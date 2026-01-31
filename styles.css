@@ -10,6 +10,8 @@
   --primary-rgb: 79 70 229;
   --accent-rgb: 20 184 166;
   --glow: 0 0 18px rgba(79, 70, 229, 0.18);
+  --card-tint-1: rgb(var(--primary-rgb) / 0.06);
+  --card-tint-2: rgb(var(--accent-rgb) / 0.05);
 }
 
 * {
@@ -230,12 +232,27 @@ h1 {
 .skill-card,
 .award-card,
 .article-card {
-  background: var(--card);
+  background: linear-gradient(180deg, var(--card-tint-1), rgba(255, 255, 255, 0.92));
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 16px;
   padding: 18px;
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+.info-card::before,
+.skill-card::before,
+.award-card::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 10px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  opacity: 0.35;
 }
 
 .info-card:hover,
@@ -293,7 +310,9 @@ h1 {
 }
 
 .featured-card {
-  background: var(--card);
+  background:
+    radial-gradient(800px 240px at 12% 0%, rgb(var(--primary-rgb) / 0.12), transparent 55%),
+    linear-gradient(180deg, var(--card-tint-2), rgba(255, 255, 255, 0.92));
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 16px;
   padding: 18px;
@@ -334,7 +353,7 @@ h1 {
 }
 
 .compact-card {
-  background: var(--card);
+  background: linear-gradient(180deg, rgb(var(--primary-rgb) / 0.04), rgba(255, 255, 255, 0.94));
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 14px;
   padding: 14px;
@@ -444,7 +463,7 @@ h1 {
 }
 
 .book-card {
-  background: var(--card);
+  background: linear-gradient(180deg, rgb(var(--accent-rgb) / 0.05), rgba(255, 255, 255, 0.92));
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 14px;
   padding: 12px;
@@ -589,7 +608,9 @@ h1 {
   justify-content: space-between;
   gap: 12px;
   align-items: center;
-  background: var(--card);
+  background:
+    radial-gradient(900px 220px at 10% 0%, rgb(var(--accent-rgb) / 0.14), transparent 55%),
+    linear-gradient(180deg, rgb(var(--primary-rgb) / 0.05), rgba(255, 255, 255, 0.92));
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 16px;
   padding: 18px;
