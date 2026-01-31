@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>混沌加密系统 · 项目详情</title>
-    <link rel="stylesheet" href="../styles.css?v=20260201-1" />
+    <link rel="stylesheet" href="../styles.css?v=20260201-2" />
   </head>
   <body class="project-page">
     <div class="bg-grid"></div>
@@ -82,14 +82,14 @@
     <section class="section" id="gallery">
       <h2>结构图 / 效果图 / 演示视频</h2>
       <div class="image-row">
-        <img class="detail-image" src="../assets/chaos-arch.svg" alt="混沌加密系统架构图（占位）" />
-        <img class="detail-image" src="../assets/chaos-result.svg" alt="混沌加密系统效果图（占位）" />
-        <img class="detail-image" src="../assets/chaos-flow.svg" alt="混沌加密系统流程图（占位）" />
+        <img class="detail-image" src="../assets/projects/chaos/arch.svg" alt="混沌加密系统架构图（占位）" />
+        <img class="detail-image" src="../assets/projects/chaos/result.svg" alt="混沌加密系统效果图（占位）" />
+        <img class="detail-image" src="../assets/projects/chaos/flow.svg" alt="混沌加密系统流程图（占位）" />
 
-        <video class="detail-image" controls playsinline preload="metadata" poster="https://placehold.co/960x540/png?text=Demo+Video">
-          <source src="../assets/chaos-demo.mp4" type="video/mp4" />
+        <video class="detail-image" controls preload="metadata" data-playsinline>
+          <source src="../assets/projects/chaos/demo.mp4" type="video/mp4" />
           你的浏览器不支持视频播放。你也可以
-          <a href="../assets/chaos-demo.mp4">下载 MP4</a>
+          <a href="../assets/projects/chaos/demo.mp4">下载 MP4</a>
           查看。
         </video>
       </div>
@@ -99,5 +99,21 @@
       <div>© [姓名占位] · 项目详情</div>
       <a href="../index.html">返回主页 ↑</a>
     </footer>
+
+    <script>
+      (() => {
+        const video = document.querySelector('video[data-playsinline]');
+        if (!video) return;
+
+        const isiOS =
+          /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+          (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+        if (isiOS) {
+          video.setAttribute('playsinline', '');
+          video.setAttribute('webkit-playsinline', '');
+        }
+      })();
+    </script>
   </body>
 </html>

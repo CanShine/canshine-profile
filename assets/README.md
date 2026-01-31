@@ -1,11 +1,11 @@
 # 媒体资源说明（图片/视频）
 
-把项目相关的图片、MP4 视频放在本目录下，然后在项目详情页中引用即可。
+素材已按类型与项目分目录整理，建议优先遵循 [docs/media.md](../docs/media.md) 的结构与命名。
 
 ## 混沌加密项目视频
 
-- 默认引用路径：`assets/chaos-demo.mp4`
-- 你需要把自己的 MP4 文件放到这里，并命名为 `chaos-demo.mp4`，或自行修改 [projects/chaos.html](../projects/chaos.html) 里的 `<source src="...">` 路径。
+- 默认引用路径：`assets/projects/chaos/demo.mp4`
+- 你可以用自己的 MP4 覆盖该文件（同名替换），或自行修改 [projects/chaos.html](../projects/chaos.html) 里的 `<source src="...">` 路径。
 
 ## 建议
 

@@ -381,7 +381,12 @@ h1 {
 
 .award-viewport {
   overflow-x: auto;
-  scrollbar-width: none;
+}
+
+@supports (scrollbar-width: none) {
+  .award-viewport {
+    scrollbar-width: none;
+  }
 }
 
 .award-viewport::-webkit-scrollbar {
@@ -523,6 +528,7 @@ h1 {
   position: absolute;
   inset: 0;
   background: rgba(15, 23, 42, 0.35);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
 
