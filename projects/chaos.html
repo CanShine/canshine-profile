@@ -23,9 +23,7 @@
         <div class="hero-left">
           <p class="badge">重点项目</p>
           <h1>混沌加密系统</h1>
-          <p class="subtitle">
-            面向视频流场景，构建可实时运行的混沌序列加密通路，并完成 FPGA 硬件加速。
-          </p>
+          <p class="subtitle">面向视频流场景，构建可实时运行的混沌序列加密通路，并完成 FPGA 硬件加速。</p>
           <div class="hero-actions">
             <a class="primary" href="#detail">查看详情</a>
             <a class="ghost" href="#gallery">查看图片/视频</a>
@@ -83,7 +81,11 @@
       <h2>结构图 / 效果图 / 演示视频</h2>
       <div class="image-row">
         <img class="detail-image" src="../assets/projects/chaos/arch.svg" alt="混沌加密系统架构图（占位）" />
-        <img class="detail-image" src="../assets/projects/chaos/result.svg" alt="混沌加密系统效果图（占位）" />
+        <img
+          class="detail-image"
+          src="../assets/projects/chaos/result.svg"
+          alt="混沌加密系统效果图（占位）"
+        />
         <img class="detail-image" src="../assets/projects/chaos/flow.svg" alt="混沌加密系统流程图（占位）" />
 
         <video class="detail-image" controls preload="metadata" data-playsinline>
@@ -102,16 +104,16 @@
 
     <script>
       (() => {
-        const video = document.querySelector('video[data-playsinline]');
+        const video = document.querySelector("video[data-playsinline]");
         if (!video) return;
 
         const isiOS =
           /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-          (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+          (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
         if (isiOS) {
-          video.setAttribute('playsinline', '');
-          video.setAttribute('webkit-playsinline', '');
+          video.setAttribute("playsinline", "");
+          video.setAttribute("webkit-playsinline", "");
         }
       })();
     </script>

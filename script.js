@@ -51,9 +51,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 const quickLinks = Array.from(document.querySelectorAll(".quick-nav a"));
-const sections = quickLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
+const sections = quickLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
 
 if (sections.length > 0) {
   const observer = new IntersectionObserver(
