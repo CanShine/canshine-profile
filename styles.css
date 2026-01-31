@@ -1,12 +1,12 @@
 :root {
-  --bg: #0b0f1a;
-  --bg-2: #0f172a;
-  --card: rgba(20, 30, 50, 0.6);
-  --text: #e6f0ff;
-  --muted: #9bb0d3;
-  --primary: #4f8cff;
-  --accent: #6ee7ff;
-  --glow: 0 0 40px rgba(79, 140, 255, 0.35);
+  --bg: #0b0f17;
+  --bg-2: #111827;
+  --card: rgba(20, 28, 44, 0.65);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #60a5fa;
+  --accent: #93c5fd;
+  --glow: 0 0 24px rgba(96, 165, 250, 0.25);
 }
 
 * {
@@ -17,9 +17,7 @@ body {
   margin: 0;
   font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   color: var(--text);
-  background: radial-gradient(1200px 600px at 10% -10%, #1b2b6b, transparent),
-    radial-gradient(900px 500px at 90% -20%, #104b7a, transparent),
-    linear-gradient(180deg, var(--bg), var(--bg-2));
+  background: linear-gradient(180deg, var(--bg), var(--bg-2));
   min-height: 100vh;
 }
 
@@ -113,7 +111,7 @@ h1 {
 }
 
 .primary {
-  background: linear-gradient(120deg, #4f8cff, #6ee7ff);
+  background: linear-gradient(120deg, #60a5fa, #93c5fd);
   border: none;
   color: #081018;
   padding: 10px 18px;
@@ -134,14 +132,14 @@ h1 {
 
 .quick-nav {
   position: fixed;
-  right: 18px;
+  left: 18px;
   top: 50%;
   transform: translateY(-50%);
   display: grid;
   gap: 8px;
   padding: 10px 12px;
   border-radius: 14px;
-  background: rgba(10, 16, 28, 0.7);
+  background: rgba(12, 18, 30, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.12);
   z-index: 10;
 }
@@ -360,7 +358,7 @@ h1 {
   overflow: hidden;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(10, 16, 28, 0.6);
+  background: rgba(12, 18, 30, 0.6);
 }
 
 .award-track {
@@ -571,9 +569,9 @@ h1 {
 
 .debug-badge {
   position: fixed;
-  left: 18px;
+  right: 18px;
   bottom: 18px;
-  background: rgba(10, 16, 28, 0.75);
+  background: rgba(12, 18, 30, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--muted);
   padding: 6px 10px;
@@ -601,7 +599,7 @@ h1 {
   }
 
   .quick-nav {
-    right: 8px;
+    left: 8px;
     top: auto;
     bottom: 16px;
     transform: none;
