@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f46e5" stop-opacity="0.18"/>
+      <stop offset="0.55" stop-color="#14b8a6" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#14b8a6"/>
+    </linearGradient>
+    <style>
+      .t1{font:700 34px -apple-system,BlinkMacSystemFont,Segoe UI,Microsoft YaHei,sans-serif;fill:#0b1324}
+      .t2{font:500 16px -apple-system,BlinkMacSystemFont,Segoe UI,Microsoft YaHei,sans-serif;fill:#5b6b84}
+      .box{fill:rgba(255,255,255,.85);stroke:rgba(11,19,36,.12);stroke-width:2;rx:16}
+      .lbl{font:600 15px -apple-system,BlinkMacSystemFont,Segoe UI,Microsoft YaHei,sans-serif;fill:#0b1324}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="960" height="540" fill="url(#bg)"/>
+  <rect x="36" y="34" width="240" height="6" rx="999" fill="url(#bar)" opacity="0.8"/>
+  <text x="36" y="92" class="t1">混沌加密系统 · 架构图占位</text>
+  <text x="36" y="122" class="t2">后续请替换为你的真实模块图（PNG/SVG/JPG 均可）。</text>
+
+  <rect x="60" y="170" width="240" height="120" class="box"/>
+  <text x="82" y="212" class="lbl">输入（视频流）</text>
+  <text x="82" y="240" class="t2">AXIS / Camera / DDR</text>
+
+  <rect x="360" y="170" width="240" height="120" class="box"/>
+  <text x="382" y="212" class="lbl">加密通路</text>
+  <text x="382" y="240" class="t2">混沌序列 + 扰动/重排</text>
+
+  <rect x="660" y="170" width="240" height="120" class="box"/>
+  <text x="682" y="212" class="lbl">输出（加密流）</text>
+  <text x="682" y="240" class="t2">网络/显示/存储</text>
+
+  <path d="M300 230 H350" stroke="#4f46e5" stroke-width="4" fill="none" opacity="0.8"/>
+  <path d="M600 230 H650" stroke="#14b8a6" stroke-width="4" fill="none" opacity="0.8"/>
+
+  <rect x="60" y="330" width="840" height="150" class="box"/>
+  <text x="82" y="372" class="lbl">关键点（示例）</text>
+  <text x="82" y="404" class="t2">• 流水线与缓存调度  • 定点化/位宽策略  • 时序收敛与约束  • 仿真对拍与板级验证</text>
+</svg>
