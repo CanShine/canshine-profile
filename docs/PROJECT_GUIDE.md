@@ -30,7 +30,7 @@
 
 推荐先看：
 
-- `docs/media.md`：素材命名与格式建议
+- `docs/MEDIA_GUIDE.md`：素材命名与格式建议
 - `docs/CONTENT_GUIDE.md`：项目/比赛如何写得更“硬核”
 
 ---

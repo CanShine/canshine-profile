@@ -1,6 +1,6 @@
 # 媒体资源说明（图片/视频）
 
-素材已按类型与项目分目录整理，建议优先遵循 [docs/media.md](../docs/media.md) 的结构与命名。
+素材已按类型与项目分目录整理，建议优先遵循 [docs/MEDIA_GUIDE.md](../docs/MEDIA_GUIDE.md) 的结构与命名。
 
 ## 混沌加密项目视频
 

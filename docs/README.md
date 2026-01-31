@@ -4,7 +4,7 @@
 
 - [PROJECT_GUIDE.md](PROJECT_GUIDE.md)：项目说明与维护指南（如何改内容/样式/卡片/素材/发布/隐私）
 - [CONTENT_GUIDE.md](CONTENT_GUIDE.md)：内容策划指南（优势挖掘、项目/比赛讲述模板、准备清单）
-- [media.md](media.md)：素材整理与命名规范（图片/视频/PDF）
+- [MEDIA_GUIDE.md](MEDIA_GUIDE.md)：素材整理与命名规范（图片/视频/PDF）
 
 建议后续可以新增：
 
