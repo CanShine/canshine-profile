@@ -12,14 +12,6 @@
     <header class="hero" id="top">
       <nav class="nav">
         <div class="brand">[姓名占位]</div>
-        <div class="nav-links">
-          <a href="#about">关于我</a>
-          <a href="#skills">技能</a>
-          <a href="#projects">项目</a>
-          <a href="#awards">奖项</a>
-          <a href="#articles">文章</a>
-          <a href="#contact">联系</a>
-        </div>
         <button class="nav-cta" onclick="scrollToSection('contact')">联系我</button>
       </nav>
 
@@ -249,7 +241,9 @@
         <div class="hint">奖状墙自动滚动，点击查看大图</div>
       </div>
       <div class="award-wall" aria-label="奖状墙">
-        <div class="award-track">
+        <button class="award-control" type="button" aria-label="上一组" data-award-prev>‹</button>
+        <div class="award-viewport">
+          <div class="award-track">
           <div class="award-tile" data-open="award-1">
             <img class="award-image" src="https://placehold.co/360x260/png?text=%E5%85%A8%E5%9B%BD%E4%B8%80%E7%AD%89%E5%A5%96" alt="全国一等奖奖状" />
             <div class="award-title">全国大学生嵌入式芯片与系统设计竞赛</div>
@@ -314,7 +308,9 @@
             <img class="award-image" src="https://placehold.co/360x260/png?text=%E5%85%A8%E5%9B%BD%E4%BC%98%E7%A7%80%E5%A5%96" alt="全国优秀奖奖状" />
             <div class="award-title">“复微杯”全国大学生电子设计大赛</div>
           </div>
+          </div>
         </div>
+        <button class="award-control" type="button" aria-label="下一组" data-award-next>›</button>
       </div>
     </section>
 
@@ -390,7 +386,7 @@
       </div>
     </div>
 
-    <div class="debug-badge">版本：2026-01-31 v1.5</div>
+    <div class="debug-badge">版本：2026-01-31 v1.6</div>
 
     <template id="proj-image">
       <h3>图像增强</h3>
