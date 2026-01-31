@@ -77,14 +77,29 @@ const awardViewport = document.querySelector(".award-viewport");
 const awardTrack = document.querySelector(".award-track");
 const awardPrev = document.querySelector("[data-award-prev]");
 const awardNext = document.querySelector("[data-award-next]");
+let awardResumeTimer;
+const awardResumeDelay = 3500;
+
+function pauseAndResumeAwards() {
+  if (!awardTrack) {
+    return;
+  }
+  awardTrack.style.animationPlayState = "paused";
+  if (awardResumeTimer) {
+    clearTimeout(awardResumeTimer);
+  }
+  awardResumeTimer = setTimeout(() => {
+    if (awardTrack) {
+      awardTrack.style.animationPlayState = "";
+    }
+  }, awardResumeDelay);
+}
 
 function scrollAwards(direction) {
   if (!awardViewport) {
     return;
   }
-  if (awardTrack) {
-    awardTrack.style.animation = "none";
-  }
+  pauseAndResumeAwards();
   const amount = awardViewport.clientWidth * 0.6;
   awardViewport.scrollBy({ left: direction * amount, behavior: "smooth" });
 }
