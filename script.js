@@ -1,26 +1,55 @@
 function scrollToSection(id) {
   const el = document.getElementById(id);
   if (el) {
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    el.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
   }
 }
 
 const modal = document.getElementById("project-modal");
 const modalBody = document.getElementById("modal-body");
 const modalTitle = document.getElementById("modal-title");
+const modalCloseButton = modal?.querySelector?.(".modal-close") ?? null;
+const modalPanel = modal?.querySelector?.(".modal-panel") ?? null;
+let lastActiveElement;
+
+function getFocusableElements(container) {
+  if (!container) {
+    return [];
+  }
+  const selector =
+    'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  return Array.from(container.querySelectorAll(selector)).filter((el) => {
+    const style = window.getComputedStyle(el);
+    return style.visibility !== "hidden" && style.display !== "none";
+  });
+}
 
 function openModal(templateId) {
-  const template = document.getElementById(templateId);
-  if (!template || !modal || !modalBody) {
+  const templateEl = document.getElementById(templateId);
+  if (!templateEl || !modal || !modalBody) {
     return;
   }
-  modalBody.innerHTML = template.innerHTML;
-  const title = template.content.querySelector("h3");
-  if (title && modalTitle) {
-    modalTitle.textContent = title.textContent;
+  lastActiveElement = document.activeElement;
+
+  let titleEl = null;
+  if (templateEl instanceof HTMLTemplateElement) {
+    const fragment = templateEl.content.cloneNode(true);
+    titleEl = fragment.querySelector?.("h3") ?? null;
+    modalBody.replaceChildren(fragment);
+  } else {
+    modalBody.innerHTML = templateEl.innerHTML;
+    titleEl = modalBody.querySelector("h3");
   }
+
+  if (titleEl && modalTitle) {
+    modalTitle.textContent = titleEl.textContent ?? "";
+  }
+
   modal.classList.add("show");
   modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  modalCloseButton?.focus?.();
 }
 
 function closeModal() {
@@ -29,6 +58,11 @@ function closeModal() {
   }
   modal.classList.remove("show");
   modal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+  if (modalBody) {
+    modalBody.replaceChildren();
+  }
+  lastActiveElement?.focus?.();
 }
 
 document.querySelectorAll("[data-open]").forEach((btn) => {
@@ -45,8 +79,36 @@ document.querySelectorAll("[data-close]").forEach((btn) => {
 });
 
 document.addEventListener("keydown", (event) => {
+  if (!modal || !modal.classList.contains("show")) {
+    return;
+  }
+
   if (event.key === "Escape") {
     closeModal();
+  }
+
+  if (event.key === "Tab") {
+    const focusables = getFocusableElements(modalPanel);
+    if (focusables.length === 0) {
+      event.preventDefault();
+      modalCloseButton?.focus?.();
+      return;
+    }
+
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    const active = document.activeElement;
+
+    if (event.shiftKey && active === first) {
+      event.preventDefault();
+      last.focus();
+      return;
+    }
+
+    if (!event.shiftKey && active === last) {
+      event.preventDefault();
+      first.focus();
+    }
   }
 });
 

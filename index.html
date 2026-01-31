@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>个人技术风采 · 展示页</title>
+    <meta name="description" content="数字 IC / FPGA 求职作品集：重点项目、奖项与工程化能力展示。" />
+    <meta property="og:title" content="个人技术风采 · 展示页" />
+    <meta property="og:description" content="数字 IC / FPGA 求职作品集：重点项目、奖项与工程化能力展示。" />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="styles.css?v=20260201-2" />
   </head>
   <body>
@@ -12,7 +16,7 @@
     <header class="hero" id="top">
       <nav class="nav">
         <div class="brand">[姓名占位]</div>
-        <button class="nav-cta" onclick="scrollToSection('contact')">联系我</button>
+        <button class="nav-cta" type="button" onclick="scrollToSection('contact')">联系我</button>
       </nav>
 
       <div class="hero-content">
@@ -24,8 +28,8 @@
             聚焦时序收敛、模块化设计与工程化交付。
           </p>
           <div class="hero-actions">
-            <button class="primary" onclick="scrollToSection('projects')">查看项目</button>
-            <button class="ghost" onclick="scrollToSection('articles')">技术文章</button>
+            <button class="primary" type="button" onclick="scrollToSection('projects')">查看项目</button>
+            <button class="ghost" type="button" onclick="scrollToSection('articles')">技术文章</button>
           </div>
           <div class="hero-stats">
             <div class="stat">
@@ -172,7 +176,7 @@
             <span class="tag">FPGA</span>
           </div>
           <p class="featured-intro">多平台协作的视频流增强与量化处理。</p>
-          <button class="ghost small" data-open="proj-image">查看详情</button>
+          <button class="ghost small" type="button" data-open="proj-image">查看详情</button>
         </div>
         <div class="featured-card">
           <div class="featured-head">
@@ -180,7 +184,7 @@
             <span class="tag">异构系统</span>
           </div>
           <p class="featured-intro">PL/PS DDR 读写与以太网高速数据传输。</p>
-          <button class="ghost small" data-open="proj-cy">查看详情</button>
+          <button class="ghost small" type="button" data-open="proj-cy">查看详情</button>
         </div>
         <div class="featured-card">
           <div class="featured-head">
@@ -188,7 +192,7 @@
             <span class="tag">FPGA</span>
           </div>
           <p class="featured-intro">高速收发与缓存管理优化。</p>
-          <button class="ghost small" data-open="proj-eth">查看详情</button>
+          <button class="ghost small" type="button" data-open="proj-eth">查看详情</button>
         </div>
         <div class="featured-card">
           <div class="featured-head">
@@ -196,7 +200,7 @@
             <span class="tag">FPGA/AI</span>
           </div>
           <p class="featured-intro">PL 仿真 + AXI-LITE 交互。</p>
-          <button class="ghost small" data-open="proj-vgg">查看详情</button>
+          <button class="ghost small" type="button" data-open="proj-vgg">查看详情</button>
         </div>
         <div class="featured-card">
           <div class="featured-head">
@@ -204,7 +208,7 @@
             <span class="tag">测试平台</span>
           </div>
           <p class="featured-intro">UART/FIFO/SPI/控制模块开发。</p>
-          <button class="ghost small" data-open="proj-t16">查看详情</button>
+          <button class="ghost small" type="button" data-open="proj-t16">查看详情</button>
         </div>
         <div class="featured-card">
           <div class="featured-head">
@@ -212,7 +216,7 @@
             <span class="tag">数字 IC</span>
           </div>
           <p class="featured-intro">张量处理单元架构与接口设计。</p>
-          <button class="ghost small" data-open="proj-tpu">查看详情</button>
+          <button class="ghost small" type="button" data-open="proj-tpu">查看详情</button>
         </div>
         <div class="featured-card">
           <div class="featured-head">
@@ -220,7 +224,7 @@
             <span class="tag">进行中</span>
           </div>
           <p class="featured-intro">毕业设计，方案设计与验证中。</p>
-          <button class="ghost small" data-open="proj-snn">查看详情</button>
+          <button class="ghost small" type="button" data-open="proj-snn">查看详情</button>
         </div>
         <div class="featured-card">
           <div class="featured-head">
@@ -228,7 +232,7 @@
             <span class="tag">FPGA/AI</span>
           </div>
           <p class="featured-intro">控制、搬运、缓存、计算一体化的推理架构。</p>
-          <button class="ghost small" data-open="proj-resnet">查看详情</button>
+          <button class="ghost small" type="button" data-open="proj-resnet">查看详情</button>
         </div>
       </div>
     </section>
@@ -364,7 +368,7 @@
           <p>GitHub：[GitHub 地址占位]</p>
           <p>
             简历：
-            <a href="assets/resume/resume.pdf" target="_blank" rel="noopener">查看/下载 PDF</a>
+            <a href="assets/resume/resume.pdf" target="_blank" rel="noopener noreferrer">查看/下载 PDF</a>
           </p>
         </div>
         <a class="primary" href="assets/resume/resume.pdf" download>下载简历</a>
@@ -378,10 +382,10 @@
 
     <div class="modal" id="project-modal" aria-hidden="true">
       <div class="modal-backdrop" data-close></div>
-      <div class="modal-panel" role="dialog" aria-modal="true">
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-header">
           <div class="modal-title" id="modal-title">项目详情</div>
-          <button class="modal-close" data-close>×</button>
+          <button class="modal-close" type="button" data-close>×</button>
         </div>
         <div class="modal-body" id="modal-body"></div>
       </div>

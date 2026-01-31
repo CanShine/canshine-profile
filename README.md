@@ -38,9 +38,15 @@
 重点项目的入口在 [index.html](index.html) 中的 **“重点项目”** 区块（通常是 `<a href="projects/xxx.html">查看详情</a>`）。
 其他项目/奖项弹窗详情在同文件底部的 **`<template id="...">`** 模板中。
 
-要新增重点项目，请按以下步骤：
+要新增重点项目（独立详情页）建议按以下步骤：
 
-1. 复制一个重点项目卡片（含 `data-open="proj-xxx"`）。
+1. 复制一个“重点项目”卡片（含 `href="projects/xxx.html"`）。
+2. 在 `projects/` 下新增对应详情页（复制现有 `projects/chaos.html`/`projects/car.html`/`projects/fft.html` 改）。
+3. 为该项目准备图片/视频等素材，并放到 `assets/projects/<project>/`。
+
+要新增“其他项目”（弹窗详情）请按以下步骤：
+
+1. 复制一个“其他项目”卡片（含 `data-open="proj-xxx"`）。
 2. 在页面底部新增对应的 `<template id="proj-xxx">`。
 3. 确保 `data-open` 与 `template id` 一致。
 
