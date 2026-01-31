@@ -244,25 +244,16 @@ h1 {
   flex-wrap: wrap;
 }
 
+.subsection-title {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+
 .hint {
   color: var(--muted);
   font-size: 14px;
-}
-
-.project {
-  margin-top: 22px;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(10, 20, 40, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
 }
 
 .tag {
@@ -273,28 +264,144 @@ h1 {
   font-size: 12px;
 }
 
-.project-grid {
+.featured-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 16px;
+}
+
+.featured-card {
+  background: rgba(10, 20, 40, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.featured-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.featured-intro {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.ghost.small {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.compact-grid {
   margin-top: 12px;
   display: grid;
-  gap: 14px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-.project-card {
+.compact-card {
   background: rgba(20, 30, 50, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
-  padding: 14px 16px;
+  padding: 14px;
+  display: grid;
+  gap: 8px;
 }
 
-.project-card h4 {
-  margin: 6px 0 8px;
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
 }
 
-.project-card ul {
+.modal.show {
+  display: flex;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 10, 20, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.modal-panel {
+  position: relative;
+  max-width: 860px;
+  width: min(92vw, 860px);
+  max-height: 82vh;
+  overflow: auto;
+  background: rgba(12, 20, 36, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 20px 22px;
+  z-index: 2;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.modal-title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.modal-close {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.modal-body h3 {
+  margin-top: 0;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.detail-grid ul {
   margin: 0;
   padding-left: 18px;
   color: var(--muted);
+}
+
+.image-row {
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.image-placeholder {
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .contact-card {
