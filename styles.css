@@ -123,6 +123,15 @@ h1 {
   box-shadow: var(--glow);
 }
 
+.primary.small {
+  padding: 8px 12px;
+  font-size: 12px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .ghost {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -280,6 +289,10 @@ h1 {
   gap: 10px;
 }
 
+.featured-card a {
+  text-decoration: none;
+}
+
 .featured-head {
   display: flex;
   justify-content: space-between;
@@ -312,6 +325,42 @@ h1 {
   padding: 14px;
   display: grid;
   gap: 8px;
+}
+
+.award-wall {
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.award-tile {
+  background: rgba(20, 30, 50, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.award-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glow);
+}
+
+.award-image {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.award-title {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.4;
 }
 
 .modal {
