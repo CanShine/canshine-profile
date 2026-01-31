@@ -1,7 +1,7 @@
 /* Clean, minimal light theme */
 :root {
-  --bg: #f1f4f9;
-  --bg-2: #e6ecf5;
+  --bg: #eef3fb;
+  --bg-2: #dde8f8;
   --card: #ffffff;
   --text: #0b1324;
   --muted: #5b6b84;
@@ -21,8 +21,9 @@ body {
   font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(1200px 620px at 12% -10%, rgba(79, 70, 229, 0.22), transparent 60%),
-    radial-gradient(1000px 560px at 90% 0%, rgba(20, 184, 166, 0.18), transparent 58%),
+    radial-gradient(1200px 620px at 12% -10%, rgba(79, 70, 229, 0.28), transparent 60%),
+    radial-gradient(1000px 560px at 90% 0%, rgba(20, 184, 166, 0.22), transparent 58%),
+    radial-gradient(1100px 700px at 55% 110%, rgba(79, 70, 229, 0.12), transparent 55%),
     linear-gradient(180deg, var(--bg), var(--bg-2));
   min-height: 100vh;
 }
@@ -35,8 +36,6 @@ body {
   position: relative;
   z-index: 1;
   padding: 24px 8vw 80px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .nav {
@@ -190,8 +189,6 @@ h1 {
   z-index: 1;
   padding: 56px 8vw;
   scroll-margin-top: 90px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .section h2 {
