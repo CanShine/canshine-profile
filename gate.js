@@ -88,7 +88,6 @@
             <input class="password-gate-input" type="password" autocomplete="current-password" required />
           </label>
           <button class="primary" type="submit">进入</button>
-          <div class="password-gate-hint">提示：这是“防路人”的前端保护，不是强安全。</div>
           <div class="password-gate-error" aria-live="polite"></div>
         </form>
       </div>
