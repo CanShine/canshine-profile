@@ -160,14 +160,6 @@
           <p class="featured-intro">高效参数化 FFT 模块，支持自定义 IP 与高速链路。</p>
           <button class="ghost small" data-open="proj-fft">查看详情</button>
         </div>
-        <div class="featured-card">
-          <div class="featured-head">
-            <h3>ResNet50 加速器</h3>
-            <span class="tag">FPGA/AI</span>
-          </div>
-          <p class="featured-intro">控制、搬运、缓存、计算一体化的高吞吐推理架构。</p>
-          <button class="ghost small" data-open="proj-resnet">查看详情</button>
-        </div>
       </div>
 
       <div class="subsection-title">其他项目</div>
@@ -206,6 +198,11 @@
           <h4>SNN 硬件加速器</h4>
           <p>毕业设计，方案设计与验证中。</p>
           <span class="chip">进行中</span>
+        </div>
+        <div class="compact-card">
+          <h4>ResNet50 加速器</h4>
+          <p>控制、搬运、缓存、计算一体化的推理架构。</p>
+          <span class="chip">FPGA/AI</span>
         </div>
       </div>
     </section>
@@ -307,7 +304,13 @@
       <p>主导实现基于混沌理论的视频流加密算法，并完成 FPGA 硬件加速。</p>
       <div class="detail-grid">
         <div>
-          <h4>架构要点</h4>
+          <h4>项目介绍</h4>
+          <p>面向视频流场景，构建可实时运行的混沌序列加密通路，并在 FPGA 上实现低延迟处理。</p>
+          <h4>原理介绍</h4>
+          <p>基于混沌系统的初值敏感性和伪随机特性，生成密钥序列对视频流进行扰动与重构。</p>
+        </div>
+        <div>
+          <h4>结构要点</h4>
           <ul>
             <li>混沌序列生成与密钥管理</li>
             <li>视频流分块/加密/重组通路</li>
@@ -324,8 +327,8 @@
         </div>
       </div>
       <div class="image-row">
-        <div class="image-placeholder">架构图占位</div>
-        <div class="image-placeholder">效果图占位</div>
+        <img class="detail-image" src="https://placehold.co/640x360/png?text=%E6%9E%B6%E6%9E%84%E5%9B%BE" alt="混沌加密系统架构图" />
+        <img class="detail-image" src="https://placehold.co/640x360/png?text=%E6%95%88%E6%9E%9C%E5%9B%BE" alt="混沌加密系统效果图" />
       </div>
     </template>
 
@@ -334,7 +337,13 @@
       <p>面向车载场景的多协议异常检测系统，强调跨时钟域与容错设计。</p>
       <div class="detail-grid">
         <div>
-          <h4>核心模块</h4>
+          <h4>项目介绍</h4>
+          <p>构建多协议协同的检测链路，对异常状态进行捕获、分级与处理，保障系统可靠运行。</p>
+          <h4>原理介绍</h4>
+          <p>通过协议解析、状态机监测与异常策略引擎，实现实时检测与告警触发。</p>
+        </div>
+        <div>
+          <h4>结构要点</h4>
           <ul>
             <li>多协议解析与状态机</li>
             <li>异常检测/告警策略</li>
@@ -351,8 +360,8 @@
         </div>
       </div>
       <div class="image-row">
-        <div class="image-placeholder">系统框图占位</div>
-        <div class="image-placeholder">异常流程占位</div>
+        <img class="detail-image" src="https://placehold.co/640x360/png?text=%E7%B3%BB%E7%BB%9F%E6%A1%86%E5%9B%BE" alt="车载中控系统框图" />
+        <img class="detail-image" src="https://placehold.co/640x360/png?text=%E5%BC%82%E5%B8%B8%E6%B5%81%E7%A8%8B" alt="车载中控异常流程图" />
       </div>
     </template>
 
@@ -361,7 +370,13 @@
       <p>高效参数化 FFT 模块，适配高速数据链路与多种 IP 组合方式。</p>
       <div class="detail-grid">
         <div>
-          <h4>关键设计</h4>
+          <h4>项目介绍</h4>
+          <p>面向高吞吐场景设计参数化 FFT 计算模块，兼顾延迟与资源占用。</p>
+          <h4>原理介绍</h4>
+          <p>基于蝶形运算的分级流水线结构，通过并行化调度提升吞吐性能。</p>
+        </div>
+        <div>
+          <h4>结构要点</h4>
           <ul>
             <li>蝶形单元流水线调度</li>
             <li>定点化与精度权衡</li>
@@ -378,35 +393,8 @@
         </div>
       </div>
       <div class="image-row">
-        <div class="image-placeholder">数据通路占位</div>
-        <div class="image-placeholder">时序示意占位</div>
-      </div>
-    </template>
-
-    <template id="proj-resnet">
-      <h3>ResNet50 加速器</h3>
-      <p>控制、搬运、缓存、计算一体化的高吞吐推理架构。</p>
-      <div class="detail-grid">
-        <div>
-          <h4>架构模块</h4>
-          <ul>
-            <li>片上缓存与数据复用</li>
-            <li>数据搬运与调度</li>
-            <li>计算阵列控制</li>
-          </ul>
-        </div>
-        <div>
-          <h4>优化方向</h4>
-          <ul>
-            <li>带宽瓶颈分析</li>
-            <li>推理流水线优化</li>
-            <li>模块化扩展能力</li>
-          </ul>
-        </div>
-      </div>
-      <div class="image-row">
-        <div class="image-placeholder">架构图占位</div>
-        <div class="image-placeholder">性能曲线占位</div>
+        <img class="detail-image" src="https://placehold.co/640x360/png?text=%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF" alt="FFT 数据通路示意图" />
+        <img class="detail-image" src="https://placehold.co/640x360/png?text=%E6%97%B6%E5%BA%8F%E7%A4%BA%E6%84%8F" alt="FFT 时序示意图" />
       </div>
     </template>
 
