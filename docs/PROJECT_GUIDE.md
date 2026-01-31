@@ -1,241 +1,148 @@
-# 项目说明与维护指南（能看懂就行版）
+# 项目说明与维护指南（循序渐进版）
 
-这份文档面向“以后你自己改内容、改样式、加项目、加图片/视频、继续维护”的场景。
+这份文档写给“未来的你”：你只需要会复制、粘贴、改文字/图片，就能把这个站点维护得很有条理。
 
 - 站点类型：纯静态（HTML/CSS/JS）
 - 发布方式：GitHub Pages（无需构建）
 
 ---
 
-## 1. 你需要改的文件分别是干什么的？
+## 0. 快速开始（5 分钟把站点改成自己的）
 
-项目根目录核心文件：
+按顺序做这 5 步，基本就能上线一个“像样的个人主页”。
 
-- `index.html`：主页内容与结构（各个板块、卡片、弹窗模板、外链等）
-- `styles.css`：全站样式（颜色/字体/布局/卡片/弹窗/响应式）
-- `script.js`：交互逻辑（平滑跳转、弹窗打开/关闭、左侧导航高亮、奖状墙滚动控制等）
+1. 打开 `index.html`，替换所有 `[xxx占位]`（姓名、学校、邮箱、GitHub 等）。
+2. 打开 `assets/resume/resume.pdf`，换成你的简历（建议公开版，见隐私章节）。
+3. 在 `index.html` 的“重点项目/其他项目”里，把项目标题和一句话亮点换成真实内容。
+4. 把你的图/视频放进 `assets/projects/<project>/`，并在 `index.html` 或 `projects/*.html` 改引用路径。
+5. 提交并推送：`git add -A` → `git commit -m "update"` → `git push`，等待 1–5 分钟生效。
+
+---
+
+## 1. 项目结构：每个文件负责什么？
+
+你以后主要就会改这几类文件。
+
+### 1.1 页面文件（你改内容的地方）
+
+- `index.html`：主页内容与结构（板块、卡片、弹窗模板、外链等）
 - `projects/*.html`：重点项目详情页（独立页面，适合放更多图/视频/更完整叙述）
 
-工程化与规范：
+### 1.2 样式与交互（你改“长什么样/怎么动”）
 
-- `.editorconfig`：统一缩进、行尾、去尾空格（让多人/多设备编辑更一致）
-- `.prettierrc.json` + `.prettierignore` + `package.json`：Prettier 格式化（统一代码风格）
-- `.gitattributes`：强制文本文件使用 LF 行尾（避免 Windows/Mac 混乱）
-- `.gitignore`：忽略 `node_modules/` 等不应提交的目录
+- `styles.css`：全站样式（颜色、字体、布局、卡片、弹窗、响应式）
+- `script.js`：交互逻辑（平滑跳转、弹窗开关、左侧导航高亮、奖状墙滚动等）
 
-素材与文档：
+### 1.3 素材与文档（你改图片/视频/简历）
 
-- `assets/`：所有图片/视频/PDF（不依赖外链，更稳定）
-- `docs/`：写作与维护文档（内容策划、素材规范等）
+- `assets/`：图片/视频/PDF（不依赖外链，更稳定）
+- `docs/`：维护文档
+  - `docs/MEDIA_GUIDE.md`：素材命名与格式建议
+  - `docs/CONTENT_GUIDE.md`：项目/比赛怎么写得更专业
 
-推荐先看：
+### 1.4 工程化（尽量别删，保持一致性）
 
-- `docs/MEDIA_GUIDE.md`：素材命名与格式建议
-- `docs/CONTENT_GUIDE.md`：项目/比赛如何写得更“硬核”
+- `.editorconfig`：缩进、行尾、去尾空格
+- `.prettierrc.json` + `.prettierignore` + `package.json`：Prettier 格式化
+- `.gitattributes`：强制仓库文本文件使用 LF 行尾
+- `.gitignore`：忽略 `node_modules/` 等不该提交的目录
 
 ---
 
-## 2. HTML（index.html）怎么读？怎么改？（超简版语法）
+## 2. 改内容：只改 HTML 就能完成 80% 工作
 
-HTML 就是“页面结构”。你可以把它理解为：
+### 2.1 先理解 6 个最常用的 HTML 标签
 
-- `<section>`：一个板块（例如“关于我/技能/项目/奖项”）
-- `<div>`：一个容器（用来排版）
-- `<h1> <h2> <h3>`：标题，数字越小越大
+你可以把 HTML 当成“搭积木”：
+
+- `<section>`：一个板块（如关于我/技能/项目/奖项）
+- `<h1>/<h2>/<h3>`：标题（数字越小越大）
 - `<p>`：段落
-- `<a>`：链接（可跳转到外部或页面内部）
+- `<a>`：链接（跳转）
 - `<img>`：图片
-- `<video>`：视频
 - `<button>`：按钮
 
-### 2.1 板块与跳转（导航）
+### 2.2 改“基本信息/联系方式”
 
-主页每个板块都有一个 `id`，比如：
+位置：`index.html` 顶部与 contact 板块。
 
-- `<section class="section" id="projects">`
+建议顺序：
 
-左侧快速导航是这样的：
+1. 先把 `[姓名占位]`、`[学校/实验室占位]`、`[邮箱占位]` 换掉。
+2. 再把“核心优势/目标岗位”的三条 bullet 改成你的真实方向。
 
-- `<a href="#projects">项目</a>`
+### 2.3 改“板块跳转（导航）”
 
-想新增一个板块：
+规则很简单：
 
-1. 在 `index.html` 增加一个 `<section ... id="xxx">...</section>`
-2. 在左侧 `.quick-nav` 增加一个 `<a href="#xxx">...</a>`
+- 目标板块要有 `id`：`<section id="projects">`
+- 导航链接用 `href="#projects"`
 
-> `script.js` 会用 IntersectionObserver 自动把当前板块对应的导航高亮。
+新增一个板块的步骤：
 
-### 2.2 卡片是什么？怎么加？
+1. 在 `index.html` 增加：`<section class="section" id="new">...</section>`
+2. 在左侧 `.quick-nav` 增加：`<a href="#new">新板块</a>`
 
-这个站点大多数内容都用“卡片”排版，比如：
-
-- 关于我：`.info-card`
-- 技能：`.skill-card`
-- 项目：`.featured-card`
-- 书墙：`.book-card`
-
-加卡片的做法一般就是：复制一份同类结构 → 改文字/图片/链接。
-
-例如“其他项目”的卡片基本长这样（示意）：
-
-```html
-<div class="featured-card">
-  <div class="featured-head">
-    <h3>项目名</h3>
-    <span class="tag">标签</span>
-  </div>
-  <p class="featured-intro">一句话亮点</p>
-  <button class="ghost small" data-open="proj-xxx">查看详情</button>
-</div>
-```
-
-> `class="..."` 决定它套用哪种样式。
-
-### 2.3 弹窗详情（template + data-open）
-
-主页的“其他项目”和“奖项大图”用的是同一个弹窗机制：
-
-- 触发按钮/卡片上写 `data-open="xxx"`
-- 页面底部写 `<template id="xxx"> ... </template>`
-- `script.js` 读取 template 内容塞进弹窗里
-
-新增一个“其他项目弹窗”的步骤：
-
-1. 复制一个按钮：`<button data-open="proj-new">查看详情</button>`
-2. 在底部新增模板：
-
-```html
-<template id="proj-new">
-  <h3>新项目标题</h3>
-  <p>一句话介绍</p>
-  <div class="image-row">
-    <img class="detail-image" src="assets/projects/new/arch.svg" alt="架构图" />
-  </div>
-</template>
-```
-
-3. 确保 `data-open` 和 `template id` 完全一致。
+说明：左侧高亮是 `script.js` 自动做的（IntersectionObserver）。
 
 ---
 
-## 3. CSS（styles.css）怎么改？（颜色/字体/布局/主题）
+## 3. 加项目：两种展示方式（先选一种）
 
-CSS 就是“长什么样”。你可以把它理解为：
+这个站点的项目展示分两类，你按需求选。
 
-- 选择器（selector）选中元素：
-  - `.featured-card` 表示 class=featured-card 的元素
-  - `#projects` 表示 id=projects 的元素
-  - `.section h2` 表示 section 内的 h2
-- 属性（property）决定样式：
-  - `color` 文字颜色
-  - `background` 背景
-  - `font-size` 字体大小
-  - `padding/margin` 内外边距
-  - `display: grid/flex` 布局
+### 3.1 重点项目（推荐）：独立详情页 `projects/*.html`
 
-### 3.1 主题颜色：优先改 CSS 变量（最省事）
+适合：你最想让面试官点开的 2–3 个项目。
 
-在 `styles.css` 顶部的 `:root` 里有主题变量：
+你需要改的地方：
 
-- `--bg/--bg-2`：背景
-- `--text/--muted`：正文/弱化文字
-- `--primary/--accent`：主色/强调色
+1. `index.html` 的“重点项目”卡片（一般是一个 `<a href="projects/xxx.html">查看详情</a>`）
+2. `projects/xxx.html`：写详细内容、放更多图/视频
 
-你改这些变量，整个网站会一起变化。
+新增一个重点项目的步骤：
 
-### 3.2 字体与字号：改 body / h1 / section 标题
+1. 复制一个现有详情页（比如 `projects/fft.html`）改名为 `projects/new.html`
+2. 在 `index.html` 复制一张“重点项目卡片”，把链接改成 `projects/new.html`
+3. 把素材放到 `assets/projects/new/`，并更新页面里的 `src` 路径
 
-- 全站字体：`body { font-family: ... }`
-- 首页大标题：`h1 { font-size: 46px; }`
-- 板块标题：`.section h2 { font-size: 28px; }`
+### 3.2 其他项目：主页弹窗（template + data-open）
 
-### 3.3 “布局条/渐变条”（卡片顶部条、标题下划线条）
+适合：项目很多，但每个只想放“简短说明 + 2 张图”。
 
-这个站点有两种常见“条形强调”：
+机制：
 
-- 板块标题下方渐变条：`.section h2::after`
-- 卡片顶部渐变条：`.info-card::before` / `.skill-card::before` / `.award-card::before`
+- 卡片按钮写 `data-open="proj-xxx"`
+- 页面底部有 `<template id="proj-xxx">...</template>`
+- JS 会把模板内容塞进同一个弹窗容器里
 
-你可以通过修改 `height` / `opacity` / 渐变颜色来调粗细与视觉风格。
+新增一个弹窗项目的步骤：
 
-### 3.4 布局：主要靠 Grid（卡片自动换行）
-
-比如：
-
-- 首页左右两列：`.hero-content { grid-template-columns: ... }`
-- 卡片网格：`.featured-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }`
-
-想让卡片“一行更多/更少”：
-
-- 调 `minmax(240px, 1fr)` 里的 `240px`：
-  - 小一点 → 一行能放更多卡片
-  - 大一点 → 一行更少但更宽
-
-### 3.5 想做暗色主题（可选）
-
-当前默认是浅色主题。如果想加暗色主题，推荐做法：
-
-1. 给 `html` 或 `body` 加 `data-theme="dark"`
-2. 在 CSS 里写：
-
-```css
-:root[data-theme="dark"] {
-  --bg: #0b1220;
-  --bg-2: #101a31;
-  --card: rgba(255, 255, 255, 0.06);
-  --text: #e5e7eb;
-  --muted: rgba(229, 231, 235, 0.72);
-}
-```
-
-然后用 JS 做一个开关（后续需要我可以直接帮你加）。
+1. 在“其他项目”复制一张卡片，把 `data-open` 改成 `proj-new`
+2. 在 `index.html` 底部复制一个 `<template>`，把 `id` 改成 `proj-new`
+3. 往模板里加文字和图片（`.image-row` 会自动排版）
 
 ---
 
-## 4. JS（script.js）负责什么？怎么扩展？
+## 4. 加图片/视频：只要会改 `src` 就行
 
-这个项目的 JS 只做“必要交互”，不引入框架：
+### 4.1 图片怎么加（主页与弹窗）
 
-- `scrollToSection(id)`：按钮点击后平滑滚动到指定板块
-- 弹窗系统：`openModal(templateId)` / `closeModal()`
-- 点击 `data-open` 的元素 → 打开对应 `<template id="...">`
-- 左侧导航高亮：IntersectionObserver 观察当前进入视口的 section
-- 奖状墙：自动滚动 + 你手动点上一组/下一组后，暂停一会再自动恢复
-
-想新增一个弹窗内容：基本只需要在 `index.html` 里加 `<template>`，JS 不用动。
-
----
-
-## 5. 如何修改“卡片/图片/视频”的数量？
-
-### 5.1 卡片数量
-
-- 卡片数量完全由 `index.html` 里你写了多少个 `.featured-card/.info-card/...` 决定
-- 想加：复制一个同类卡片 → 改标题/文字/按钮/链接
-- 想删：删除对应那一段 HTML
-
-### 5.2 图片数量（弹窗/详情页）
-
-- 在模板里增加/删除 `<img ...>` 即可
-- 推荐把多张图放在 `.image-row` 容器里，它会自动排版
-
-示意：
+你只需要会改这一句：
 
 ```html
-<div class="image-row">
-  <img class="detail-image" src="assets/projects/xxx/arch.svg" alt="架构" />
-  <img class="detail-image" src="assets/projects/xxx/result.svg" alt="结果" />
-</div>
+<img src="assets/projects/xxx/arch.svg" alt="架构图" />
 ```
 
-### 5.3 视频数量（重点项目详情页）
+建议：
 
-重点项目的详情在 `projects/*.html`。
+- 多张图放进 `.image-row` 容器里（自动排版）
+- 主页用 `assets/...` 路径
+- 详情页（`projects/*.html`）用 `../assets/...` 路径
 
-- 加一个视频：增加一个 `<video ...>`
-- 推荐加 `controls`，并用 `preload="metadata"` 降低首屏加载
+### 4.2 视频怎么加（重点项目详情页更合适）
 
-建议写法（示意）：
+推荐写法：
 
 ```html
 <video controls preload="metadata" style="width: 100%; border-radius: 12px">
@@ -245,41 +152,62 @@ CSS 就是“长什么样”。你可以把它理解为：
 
 ---
 
-## 6. 项目文件怎么管理才“有条理”？（建议规则）
+## 5. 改样式：先改主题变量，再改局部样式
 
-### 6.1 目录规则（已经按这个做了）
+### 5.1 主题颜色（最推荐的改法）
 
-- `assets/projects/<project>/`：每个项目一套素材
-- `assets/awards/`：奖状
-- `assets/books/`：书墙
-- `assets/resume/`：简历
+位置：`styles.css` 顶部 `:root`。
 
-### 6.2 命名规则
+你一般只需要改：
 
-建议按语义命名，而不是 `1.png/2.png`：
+- `--primary` / `--accent`：主色与强调色
+- `--text` / `--muted`：文字与弱化文字
 
-- `cover.*`（封面）
-- `arch.*`（架构）
-- `flow.*`（流程）
-- `result.*`（结果）
-- `demo.mp4`（演示视频）
+### 5.2 字体大小（最常改的 3 个地方）
 
-### 6.3 内容写作与技术文档
+- 全站字体：`body { font-family: ... }`
+- 首页大标题：`h1 { font-size: ... }`
+- 板块标题：`.section h2 { font-size: ... }`
 
-- “主页一句话亮点”写在 `index.html`
-- “面试可讲的详细稿”写在 `docs/`（例如 `docs/projects/xxx.md`）
-- “最终对外展示的长文”可以放外部博客，然后在主页 articles 区加链接
+### 5.3 卡片布局（想一行放更多卡片）
+
+位置：`.featured-grid` 这类网格。
+
+关键是这一段：
+
+- `minmax(240px, 1fr)`
+
+想一行更多卡片：把 `240px` 调小。
+想卡片更宽：把 `240px` 调大。
+
+### 5.4 暗色主题（可选）
+
+如果你确定要做暗色主题，建议用“开关 + CSS 变量”的方式实现（我可以直接帮你加按钮和保存偏好）。
 
 ---
 
-## 7. 发布（GitHub Pages）怎么做？
+## 6. 素材格式怎么选？（结合本项目推荐）
 
-发布原则：只要你 `git push` 到 `main`，Pages 就会更新。
+更完整建议见 `docs/MEDIA_GUIDE.md`。这里给一个“最容易选对”的版本。
 
-步骤：
+### 6.1 图片
 
-1. 修改代码/内容
-2. 提交并推送：
+- 架构图/流程图/曲线：优先 `svg`（清晰、可缩放、体积小）
+- 需要无损的截图：优先 `png`
+- 照片：优先 `jpg`
+
+### 6.2 视频
+
+- `mp4(H.264 + AAC)`：兼容性最好
+- 建议 720p/1080p，`preload="metadata"`，体积尽量控制在 20–40MB
+
+---
+
+## 7. 发布与更新（GitHub Pages）
+
+### 7.1 发布原则
+
+只要你把改动推送到 `main` 分支，GitHub Pages 就会自动更新。
 
 ```bash
 git add -A
@@ -287,106 +215,57 @@ git commit -m "update: content"
 git push
 ```
 
-3. 等 1–5 分钟，访问：
+等待 1–5 分钟后访问：
 
 - `https://canshine.github.io/canshine-profile/`
 
-### 7.1 缓存不更新怎么办？
-
-本项目对 CSS/JS 引用了版本号：
-
-- `styles.css?v=...`
-- `script.js?v=...`
+### 7.2 缓存不更新怎么办？
 
 如果你遇到“手机/电脑显示不一致/一直没更新”，优先：
 
-- 把 `index.html` 里这两个 `v=` 改一下（例如日期+版本）
-- 浏览器强刷（Ctrl+F5）或清缓存
+1. 修改 `index.html` 里 `styles.css?v=...` 和 `script.js?v=...` 的版本号
+2. 浏览器强刷（Ctrl+F5）或清缓存
 
 ---
 
-## 8. jpg/png/svg/mp4 用哪个？（结合本项目建议）
+## 8. 维护方式：让项目长期不乱
 
-### 8.1 图片
+推荐你坚持 6 条就够用：
 
-- `svg`：强烈推荐用于 架构图/流程图/曲线图/示意图（清晰、可缩放、体积小）
-- `png`：推荐用于 需要无损的截图（UI 截图、像素级对比图），缺点是可能比较大
-- `jpg`：推荐用于 照片/真人照/活动照（体积小），缺点是不支持透明且有压缩损失
-
-总结一句话：
-
-- 图/架构：优先 `svg`
-- 屏幕截图：优先 `png`
-- 照片：优先 `jpg`
-
-### 8.2 视频
-
-- `mp4(H.264 + AAC)`：兼容性最好，GitHub Pages 也最稳
-
-建议：
-
-- 720p/1080p 足够
-- `preload="metadata"`
-- 文件尽量控制在 20–40MB
+1. 内容优先改 `index.html`（概览）+ `projects/*.html`（重点项目细节）
+2. 素材只放 `assets/`，不要外链占位图
+3. 一个项目一个目录：`assets/projects/<project>/`
+4. 改完跑格式化（统一风格）：`npm run format`
+5. 提交信息写清楚：`update/fix/chore/docs`（看提交就知道改了什么）
+6. 隐私宁可少，不要硬塞
 
 ---
 
-## 9. 做这个网页用到的知识点（简要清单）
+## 9. 隐私与敏感信息：公开版 vs 投递版
 
-- HTML：语义化结构、锚点跳转、图片/视频/链接、安全属性（`rel="noopener"`）
-- CSS：变量主题、Flex/Grid 布局、卡片风格（阴影/圆角/渐变）、响应式
-- JS：DOM 操作、事件监听、IntersectionObserver、弹窗组件思路
-- 工程化：Git/GitHub、Pages 部署、格式化（Prettier）、行尾规范（LF）
-- 资产管理：本地素材组织、图片/视频格式选择与体积控制
+### 9.1 建议可以公开展示
 
----
-
-## 10. 维护方式（长期不乱）
-
-推荐你坚持 5 条就够用：
-
-1. 内容改动优先改 `index.html`（一句话亮点）+ `projects/*.html`（详细项目叙述）
-2. 素材只放 `assets/`，不要外链占位图（稳定、可控）
-3. 一次改完跑一次格式化：
-
-```bash
-npm run format
-```
-
-4. 提交信息写清楚：`update: xxx` / `fix: xxx` / `chore: xxx`
-5. 隐私与敏感信息宁可少，不要硬塞
-
----
-
-## 11. 隐私与敏感信息：展示什么？不展示什么？（很重要）
-
-### 11.1 建议可以展示
-
-- 邮箱（建议单独用于求职的邮箱）
+- 邮箱（建议使用专门的求职邮箱）
 - GitHub 主页（公开仓库）
-- 学校/专业（如果不介意）
-- 技术栈、项目亮点、可量化结果（吞吐/频率/资源/功耗/验证覆盖率等）
-- 项目截图/架构图（确保不含敏感字段/内部地址）
+- 技术栈、项目亮点、可量化结果（吞吐/频率/资源/功耗/覆盖率）
 
-### 11.2 强烈不建议展示
+### 9.2 强烈不建议公开展示
 
 - 身份证号、学号、手机号、家庭住址、生日全量
 - 任何账号密码、Access Token、API Key
 - 内网地址、服务器 IP、公司/实验室内部系统截图
-- NDA/保密项目的源码、关键细节（尤其是未公开产品/真实客户信息）
+- 受 NDA/保密约束的源码与关键细节
 
-### 11.3 “看起来无害但其实有风险”的信息
+### 9.3 容易忽略的风险点
 
-- 简历 PDF 里可能包含：手机号、住址、照片、身份证后几位
-- 截图里可能包含：文件路径、用户名、邮箱、组织名称
-- 奖状/证书可能包含：证书编号、身份证/手机号
+- 简历 PDF 里可能包含手机号/住址/证件信息
+- 截图里可能包含用户名、邮箱、组织名、路径、证书编号
 
 建议做法：
 
-- 对外版本只保留必要信息（邮箱 + GitHub + 城市可选）
-- 简历准备 2 份：公开版（去敏）/投递版（完整）
-- 图片需要的话就打码再放
+- 准备两份简历：公开版（去敏）/投递版（完整）
+- 图片需要的话先打码再上传
 
 ---
 
-如果你希望我再加一份“按你的页面结构逐行讲怎么改”的超细教程（比如：每一块卡片对应哪些 CSS），告诉我你最想先改哪 3 件事：颜色主题 / 卡片布局 / 项目内容。
+如果你愿意，我可以再补一节“按页面结构逐块讲：改哪段 HTML 对应哪段 CSS”，这样你改样式会更快。
