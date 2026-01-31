@@ -38,7 +38,9 @@
 - `assets/`：图片/视频/PDF（不依赖外链，更稳定）
 - `docs/`：维护文档
   - `docs/MEDIA_GUIDE.md`：素材命名与格式建议
-  - `docs/CONTENT_GUIDE.md`：项目/比赛怎么写得更专业
+  - `docs/CONTENT_GUIDE.md`：网站/简历的内容策划（项目/比赛怎么写得更专业）
+  - `docs/INTERVIEW_GUIDE.md`：面试讲述（短/中/长版本、可信度、扬长避短）
+  - `docs/PRIVACY_GUIDE.md`：公开展示与隐私边界（脱敏、哪些别放公开仓库）
 
 ### 1.4 工程化（尽量别删，保持一致性）
 

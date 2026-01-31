@@ -64,7 +64,7 @@
 
 最终访问地址：
 
-```
+```text
 https://canshine.github.io/canshine-profile/
 ```
 
@@ -75,13 +75,13 @@ https://canshine.github.io/canshine-profile/
 1. 修改文件（index.html / styles.css / script.js）
 2. 提交并推送：
 
-```
+```bash
 git add .
 git commit -m "update"
 git push
 ```
 
-3. GitHub Pages 会自动更新
+1. GitHub Pages 会自动更新
 
 ---
 
