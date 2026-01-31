@@ -2,6 +2,10 @@
 
 本项目为纯静态页面（HTML/CSS/JS），通过 GitHub Pages 发布，无需 Hexo 或额外构建流程。
 
+更完整的“如何改内容/样式/卡片/素材/发布/隐私”指南见：
+
+- `docs/PROJECT_GUIDE.md`
+
 ---
 
 ## 目录结构
@@ -9,6 +13,8 @@
 - index.html：页面内容与结构（项目、奖项、个人信息等）
 - styles.css：页面样式（布局、颜色、弹窗等）
 - script.js：交互逻辑（平滑滚动、项目弹窗）
+- projects/：重点项目详情页（独立页面，如 projects/chaos.html）
+- assets/：站点素材（图片/视频/PDF，按 projects/awards/books/resume 分类）
 
 ---
 
@@ -26,11 +32,11 @@
 
 当前项目分为：
 
-- 重点项目（卡片 + 弹窗详情）
-- 其他项目（小卡片列表）
+- 重点项目（卡片链接到独立详情页：projects/\*.html）
+- 其他项目（卡片 + 弹窗详情：template + data-open）
 
-重点项目的卡片在 [index.html](index.html) 中的 **“重点项目”** 区块。
-弹窗详情在同文件底部的 **`<template id="proj-xxx">`** 模板中。
+重点项目的入口在 [index.html](index.html) 中的 **“重点项目”** 区块（通常是 `<a href="projects/xxx.html">查看详情</a>`）。
+其他项目/奖项弹窗详情在同文件底部的 **`<template id="...">`** 模板中。
 
 要新增重点项目，请按以下步骤：
 
@@ -40,10 +46,10 @@
 
 ### 3) 替换架构图/效果图
 
-弹窗中的“架构图占位”是占位块。你可以替换为图片：
+弹窗/详情页中的图片可以直接替换为你自己的素材：
 
-1. 将图片放入仓库（建议新建 `assets/` 目录）。
-2. 将占位块替换为 `<img src="assets/xxx.png" alt="...">`。
+1. 将图片放到对应目录（推荐：`assets/projects/<project>/`）。
+2. 将图片引用改为：`<img src="assets/projects/<project>/xxx.png" alt="...">`（主页）或 `../assets/projects/<project>/xxx.png`（projects 详情页）。
 
 ---
 
