@@ -47,6 +47,21 @@
 - `.gitattributes`：强制仓库文本文件使用 LF 行尾
 - `.gitignore`：忽略 `node_modules/` 等不该提交的目录
 
+### 1.5 新增的“各种后缀/隐藏文件”是什么？（速查）
+
+这类文件通常是“工具配置/锁定版本”，不是页面本身的内容。
+
+- `.editorconfig`：编辑器通用规则（缩进、行尾、是否去尾空格）。你一般不用改。
+- `.gitattributes`：Git 层面的规则（本仓库用它强制文本文件 LF 行尾；并标记 pdf/mp4 等为二进制）。你一般不用改。
+- `.gitignore`：告诉 Git 哪些文件/目录不要提交（例如 `node_modules/`）。可以按需追加，但不建议删除。
+- `.prettierrc.json`：Prettier 的格式化规则（比如引号、换行等）。一般不需要频繁改。
+- `.prettierignore`：告诉 Prettier 哪些文件不要格式化（本项目忽略 `assets/**`、`*.pdf`、`*.mp4` 等）。
+- `package.json`：Node 工具清单与脚本入口（这里主要提供 `npm run format`、`npm run format:check`）。你会偶尔改它（例如新增脚本）。
+- `package-lock.json`：npm 自动生成的“依赖锁定文件”，用于保证不同电脑装到同一版本。不要手动编辑，正常提交到仓库即可。
+- `node_modules/`：npm 安装的依赖目录（体积大、可再生）。永远不要提交；本项目已通过 `.gitignore` 忽略。
+
+你看到类似“CRLF will be replaced by LF”的提示也正常：这是 `.gitattributes` 在保证行尾统一，避免跨平台反复改来改去。
+
 ---
 
 ## 2. 改内容：只改 HTML 就能完成 80% 工作
