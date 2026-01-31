@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>个人技术风采 · 展示页 Demo</title>
+    <title>个人技术风采 · 展示页</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="bg-grid"></div>
+
     <header class="hero" id="top">
       <nav class="nav">
         <div class="brand">[姓名占位]</div>
@@ -15,11 +16,11 @@
           <a href="#about">关于我</a>
           <a href="#skills">技能</a>
           <a href="#projects">项目</a>
-          <a href="#awards">竞赛与奖项</a>
+          <a href="#awards">奖项</a>
           <a href="#articles">文章</a>
           <a href="#contact">联系</a>
         </div>
-            <a class="primary small" href="projects/chaos.html">查看详情</a>
+        <button class="nav-cta" onclick="scrollToSection('contact')">联系我</button>
       </nav>
 
       <div class="hero-content">
@@ -27,7 +28,7 @@
           <p class="badge">数字 IC 设计 · FPGA 实践 · 求职展示</p>
           <h1>用硬件思维构建可靠系统</h1>
           <p class="subtitle">
-            <a class="primary small" href="projects/car.html">查看详情</a>
+            [学校/实验室占位] · 研究方向：[数字 IC 设计 / FPGA 系统]。
             专注可综合实现、时序收敛与验证体系，擅长从原型走向工程化。
           </p>
           <div class="hero-actions">
@@ -35,77 +36,64 @@
             <button class="ghost" onclick="scrollToSection('articles')">技术文章</button>
           </div>
           <div class="hero-stats">
-            <a class="primary small" href="projects/fft.html">查看详情</a>
+            <div class="stat">
               <div class="stat-num">11</div>
               <div class="stat-label">重点项目</div>
             </div>
             <div class="stat">
-        <div class="featured-grid">
-          <div class="featured-card">
-            <div class="featured-head">
-              <h3>图像增强</h3>
-              <span class="tag">FPGA</span>
+              <div class="stat-num">8</div>
+              <div class="stat-label">竞赛奖项</div>
             </div>
-            <p class="featured-intro">多平台协作的视频流增强与量化处理。</p>
-            <button class="ghost small" data-open="proj-image">查看详情</button>
-          </div>
-          <div class="featured-card">
-            <div class="featured-head">
-              <h3>CY 光计算</h3>
-              <span class="tag">异构系统</span>
+            <div class="stat">
+              <div class="stat-num">[X]</div>
+              <div class="stat-label">技术文章</div>
             </div>
-            <p class="featured-intro">PL/PS DDR 读写与以太网高速数据传输。</p>
-            <button class="ghost small" data-open="proj-cy">查看详情</button>
-          </div>
-          <div class="featured-card">
-            <div class="featured-head">
-              <h3>以太网传输</h3>
-              <span class="tag">FPGA</span>
-            </div>
-            <p class="featured-intro">高速收发与缓存管理优化。</p>
-            <button class="ghost small" data-open="proj-eth">查看详情</button>
-          </div>
-          <div class="featured-card">
-            <div class="featured-head">
-              <h3>VGG 训练加速器</h3>
-              <span class="tag">FPGA/AI</span>
-            </div>
-            <p class="featured-intro">PL 仿真 + AXI-LITE 交互。</p>
-            <button class="ghost small" data-open="proj-vgg">查看详情</button>
-          </div>
-          <div class="featured-card">
-            <div class="featured-head">
-              <h3>T16 ADC 芯片测试</h3>
-              <span class="tag">测试平台</span>
-            </div>
-            <p class="featured-intro">UART/FIFO/SPI/控制模块开发。</p>
-            <button class="ghost small" data-open="proj-t16">查看详情</button>
-          </div>
-          <div class="featured-card">
-            <div class="featured-head">
-              <h3>TPU 设计</h3>
-              <span class="tag">数字 IC</span>
-            </div>
-            <p class="featured-intro">张量处理单元架构与接口设计。</p>
-            <button class="ghost small" data-open="proj-tpu">查看详情</button>
-          </div>
-          <div class="featured-card">
-            <div class="featured-head">
-              <h3>SNN 硬件加速器</h3>
-              <span class="tag">进行中</span>
-            </div>
-            <p class="featured-intro">毕业设计，方案设计与验证中。</p>
-            <button class="ghost small" data-open="proj-snn">查看详情</button>
-          </div>
-          <div class="featured-card">
-            <div class="featured-head">
-              <h3>ResNet50 加速器</h3>
-              <span class="tag">FPGA/AI</span>
-            </div>
-            <p class="featured-intro">控制、搬运、缓存、计算一体化的推理架构。</p>
-            <button class="ghost small" data-open="proj-resnet">查看详情</button>
           </div>
         </div>
+        <div class="hero-right">
+          <div class="glass-card">
+            <div class="card-title">定位画像</div>
+            <ul class="list">
+              <li>数字 IC 设计流程理解：前端 RTL → 验证 → 综合 → 时序</li>
+              <li>FPGA 工程化能力：架构拆分、资源/功耗评估</li>
+              <li>验证意识：覆盖率、约束、可测性</li>
+            </ul>
+            <div class="card-title">目标岗位</div>
+            <div class="chip-row">
+              <span class="chip">数字 IC 设计</span>
+              <span class="chip">数字前端</span>
+              <span class="chip">验证</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <aside class="quick-nav" aria-label="页面导航">
+      <a href="#top">顶部</a>
+      <a href="#about">关于</a>
+      <a href="#skills">技能</a>
+      <a href="#projects">项目</a>
+      <a href="#awards">奖项</a>
+      <a href="#articles">文章</a>
+      <a href="#books">书墙</a>
+      <a href="#contact">联系</a>
+    </aside>
+
+    <section class="section" id="about">
+      <h2>关于我</h2>
+      <p class="section-desc">
+        [个人简介占位]：研究方向、核心兴趣、擅长的工程化能力与求职目标。
+      </p>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>教育背景</h3>
+          <p>[学校/学院/专业占位]</p>
+          <p>[入学年份 - 预计毕业年份]</p>
+        </div>
+        <div class="info-card">
+          <h3>研究方向</h3>
+          <p>数字 IC 设计 / FPGA 原型验证 / 硬件系统架构</p>
         </div>
         <div class="info-card">
           <h3>兴趣方向</h3>
@@ -155,84 +143,111 @@
     <section class="section" id="projects">
       <div class="section-title-row">
         <h2>项目展示</h2>
-        <div class="hint">重点项目先看，小项目可展开了解</div>
+        <div class="hint">重点项目优先展示，其他项目以卡片形式补充</div>
       </div>
 
       <div class="subsection-title">重点项目</div>
       <div class="featured-grid">
         <div class="featured-card">
           <div class="featured-head">
-            <h3>混沌加密系统</h3>
+            <h3>项目 01 · 混沌加密系统</h3>
             <span class="tag">FPGA</span>
           </div>
           <p class="featured-intro">基于混沌理论的视频流加密算法 + FPGA 硬件加速。</p>
-          <button class="ghost small" data-open="proj-chaos">查看详情</button>
+          <a class="primary small" href="projects/chaos.html">查看详情</a>
         </div>
         <div class="featured-card">
           <div class="featured-head">
-            <h3>车载中控异常检测</h3>
+            <h3>项目 02 · 车载中控异常检测</h3>
             <span class="tag">FPGA</span>
           </div>
           <p class="featured-intro">多协议协同的异常检测系统，跨时钟域处理与容错。</p>
-          <button class="ghost small" data-open="proj-car">查看详情</button>
+          <a class="primary small" href="projects/car.html">查看详情</a>
         </div>
         <div class="featured-card">
           <div class="featured-head">
-            <h3>FFT 并行化设计</h3>
+            <h3>项目 03 · FFT 并行化设计</h3>
             <span class="tag">FPGA</span>
           </div>
           <p class="featured-intro">高效参数化 FFT 模块，支持自定义 IP 与高速链路。</p>
-          <button class="ghost small" data-open="proj-fft">查看详情</button>
+          <a class="primary small" href="projects/fft.html">查看详情</a>
         </div>
       </div>
 
       <div class="subsection-title">其他项目</div>
-      <div class="compact-grid">
-        <div class="compact-card">
-          <h4>图像增强</h4>
-          <p>多平台协作的视频流增强与量化处理。</p>
-          <span class="chip">FPGA</span>
+      <div class="featured-grid">
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>图像增强</h3>
+            <span class="tag">FPGA</span>
+          </div>
+          <p class="featured-intro">多平台协作的视频流增强与量化处理。</p>
+          <button class="ghost small" data-open="proj-image">查看详情</button>
         </div>
-        <div class="compact-card">
-          <h4>CY 光计算</h4>
-          <p>PL/PS DDR 读写与以太网高速传输。</p>
-          <span class="chip">异构系统</span>
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>CY 光计算</h3>
+            <span class="tag">异构系统</span>
+          </div>
+          <p class="featured-intro">PL/PS DDR 读写与以太网高速数据传输。</p>
+          <button class="ghost small" data-open="proj-cy">查看详情</button>
         </div>
-        <div class="compact-card">
-          <h4>以太网传输</h4>
-          <p>高速收发与缓存管理优化。</p>
-          <span class="chip">FPGA</span>
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>以太网传输</h3>
+            <span class="tag">FPGA</span>
+          </div>
+          <p class="featured-intro">高速收发与缓存管理优化。</p>
+          <button class="ghost small" data-open="proj-eth">查看详情</button>
         </div>
-        <div class="compact-card">
-          <h4>VGG 训练加速器</h4>
-          <p>PL 仿真 + AXI-LITE 交互。</p>
-          <span class="chip">FPGA/AI</span>
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>VGG 训练加速器</h3>
+            <span class="tag">FPGA/AI</span>
+          </div>
+          <p class="featured-intro">PL 仿真 + AXI-LITE 交互。</p>
+          <button class="ghost small" data-open="proj-vgg">查看详情</button>
         </div>
-        <div class="compact-card">
-          <h4>T16 ADC 芯片测试</h4>
-          <p>UART/FIFO/SPI/控制模块开发。</p>
-          <span class="chip">测试平台</span>
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>T16 ADC 芯片测试</h3>
+            <span class="tag">测试平台</span>
+          </div>
+          <p class="featured-intro">UART/FIFO/SPI/控制模块开发。</p>
+          <button class="ghost small" data-open="proj-t16">查看详情</button>
         </div>
-        <div class="compact-card">
-          <h4>TPU 设计</h4>
-          <p>张量处理单元架构与接口设计。</p>
-          <span class="chip">数字 IC</span>
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>TPU 设计</h3>
+            <span class="tag">数字 IC</span>
+          </div>
+          <p class="featured-intro">张量处理单元架构与接口设计。</p>
+          <button class="ghost small" data-open="proj-tpu">查看详情</button>
         </div>
-        <div class="compact-card">
-          <h4>SNN 硬件加速器</h4>
-          <p>毕业设计，方案设计与验证中。</p>
-          <span class="chip">进行中</span>
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>SNN 硬件加速器</h3>
+            <span class="tag">进行中</span>
+          </div>
+          <p class="featured-intro">毕业设计，方案设计与验证中。</p>
+          <button class="ghost small" data-open="proj-snn">查看详情</button>
         </div>
-        <div class="compact-card">
-          <h4>ResNet50 加速器</h4>
-          <p>控制、搬运、缓存、计算一体化的推理架构。</p>
-          <span class="chip">FPGA/AI</span>
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>ResNet50 加速器</h3>
+            <span class="tag">FPGA/AI</span>
+          </div>
+          <p class="featured-intro">控制、搬运、缓存、计算一体化的推理架构。</p>
+          <button class="ghost small" data-open="proj-resnet">查看详情</button>
         </div>
       </div>
     </section>
 
     <section class="section" id="awards">
-      <h2>竞赛与奖项</h2>
+      <div class="section-title-row">
+        <h2>竞赛与奖项</h2>
+        <div class="hint">奖状墙自动滚动，点击查看大图</div>
+      </div>
       <div class="award-wall" aria-label="奖状墙">
         <div class="award-track">
           <div class="award-tile" data-open="award-1">
@@ -283,48 +298,22 @@
             <img class="award-image" src="https://placehold.co/360x260/png?text=%E8%B5%9B%E5%8C%BA%E4%BA%8C%E7%AD%89%E5%A5%96" alt="赛区二等奖奖状" />
             <div class="award-title">嵌入式芯片与系统设计竞赛（赛区）</div>
           </div>
-        </div>
-      </div>
-      <div class="award-grid">
-        <div class="award-card">
-          <h3>全国大学生嵌入式芯片与系统设计竞赛</h3>
-          <p>奖项：全国一等奖</p>
-          <p>时间：[年份]</p>
-        </div>
-        <div class="award-card">
-          <h3>“中国软件杯”大学生软件设计大赛</h3>
-          <p>奖项：全国三等奖</p>
-          <p>时间：[年份]</p>
-        </div>
-        <div class="award-card">
-          <h3>广东省大学生电子设计竞赛</h3>
-          <p>奖项：一等奖</p>
-          <p>时间：[年份]</p>
-        </div>
-        <div class="award-card">
-          <h3>全国大学生嵌入式芯片与系统设计竞赛</h3>
-          <p>奖项：赛区二等奖</p>
-          <p>时间：[年份]</p>
-        </div>
-        <div class="award-card">
-          <h3>全国大学生集成电路创新创业大赛</h3>
-          <p>奖项：赛区二等奖</p>
-          <p>时间：[年份]</p>
-        </div>
-        <div class="award-card">
-          <h3>全国大学生集成电路创新创业大赛</h3>
-          <p>奖项：赛区三等奖</p>
-          <p>时间：[年份]</p>
-        </div>
-        <div class="award-card">
-          <h3>蓝桥杯全国软件和信息技术专业人才大赛</h3>
-          <p>奖项：赛区三等奖</p>
-          <p>时间：[年份]</p>
-        </div>
-        <div class="award-card">
-          <h3>“复微杯”全国大学生电子设计大赛</h3>
-          <p>奖项：全国优秀奖</p>
-          <p>时间：[年份]</p>
+          <div class="award-tile" data-open="award-5" aria-hidden="true">
+            <img class="award-image" src="https://placehold.co/360x260/png?text=%E8%B5%9B%E5%8C%BA%E4%BA%8C%E7%AD%89%E5%A5%96" alt="赛区二等奖奖状" />
+            <div class="award-title">集成电路创新创业大赛（赛区二等奖）</div>
+          </div>
+          <div class="award-tile" data-open="award-6" aria-hidden="true">
+            <img class="award-image" src="https://placehold.co/360x260/png?text=%E8%B5%9B%E5%8C%BA%E4%B8%89%E7%AD%89%E5%A5%96" alt="赛区三等奖奖状" />
+            <div class="award-title">集成电路创新创业大赛（赛区三等奖）</div>
+          </div>
+          <div class="award-tile" data-open="award-7" aria-hidden="true">
+            <img class="award-image" src="https://placehold.co/360x260/png?text=%E8%B5%9B%E5%8C%BA%E4%B8%89%E7%AD%89%E5%A5%96" alt="赛区三等奖奖状" />
+            <div class="award-title">蓝桥杯软件与信息技术大赛（赛区）</div>
+          </div>
+          <div class="award-tile" data-open="award-8" aria-hidden="true">
+            <img class="award-image" src="https://placehold.co/360x260/png?text=%E5%85%A8%E5%9B%BD%E4%BC%98%E7%A7%80%E5%A5%96" alt="全国优秀奖奖状" />
+            <div class="award-title">“复微杯”全国大学生电子设计大赛</div>
+          </div>
         </div>
       </div>
     </section>
@@ -400,6 +389,8 @@
         <div class="modal-body" id="modal-body"></div>
       </div>
     </div>
+
+    <div class="debug-badge">版本：2026-01-31 v1.4</div>
 
     <template id="proj-image">
       <h3>图像增强</h3>
