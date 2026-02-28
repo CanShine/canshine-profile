@@ -394,6 +394,8 @@ h1 {
 .school-logo {
   width: 16px;
   height: 16px;
+  max-width: 16px;
+  max-height: 16px;
   object-fit: contain;
   flex-shrink: 0;
 }
