@@ -172,3 +172,21 @@ if (awardPrev) {
 if (awardNext) {
   awardNext.addEventListener("click", () => scrollAwards(1));
 }
+
+// 图片灯箱：点击 modal 内图片放大查看
+document.addEventListener("click", (e) => {
+  const img = e.target.closest(".modal-body .detail-image");
+  if (!img) return;
+  const lb = document.createElement("div");
+  lb.className = "img-lightbox";
+  const big = document.createElement("img");
+  big.src = img.src;
+  big.alt = img.alt;
+  lb.appendChild(big);
+  const close = () => lb.remove();
+  lb.addEventListener("click", close);
+  document.addEventListener("keydown", function esc(ev) {
+    if (ev.key === "Escape") { close(); document.removeEventListener("keydown", esc); }
+  }, { once: true });
+  document.body.appendChild(lb);
+});

@@ -478,7 +478,7 @@
       </div>
     </div>
 
-    <div class="debug-badge">版本：2026-02-28 v3.6</div>
+    <div class="debug-badge">版本：2026-07-14 v3.7</div>
 
     <template id="proj-image">
       <h3>智能图像去雾与动态范围增强引擎</h3>
@@ -667,54 +667,25 @@
       </div>
     </template>
 
-    <template id="proj-vgg">
-      <h3>VGG 训练加速器</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">FPGA 平台卷积算子加速研究 · 训练支撑原型验证</p>
-      <div class="detail-grid">
-        <div>
-          <h4>核心工作</h4>
-          <ul>
-            <li><strong>AXI-Lite 控制接口</strong>：设计标准化寄存器地址映射，PS 端通过 AXI-Lite 下发卷积参数（核大小、步长、特征图分辨率），实现灵活的算子配置</li>
-            <li><strong>PL 端算子仿真加速</strong>：在 PL 端部署卷积计算核，验证数据复用策略（行缓冲复用、权重广播）对带宽需求的降低效果</li>
-            <li><strong>性能对标与分析</strong>：建立仿真基准，测量不同批大小与分辨率配置下的吞吐率，为后续训练加速架构演进提供数据支撑</li>
-          </ul>
-        </div>
-        <div>
-          <h4>技术标签</h4>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
-            <span class="chip">Verilog</span>
-            <span class="chip">AXI-Lite</span>
-            <span class="chip">ZYNQ</span>
-            <span class="chip">卷积加速</span>
-            <span class="chip">数据复用</span>
-          </div>
-          <h4 style="margin-top:12px">设计说明</h4>
-          <p style="font-size:.9rem;color:var(--text-2)">本项目为原型探索性工作，重点在于验证 PS-PL 协同控制流与算子参数化设计的可行性，而非追求极致的峰值性能，结论为后续 ResNet/SNN 加速器的架构决策提供了参考。</p>
-        </div>
-      </div>
-    </template>
-
     <template id="proj-tpu">
       <h3>多精度可重构张量计算单元 (TPU) 设计</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">第九届全国大学生集成电路创新创业大赛 · <strong>华东赛区二等奖</strong></p>
+      <p style="color:var(--text-2);margin-bottom:16px">第九届全国大学生集成电路创新创业大赛 · <strong>华东赛区二等奖</strong></p>
+
+      <!-- 第一行：核心挑战 + 成果指标 -->
       <div class="detail-grid">
         <div>
           <h4>核心挑战</h4>
-          <p>如何在单一计算阵列中兼容 <strong>m16/m32/m8</strong> 等多种维度及 <strong>INT4&ndash;FP32</strong> 共 9 种精度模式，同时避免硬件资源呼线性膨胀。最大难点在于 <strong>验证空间爆炸</strong>，传统定向测试无法覆盖所有精度与维度组合及边界溢出情况。</p>
-          <h4 style="margin-top:12px">关键技术</h4>
-          <p><strong>TDM-PE 时分复用架构</strong>：设计基于时分复用的通用计算单元，延迟复用底层乘法器与加法器树资源，以极低面积代价实现全精度集合硬件兼容。</p>
-          <p style="margin-top:8px"><strong>Coverage-Driven UVM 验证</strong>：UVM Agent / Scoreboard + <strong>DPI-C</strong> 调用 Python 黄金模型在线比对；针对稀疏矩阵、Corner Case 受限随机激励；实现 <strong>9 种精度 &times; 3 种维度 &times; 溢出标志位 100% 交叉覆盖</strong>。</p>
+          <p>如何在单一计算阵列中兼容 <strong>m16/m32/m8</strong> 等多种维度及 <strong>INT4&ndash;FP32</strong> 共 9 种精度模式，同时避免硬件资源线性膨胀。最大难点在于 <strong>验证空间爆炸</strong>，传统定向测试无法覆盖所有精度与维度组合及边界溢出情况。</p>
         </div>
         <div>
           <h4>成果指标</h4>
           <ul>
             <li>功能覆盖率 <strong>100%</strong>，代码覆盖率（行/分支/翻转）<strong>95%+</strong></li>
-            <li>FPGA 上板前拦截 <strong>20+ 个深层逗辑 Bug</strong>（如溢出截断错误）</li>
+            <li>FPGA 上板前拦截 <strong>20+ 个深层逻辑 Bug</strong>（如溢出截断错误）</li>
             <li>XCZU19EG 综合频率 <strong>200 MHz</strong>，LUT <strong>22.9%</strong>，功耗 <strong>6.1 W</strong></li>
-            <li>标准 8&times;8 阵列 FPGA 上板验证通过，计算结果与软件模型完全一致</li>
+            <li>8&times;8 阵列 FPGA 上板验证通过，结果与软件模型完全一致</li>
           </ul>
-          <h4 style="margin-top:12px">技术栏</h4>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+          <div class="chip-row" style="flex-wrap:wrap;gap:6px;margin-top:10px">
             <span class="chip">SystemVerilog</span>
             <span class="chip">UVM</span>
             <span class="chip">DPI-C</span>
@@ -723,18 +694,33 @@
           </div>
         </div>
       </div>
-      <div class="image-row" style="flex-direction:column;gap:16px;align-items:center">
-        <figure style="margin:0;width:100%">
+
+      <!-- 第二行：两大技术方案卡片 -->
+      <div class="detail-grid" style="margin-top:16px">
+        <div style="background:rgb(var(--primary-rgb)/.05);border:1px solid rgb(var(--primary-rgb)/.15);border-radius:12px;padding:14px">
+          <h4 style="margin-top:0">⚙️ TDM-PE 时分复用架构</h4>
+          <p style="margin:0;color:var(--muted);font-size:.9rem">设计基于时分复用的通用计算单元，延迟复用底层乘法器与加法器树资源，以极低面积代价实现全精度集合硬件兼容，支持 INT4&ndash;FP32 共 9 种精度与 m8/m16/m32 三种维度。</p>
+        </div>
+        <div style="background:rgb(var(--accent-rgb)/.05);border:1px solid rgb(var(--accent-rgb)/.18);border-radius:12px;padding:14px">
+          <h4 style="margin-top:0">🔬 Coverage-Driven UVM 验证</h4>
+          <p style="margin:0;color:var(--muted);font-size:.9rem">UVM Agent / Scoreboard + <strong>DPI-C</strong> 调用 Python 黄金模型在线比对；针对稀疏矩阵、Corner Case 受限随机激励；实现 <strong>9 种精度 &times; 3 种维度 &times; 溢出标志位 100% 交叉覆盖</strong>。</p>
+        </div>
+      </div>
+
+      <!-- 第三行：图片（点击可放大） -->
+      <p style="color:var(--muted);font-size:.8rem;margin:16px 0 8px;text-align:right">点击图片可放大查看</p>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <figure style="margin:0">
           <img class="detail-image" src="assets/projects/tpu/UVM环境.svg" alt="UVM 验证环境架构" style="max-width:900px;width:100%" />
-          <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:4px">① Coverage-Driven UVM 验证环境架构</figcaption>
+          <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:6px">① Coverage-Driven UVM 验证环境架构</figcaption>
         </figure>
-        <figure style="margin:0;width:100%">
+        <figure style="margin:0">
           <img class="detail-image" src="assets/projects/tpu/覆盖率.svg" alt="覆盖率报告" style="max-width:900px;width:100%" />
-          <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:4px">② 精度 × 维度 × 溢出标志位交叉覆盖率报告</figcaption>
+          <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:6px">② 精度 &times; 维度 &times; 溢出标志位交叉覆盖率报告</figcaption>
         </figure>
-        <figure style="margin:0;width:100%">
+        <figure style="margin:0">
           <img class="detail-image" src="assets/projects/tpu/误差分析.svg" alt="误差分析图" style="max-width:900px;width:100%" />
-          <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:4px">③ 多精度计算误差分析</figcaption>
+          <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:6px">③ 多精度计算误差分析</figcaption>
         </figure>
       </div>
     </template>

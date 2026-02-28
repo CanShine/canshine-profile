@@ -808,6 +808,37 @@ h1 {
   background: rgba(255, 255, 255, 0.6);
 }
 
+/* modal 内图片点击放大提示 */
+.modal-body .detail-image {
+  cursor: zoom-in;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.modal-body .detail-image:hover {
+  opacity: 0.88;
+  transform: scale(1.01);
+}
+
+/* 图片灯箱 */
+.img-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.15s ease;
+}
+.img-lightbox img {
+  max-width: 92vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6);
+}
+
 .contact-card {
   display: flex;
   justify-content: space-between;
