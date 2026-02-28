@@ -92,9 +92,16 @@
       <p class="section-desc">
         摒弃传统「数据块（Block）」处理思维，确立<strong>「视频即数据流（Video as Stream）」</strong>的核心设计理念。
       </p>
-      <div class="image-row">
-        <img class="detail-image" src="../assets/projects/chaos/混沌系统架构图.svg" alt="混沌加密 SoC 系统架构图" />
-      </div>
+      <figure style="margin:0 0 24px">
+        <img
+          src="../assets/projects/chaos/混沌系统架构图.svg"
+          alt="混沌加密 SoC 系统架构图"
+          style="width:100%;max-width:960px;display:block;margin:0 auto;border-radius:8px"
+        />
+        <figcaption style="text-align:center;margin-top:8px;font-size:0.85rem;color:var(--text-2)">
+          图 1 &nbsp;·&nbsp; 基于 ZYNQ 的软硬协同流式加密 SoC 系统架构
+        </figcaption>
+      </figure>
       <div class="detail-grid">
         <div>
           <h4>PL 端（FPGA 加速层）</h4>
@@ -212,18 +219,67 @@
     <!-- 效果演示 -->
     <section class="section" id="gallery">
       <h2>效果演示</h2>
-      <div class="image-row">
-        <img class="detail-image" src="../assets/projects/chaos/发送端原始图片.png" alt="发送端原始图片" />
-        <img class="detail-image" src="../assets/projects/chaos/发送端加密图片.png" alt="发送端加密图片（像素值完全随机化）" />
-        <img class="detail-image" src="../assets/projects/chaos/接收端加密图片.png" alt="接收端加密图片（含信道干扰）" />
-        <img class="detail-image" src="../assets/projects/chaos/接收端解密图片.png" alt="接收端解密图片（自同步恢复后）" />
+      <p class="section-desc">仿真导出数据经 MATLAB 重构的加解密图像验证结果，逐比特对比确认硬件逻辑正确性。</p>
+
+      <!-- 2×2 验证图网格 -->
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:800px;margin:0 auto 36px">
+        <figure style="margin:0;text-align:center">
+          <img
+            src="../assets/projects/chaos/发送端原始图片.png"
+            alt="发送端原始图片"
+            style="width:100%;border-radius:6px;display:block"
+          />
+          <figcaption style="margin-top:8px;font-size:0.85rem;color:var(--text-2)">
+            ① &nbsp;发送端 &nbsp;·&nbsp; 原始明文图像
+          </figcaption>
+        </figure>
+        <figure style="margin:0;text-align:center">
+          <img
+            src="../assets/projects/chaos/发送端加密图片.png"
+            alt="发送端加密图片"
+            style="width:100%;border-radius:6px;display:block"
+          />
+          <figcaption style="margin-top:8px;font-size:0.85rem;color:var(--text-2)">
+            ② &nbsp;发送端 &nbsp;·&nbsp; 加密密文（像素值完全随机化）
+          </figcaption>
+        </figure>
+        <figure style="margin:0;text-align:center">
+          <img
+            src="../assets/projects/chaos/接收端加密图片.png"
+            alt="接收端加密图片"
+            style="width:100%;border-radius:6px;display:block"
+          />
+          <figcaption style="margin-top:8px;font-size:0.85rem;color:var(--text-2)">
+            ③ &nbsp;接收端 &nbsp;·&nbsp; 含信道干扰的密文
+          </figcaption>
+        </figure>
+        <figure style="margin:0;text-align:center">
+          <img
+            src="../assets/projects/chaos/接收端解密图片.png"
+            alt="接收端解密图片"
+            style="width:100%;border-radius:6px;display:block"
+          />
+          <figcaption style="margin-top:8px;font-size:0.85rem;color:var(--text-2)">
+            ④ &nbsp;接收端 &nbsp;·&nbsp; 解密还原（自同步容错后清晰无损）
+          </figcaption>
+        </figure>
       </div>
-      <div class="image-row">
-        <video class="detail-image" controls preload="metadata" style="width:100%;max-width:768px" data-playsinline>
+
+      <!-- 演示视频 -->
+      <figure style="margin:0;text-align:center">
+        <video
+          controls
+          preload="metadata"
+          data-playsinline
+          style="width:100%;max-width:768px;border-radius:8px;display:block;margin:0 auto"
+        >
           <source src="../assets/projects/chaos/演示视频.mp4" type="video/mp4" />
           你的浏览器不支持视频播放，可 <a href="../assets/projects/chaos/演示视频.mp4">下载 MP4</a> 查看。
         </video>
-      </div>
+        <figcaption style="margin-top:8px;font-size:0.85rem;color:var(--text-2)">
+          系统实机演示 &nbsp;·&nbsp; 640×480 实时加解密全链路运行（发送端 → 信道传输 → 接收端还原）
+        </figcaption>
+      </figure>
     </section>
 
     <!-- 技术探讨 -->
