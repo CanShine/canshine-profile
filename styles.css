@@ -228,6 +228,16 @@ h1 {
 .ghost.small {
   padding: 8px 12px;
   font-size: 12px;
+  background: #94a3b8;
+  border-color: #94a3b8;
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.ghost.small:hover {
+  background: #7c8fa6;
+  border-color: #7c8fa6;
 }
 
 .hero-stats {
