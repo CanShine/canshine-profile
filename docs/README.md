@@ -12,6 +12,14 @@
 - [PRIVACY_GUIDE.md](PRIVACY_GUIDE.md)：公开展示与隐私边界（GitHub Pages/公开仓库风险与方案）
 - [MEDIA_GUIDE.md](MEDIA_GUIDE.md)：素材整理与命名规范（图片/视频/PDF）
 
+---
+
+## 维护规范速览
+
+- 提交前建议先执行：`npm run check`（或 `npm run format:check`）
+- 内容改动较多时建议先执行：`npm run format`
+- 提交信息建议清晰描述改动内容（示例：`update docs and content`）
+
 建议后续可以新增：
 
 - `docs/projects/chaos.md`：混沌加密项目的详细写作稿（面试 30 秒/2 分钟/5 分钟版本）

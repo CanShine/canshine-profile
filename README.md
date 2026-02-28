@@ -41,7 +41,7 @@
 要新增重点项目（独立详情页）建议按以下步骤：
 
 1. 复制一个“重点项目”卡片（含 `href="projects/xxx.html"`）。
-2. 在 `projects/` 下新增对应详情页（复制现有 `projects/chaos.html`/`projects/car.html`/`projects/fft.html` 改）。
+2. 在 `projects/` 下新增对应详情页（复制现有 `projects/chaos.html`/`projects/resnet.html`/`projects/snn.html` 改）。
 3. 为该项目准备图片/视频等素材，并放到 `assets/projects/<project>/`。
 
 要新增“其他项目”（弹窗详情）请按以下步骤：
@@ -83,11 +83,11 @@ https://canshine.github.io/canshine-profile/
 
 ```bash
 git add .
-git commit -m "update"
+git commit -m "docs: update homepage content"
 git push
 ```
 
-1. GitHub Pages 会自动更新
+3. GitHub Pages 会自动更新
 
 ---
 
@@ -111,6 +111,17 @@ npm run format
 ```bash
 npm run format:check
 ```
+
+运行统一检查入口：
+
+```bash
+npm run check
+```
+
+建议提交前手动执行：
+
+- `npm run format`
+- `npm run check`
 
 ---
 

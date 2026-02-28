@@ -15,7 +15,7 @@
 2. 打开 `assets/resume/resume.pdf`，换成你的简历（建议公开版，见隐私章节）。
 3. 在 `index.html` 的“重点项目/其他项目”里，把项目标题和一句话亮点换成真实内容。
 4. 把你的图/视频放进 `assets/projects/<project>/`，并在 `index.html` 或 `projects/*.html` 改引用路径。
-5. 提交并推送：`git add -A` → `git commit -m "update"` → `git push`，等待 1–5 分钟生效。
+5. 提交并推送：`git add -A` → `git commit -m "docs: update homepage content"` → `git push`，等待 1–5 分钟生效。
 
 ---
 
@@ -58,7 +58,7 @@
 - `.gitignore`：告诉 Git 哪些文件/目录不要提交（例如 `node_modules/`）。可以按需追加，但不建议删除。
 - `.prettierrc.json`：Prettier 的格式化规则（比如引号、换行等）。一般不需要频繁改。
 - `.prettierignore`：告诉 Prettier 哪些文件不要格式化（本项目忽略 `assets/**`、`*.pdf`、`*.mp4` 等）。
-- `package.json`：Node 工具清单与脚本入口（这里主要提供 `npm run format`、`npm run format:check`）。你会偶尔改它（例如新增脚本）。
+- `package.json`：Node 工具清单与脚本入口（当前常用：`npm run format`、`npm run format:check`、`npm run check`）。你会偶尔改它（例如新增脚本）。
 - `package-lock.json`：npm 自动生成的“依赖锁定文件”，用于保证不同电脑装到同一版本。不要手动编辑，正常提交到仓库即可。
 - `node_modules/`：npm 安装的依赖目录（体积大、可再生）。永远不要提交；本项目已通过 `.gitignore` 忽略。
 
@@ -119,7 +119,7 @@
 
 新增一个重点项目的步骤：
 
-1. 复制一个现有详情页（比如 `projects/fft.html`）改名为 `projects/new.html`
+1. 复制一个现有详情页（比如 `projects/chaos.html` / `projects/resnet.html` / `projects/snn.html`）改名为 `projects/new.html`
 2. 在 `index.html` 复制一张“重点项目卡片”，把链接改成 `projects/new.html`
 3. 把素材放到 `assets/projects/new/`，并更新页面里的 `src` 路径
 
@@ -228,7 +228,7 @@
 
 ```bash
 git add -A
-git commit -m "update: content"
+git commit -m "docs: update content"
 git push
 ```
 
@@ -253,7 +253,7 @@ git push
 2. 素材只放 `assets/`，不要外链占位图
 3. 一个项目一个目录：`assets/projects/<project>/`
 4. 改完跑格式化（统一风格）：`npm run format`
-5. 提交信息写清楚：`update/fix/chore/docs`（看提交就知道改了什么）
+5. 提交信息写清楚改动内容（例如 `update project metrics`、`fix resume link`）
 6. 隐私宁可少，不要硬塞
 
 ---

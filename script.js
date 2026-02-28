@@ -185,8 +185,15 @@ document.addEventListener("click", (e) => {
   lb.appendChild(big);
   const close = () => lb.remove();
   lb.addEventListener("click", close);
-  document.addEventListener("keydown", function esc(ev) {
-    if (ev.key === "Escape") { close(); document.removeEventListener("keydown", esc); }
-  }, { once: true });
+  document.addEventListener(
+    "keydown",
+    function esc(ev) {
+      if (ev.key === "Escape") {
+        close();
+        document.removeEventListener("keydown", esc);
+      }
+    },
+    { once: true }
+  );
   document.body.appendChild(lb);
 });

@@ -139,7 +139,9 @@ body.modal-open {
   border-radius: 999px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .nav-cta:hover {
@@ -192,7 +194,9 @@ h1 {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 0 14px rgba(37, 99, 235, 0.2);
-  transition: background 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .primary:hover {
@@ -223,7 +227,9 @@ h1 {
   border-radius: 12px;
   cursor: pointer;
   font-weight: 500;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .ghost:hover {
@@ -384,12 +390,30 @@ h1 {
 }
 
 /* ── info-card inner layout helpers ── */
-.ic-title  { margin-bottom: 4px; }
-.ic-org    { margin-bottom: 2px; display: flex; align-items: center; gap: 6px; }
-.ic-org-lg { margin-bottom: 6px; }
-.ic-dept   { color: var(--text-2); font-size: .85rem; }
-.ic-dept-end { color: var(--text-2); font-size: .85rem; margin-bottom: 14px; }
-.ic-chips  { margin-bottom: 8px; }
+.ic-title {
+  margin-bottom: 4px;
+}
+.ic-org {
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ic-org-lg {
+  margin-bottom: 6px;
+}
+.ic-dept {
+  color: var(--text-2);
+  font-size: 0.85rem;
+}
+.ic-dept-end {
+  color: var(--text-2);
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+.ic-chips {
+  margin-bottom: 8px;
+}
 
 .school-logo {
   width: 16px;
@@ -499,7 +523,7 @@ h1 {
 .feat-subtitle {
   display: block;
   color: var(--accent);
-  font-size: .82rem;
+  font-size: 0.82rem;
   font-weight: 500;
   margin-bottom: 5px;
 }
@@ -508,7 +532,7 @@ h1 {
   display: block;
   margin-top: 8px;
   font-family: monospace;
-  font-size: .85rem;
+  font-size: 0.85rem;
 }
 
 .compact-grid {
@@ -623,7 +647,7 @@ h1 {
 .award-image {
   display: block;
   width: 100%;
-  height: 180px;        /* 所有证书统一高度 */
+  height: 180px; /* 所有证书统一高度 */
   object-fit: contain;
   border-radius: 12px;
   border: 1px solid rgba(15, 23, 42, 0.08);
@@ -684,7 +708,9 @@ h1 {
   background: var(--card);
   border: 1px solid rgba(15, 23, 42, 0.07);
   border-radius: 10px;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .honor-item:hover {
@@ -784,8 +810,12 @@ h1 {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -868,35 +898,64 @@ h1 {
 }
 
 /* ── modal template paragraph helpers ── */
-.modal-sub  { color: var(--text-2); margin-bottom: 16px; }
-.award-meta { color: var(--text-2); margin-bottom: 12px; }
-.card-text  { margin: 0; color: var(--muted); font-size: .9rem; }
-.img-hint   { color: var(--muted); font-size: .8rem; margin: 16px 0 8px; text-align: right; }
+.modal-sub {
+  color: var(--text-2);
+  margin-bottom: 16px;
+}
+.award-meta {
+  color: var(--text-2);
+  margin-bottom: 12px;
+}
+.card-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.img-hint {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin: 16px 0 8px;
+  text-align: right;
+}
 
 /* ── chip-row modifiers ── */
-.chip-row--sm { gap: 6px; }
-.chip-row--mt { margin-top: 10px; }
+.chip-row--sm {
+  gap: 6px;
+}
+.chip-row--mt {
+  margin-top: 10px;
+}
 
 /* ── detail-grid modifier ── */
-.detail-grid--mt { margin-top: 16px; }
+.detail-grid--mt {
+  margin-top: 16px;
+}
 
 /* ── tech card variants (inside detail-grid second row) ── */
 .tech-card--primary {
-  background: rgb(var(--primary-rgb) / .05);
-  border: 1px solid rgb(var(--primary-rgb) / .15);
+  background: rgb(var(--primary-rgb) / 0.05);
+  border: 1px solid rgb(var(--primary-rgb) / 0.15);
   border-radius: 12px;
   padding: 14px;
 }
 .tech-card--accent {
-  background: rgb(var(--accent-rgb) / .05);
-  border: 1px solid rgb(var(--accent-rgb) / .18);
+  background: rgb(var(--accent-rgb) / 0.05);
+  border: 1px solid rgb(var(--accent-rgb) / 0.18);
   border-radius: 12px;
   padding: 14px;
 }
 
 /* ── image layout helpers ── */
-.img-stack { display: flex; flex-direction: column; gap: 20px; }
-.img-pair  { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.img-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.img-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
 
 .image-row {
   margin-top: 12px;
@@ -927,7 +986,9 @@ h1 {
 /* 图片点击放大提示 */
 .detail-image {
   cursor: zoom-in;
-  transition: opacity 0.15s, transform 0.15s;
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
 }
 .detail-image:hover {
   opacity: 0.88;
@@ -984,7 +1045,9 @@ h1 {
   grid-template-columns: repeat(2, 1fr);
   gap: 8px 32px;
 }
-.contact-grid p { margin: 0; }
+.contact-grid p {
+  margin: 0;
+}
 
 .contact-action {
   display: flex;
@@ -993,8 +1056,12 @@ h1 {
 }
 
 @media (max-width: 600px) {
-  .contact-grid { grid-template-columns: 1fr; }
-  .contact-action { flex-direction: column; }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-action {
+    flex-direction: column;
+  }
 }
 
 /* ── project page figure helpers ── */
@@ -1014,7 +1081,7 @@ h1 {
 .proj-figcap {
   text-align: center;
   margin-top: 10px;
-  font-size: .85rem;
+  font-size: 0.85rem;
   color: var(--text-2);
 }
 
@@ -1033,7 +1100,9 @@ h1 {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .gallery-figure:hover {
@@ -1048,7 +1117,7 @@ h1 {
 
 .gallery-cap {
   padding: 8px 10px;
-  font-size: .82rem;
+  font-size: 0.82rem;
   color: var(--text-2);
   background: rgba(255, 255, 255, 0.6);
 }
@@ -1074,15 +1143,30 @@ h1 {
 }
 
 /* ── small text spacing utilities ── */
-.mt-4 { margin-top: 4px; }
-.mt-6 { margin-top: 6px; }
-.mt-8 { margin-top: 8px; }
+.mt-4 {
+  margin-top: 4px;
+}
+.mt-6 {
+  margin-top: 6px;
+}
+.mt-8 {
+  margin-top: 8px;
+}
 
 /* ── info-card accent note ── */
-.accent-note { margin-top: 8px; font-size: .9rem; color: var(--accent); }
+.accent-note {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
 
 /* ── hero-stats center variant ── */
-.hero-stats--center { justify-content: center; gap: 32px; flex-wrap: wrap; margin-bottom: 32px; }
+.hero-stats--center {
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
 
 .footer {
   padding: 24px 8vw 40px;

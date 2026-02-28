@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ResNet-50 FPGA 加速器 · CanShine</title>
-    <meta name="description" content="面向 ResNet-50 的高性能 FPGA 卷积加速器，国家级专项重点项目，基于多级缓存协同与算子融合技术的定制化计算架构。" />
+    <meta
+      name="description"
+      content="面向 ResNet-50 的高性能 FPGA 卷积加速器，国家级专项重点项目，基于多级缓存协同与算子融合技术的定制化计算架构。"
+    />
     <link rel="stylesheet" href="../styles.css?v=20260228-1" />
     <script src="../gate.js"></script>
   </head>
@@ -66,8 +69,13 @@
     <section class="section" id="context">
       <h2>项目背景</h2>
       <p class="section-desc">
-        国家级专项重点项目中的 AI 子系统设计。FPGA 需在同片承载 SAR 信号处理、高速接口等<strong>多个高优先级模块共存</strong>
-        的高密度集成环境下，在极窄资源窗口内完成高性能 ResNet-50 推理加速，并作为<strong>总线友好型独立 IP</strong> 挂载于 AXI 互连。
+        国家级专项重点项目中的 AI 子系统设计。FPGA 需在同片承载 SAR 信号处理、高速接口等<strong
+          >多个高优先级模块共存</strong
+        >
+        的高密度集成环境下，在极窄资源窗口内完成高性能 ResNet-50 推理加速，并作为<strong
+          >总线友好型独立 IP</strong
+        >
+        挂载于 AXI 互连。
       </p>
       <div class="detail-grid">
         <div>
@@ -97,8 +105,8 @@
     <section class="section" id="architecture">
       <h2>架构方案：存算协同体系</h2>
       <p class="section-desc">
-        摒弃通用处理器模式，采用 <strong>VLIW 指令驱动</strong> 的独立 IP 架构，通过 <strong>AXI-Lite</strong> 配置
-        与 <strong>AXI-Full</strong> 大位宽数据搬运，实现计算与访存的深度解耦。
+        摒弃通用处理器模式，采用 <strong>VLIW 指令驱动</strong> 的独立 IP 架构，通过
+        <strong>AXI-Lite</strong> 配置 与 <strong>AXI-Full</strong> 大位宽数据搬运，实现计算与访存的深度解耦。
       </p>
       <figure class="proj-fig">
         <img
@@ -114,8 +122,9 @@
         <div>
           <h4>模块化 IP 设计</h4>
           <p>
-            纯 PL 侧独立加速器，集成 <strong>控制单元、Lite-DMA、片上 BRAM 缓存池、PE 计算阵列</strong> 四大核心。
-            PS 端仅负责顶层调度，CPU 算力完全释放。
+            纯 PL 侧独立加速器，集成
+            <strong>控制单元、Lite-DMA、片上 BRAM 缓存池、PE 计算阵列</strong> 四大核心。 PS
+            端仅负责顶层调度，CPU 算力完全释放。
           </p>
         </div>
         <div>
@@ -144,24 +153,18 @@
           <h3>多级缓存与带宽隐藏</h3>
           <p>
             设计输入/输出双向 <strong>乒乓缓存</strong> 机制，实现"零等待"计算。
-            当前缓冲块正在参与计算的同时，DMA 已在后台预取下一块数据，
-            有效隐藏高负载环境下的 DDR 访存开销。
+            当前缓冲块正在参与计算的同时，DMA 已在后台预取下一块数据， 有效隐藏高负载环境下的 DDR 访存开销。
           </p>
-          <p class="accent-note">
-            推理延迟降低 ~14%（401.2 ms → 345.8 ms）
-          </p>
+          <p class="accent-note">推理延迟降低 ~14%（401.2 ms → 345.8 ms）</p>
         </div>
         <div class="info-card">
           <div class="info-icon">🔗</div>
           <h3>算子融合与访存裁剪</h3>
           <p>
             构建 <strong>Conv / ResAdd + ReLU</strong> 的寄存器级流水线级联，
-            三个算子在单次数据通过中完成，消除中间结果的片外回写，
-            显著降低总线压力与动态功耗。
+            三个算子在单次数据通过中完成，消除中间结果的片外回写， 显著降低总线压力与动态功耗。
           </p>
-          <p class="accent-note">
-            中间数据传输量减少 ~60%，片外带宽需求大幅降低
-          </p>
+          <p class="accent-note">中间数据传输量减少 ~60%，片外带宽需求大幅降低</p>
         </div>
         <div class="info-card">
           <div class="info-icon">📐</div>
@@ -170,9 +173,7 @@
             <strong>VLIW 调度</strong> 降低控制开销，<strong>残差主旁路</strong>共用计算与存储资源，
             消除冗余资源闲置。针对 DDR 4KB 边界限制实现硬件自动拆分，无需软件干预。
           </p>
-          <p class="accent-note">
-            DSP &lt;2% / LUT &lt;4%，多系统稳定共存
-          </p>
+          <p class="accent-note">DSP &lt;2% / LUT &lt;4%，多系统稳定共存</p>
         </div>
       </div>
     </section>
@@ -229,31 +230,28 @@
     <section class="section" id="verification">
       <h2>系统闭环与验证</h2>
       <p class="section-desc">
-        基于软硬协同的验证策略，确保硬件推理结果与浮点参考模型一致，
-        并在 MPSoC 板级完成端到端全流程验证。
+        基于软硬协同的验证策略，确保硬件推理结果与浮点参考模型一致， 并在 MPSoC 板级完成端到端全流程验证。
       </p>
       <div class="detail-grid">
         <div>
           <h4>Python 黄金模型</h4>
           <p>
-            以 Python 搭建逐层定点化的 ResNet-50 黄金模型，
-            逐 tensor 对比 RTL 仿真输出与浮点参考值，
+            以 Python 搭建逐层定点化的 ResNet-50 黄金模型， 逐 tensor 对比 RTL 仿真输出与浮点参考值，
             硬件推理精度稳定达到 <strong>90%+</strong>。
           </p>
         </div>
         <div>
           <h4>SystemVerilog 仿真</h4>
           <p>
-            模块级仿真覆盖：Lite-DMA 突发读写边界、乒乓缓存切换时序、
-            算子融合流水线握手信号，确保各模块在 corner case 下无数据撕裂。
+            模块级仿真覆盖：Lite-DMA 突发读写边界、乒乓缓存切换时序、 算子融合流水线握手信号，确保各模块在
+            corner case 下无数据撕裂。
           </p>
         </div>
         <div>
           <h4>板级全流程验证</h4>
           <p>
             在 MPSoC 平台完成 PS + PL 联合部署，
-            <strong>300 MHz</strong> 高频下长时间压力测试通过，
-            系统运行稳定，无时序违例（WNS &gt; 0ns）。
+            <strong>300 MHz</strong> 高频下长时间压力测试通过， 系统运行稳定，无时序违例（WNS &gt; 0ns）。
           </p>
         </div>
       </div>
@@ -263,10 +261,10 @@
     <section class="section" id="discussion">
       <h2>技术探讨</h2>
       <p class="section-desc">
-        本页面展示了加速器的工程实现与架构上限评估。
-        关于「<strong>自定义 VLIW 指令集的解码逻辑</strong>」「<strong>高负载混合系统中的时序收敛技巧</strong>」
-        以及「<strong>大规模并行下的布线拥塞规避与 Floorplanning 策略</strong>」等深度细节，
-        欢迎在专业交流中展开进一步探讨。
+        本页面展示了加速器的工程实现与架构上限评估。 关于「<strong>自定义 VLIW 指令集的解码逻辑</strong
+        >」「<strong>高负载混合系统中的时序收敛技巧</strong>」 以及「<strong
+          >大规模并行下的布线拥塞规避与 Floorplanning 策略</strong
+        >」等深度细节， 欢迎在专业交流中展开进一步探讨。
       </p>
       <div class="hero-actions">
         <a class="primary" href="../index.html#contact">联系交流</a>
@@ -279,18 +277,21 @@
       <a href="#top">返回顶部 ↑</a>
     </footer>
     <script>
-      const qLinks = document.querySelectorAll('.quick-nav a');
-      const qSections = [...qLinks].map(a => document.querySelector(a.getAttribute('href')));
-      const qObs = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            qLinks.forEach(a => a.classList.remove('active'));
-            const link = document.querySelector(`.quick-nav a[href="#${entry.target.id}"]`);
-            if (link) link.classList.add('active');
-          }
-        });
-      }, { rootMargin: '-30% 0px -60% 0px' });
-      qSections.forEach(s => s && qObs.observe(s));
+      const qLinks = document.querySelectorAll(".quick-nav a");
+      const qSections = [...qLinks].map((a) => document.querySelector(a.getAttribute("href")));
+      const qObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              qLinks.forEach((a) => a.classList.remove("active"));
+              const link = document.querySelector(`.quick-nav a[href="#${entry.target.id}"]`);
+              if (link) link.classList.add("active");
+            }
+          });
+        },
+        { rootMargin: "-30% 0px -60% 0px" }
+      );
+      qSections.forEach((s) => s && qObs.observe(s));
     </script>
   </body>
 </html>

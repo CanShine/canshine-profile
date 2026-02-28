@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SNN ASIC 加速器 · CanShine</title>
-    <meta name="description" content="高能效脉冲神经网络异构计算芯片前端设计，国家重点研发计划项目，基于空时折叠与稀疏感知的 ASIC 全流程实现。" />
+    <meta
+      name="description"
+      content="高能效脉冲神经网络异构计算芯片前端设计，国家重点研发计划项目，基于空时折叠与稀疏感知的 ASIC 全流程实现。"
+    />
     <link rel="stylesheet" href="../styles.css?v=20260228-1" />
     <script src="../gate.js"></script>
   </head>
@@ -67,9 +70,9 @@
     <section class="section" id="context">
       <h2>项目背景</h2>
       <p class="section-desc">
-        国家重点研发计划《高能效类脑器件及其智能芯片关键技术研究》子课题。
-        针对 SNN 网络<strong>时间步迭代计算翻倍</strong>与<strong>访存带宽瓶颈</strong>两大核心挑战，
-        主导设计面向 <strong>Spiking-ResNet-18（T=2）</strong> 的 ASIC 加速架构，
+        国家重点研发计划《高能效类脑器件及其智能芯片关键技术研究》子课题。 针对 SNN
+        网络<strong>时间步迭代计算翻倍</strong>与<strong>访存带宽瓶颈</strong>两大核心挑战， 主导设计面向
+        <strong>Spiking-ResNet-18（T=2）</strong> 的 ASIC 加速架构，
         将算法理论直接映射为可交付芯片前端的完整工程产出。
       </p>
       <div class="detail-grid">
@@ -103,11 +106,7 @@
         通过<strong>异构微核</strong>分别处理密集首层与稀疏深层，实现算力与能效的双重最优。
       </p>
       <figure class="proj-fig">
-        <img
-          src="../assets/projects/snn/SNN架构图.svg"
-          alt="SNN ASIC 加速器架构图"
-          class="proj-fig-img"
-        />
+        <img src="../assets/projects/snn/SNN架构图.svg" alt="SNN ASIC 加速器架构图" class="proj-fig-img" />
         <figcaption class="proj-figcap">
           图 1 &nbsp;·&nbsp; 异构双核驱动的 SNN ASIC 加速架构（DEC 密集核 + SAC 稀疏核）
         </figcaption>
@@ -117,8 +116,7 @@
           <h4>高保真特征提取算子 (DEC)</h4>
           <p>
             专为<strong>首层密集数据</strong>设计，采用高位宽处理路径与流水线 MAC 阵列，
-            直接对原始输入进行高保真卷积，规避传统脉冲编码的信息丢失，
-            奠定系统整体识别率的精度基石。
+            直接对原始输入进行高保真卷积，规避传统脉冲编码的信息丢失， 奠定系统整体识别率的精度基石。
           </p>
         </div>
         <div>
@@ -147,8 +145,7 @@
           <h3>空时折叠并行策略</h3>
           <p>
             <strong>时域物理叠层</strong>：构建物理并行的双重计算链路，
-            将原本串行的多时间步运算进行时域展开并行处理，
-            有效消除时间维度迭代带来的推理时延开销。
+            将原本串行的多时间步运算进行时域展开并行处理， 有效消除时间维度迭代带来的推理时延开销。
           </p>
           <p class="mt-8">
             <strong>空域逻辑分时</strong>：设计动态资源调度器与冲突分拍机制，
@@ -171,9 +168,8 @@
           <div class="info-icon">🔁</div>
           <h3>残差流硬件映射优化</h3>
           <p>
-            <strong>注入式累加架构</strong>：构建"先注入后累加"数据流，
-            利用 PE 空闲时隙将残差预注入累加器，复用核心算术逻辑完成残差融合，
-            规避独立加法器阵列的面积冗余。
+            <strong>注入式累加架构</strong>：构建"先注入后累加"数据流， 利用 PE
+            空闲时隙将残差预注入累加器，复用核心算术逻辑完成残差融合， 规避独立加法器阵列的面积冗余。
           </p>
           <p class="mt-8">
             <strong>脉冲全片上驻留</strong>：残差支路数据完全片内暂存复用，
@@ -192,24 +188,14 @@
       </p>
       <div class="gallery-grid">
         <figure class="gallery-figure">
-          <img
-            src="../assets/projects/snn/稀疏度.svg"
-            alt="各层脉冲稀疏度分布"
-            class="gallery-img"
-          />
+          <img src="../assets/projects/snn/稀疏度.svg" alt="各层脉冲稀疏度分布" class="gallery-img" />
           <figcaption class="gallery-cap">
             图 2 &nbsp;·&nbsp; Spiking-ResNet-18 各层脉冲稀疏度分布（综合稀疏度 82.97%）
           </figcaption>
         </figure>
         <figure class="gallery-figure">
-          <img
-            src="../assets/projects/snn/跳零.svg"
-            alt="跳零机制示意图"
-            class="gallery-img"
-          />
-          <figcaption class="gallery-cap">
-            图 3 &nbsp;·&nbsp; 标志位扫描器驱动的跳零机制示意
-          </figcaption>
+          <img src="../assets/projects/snn/跳零.svg" alt="跳零机制示意图" class="gallery-img" />
+          <figcaption class="gallery-cap">图 3 &nbsp;·&nbsp; 标志位扫描器驱动的跳零机制示意</figcaption>
         </figure>
       </div>
     </section>
@@ -276,16 +262,14 @@
         <div>
           <h4>自动化数据闭环</h4>
           <p>
-            Python 完成 SNN 算法训练、混合精度量化及权重 / 激励数据导出，
-            自动生成 RTL 仿真所需的测试向量，
+            Python 完成 SNN 算法训练、混合精度量化及权重 / 激励数据导出， 自动生成 RTL 仿真所需的测试向量，
             并与仿真输出进行<strong>端到端数据一致性校验</strong>。
           </p>
         </div>
         <div>
           <h4>RTL 仿真验证</h4>
           <p>
-            覆盖 DEC / SAC 双核路径、稀疏标志位扫描逻辑、
-            残差注入时序及跨模块握手协议，
+            覆盖 DEC / SAC 双核路径、稀疏标志位扫描逻辑、 残差注入时序及跨模块握手协议，
             确保各模块在边界条件下无数据错误与时序冲突。
           </p>
         </div>
@@ -304,10 +288,9 @@
     <section class="section" id="discussion">
       <h2>技术探讨</h2>
       <p class="section-desc">
-        本页面侧重于架构级方案与工程产出展示。
-        关于「<strong>物理链路叠层的 RTL 优化细节</strong>」「<strong>训练—量化—硬件映射的一致性保证</strong>」
-        以及「<strong>残差累加过程中的时序收敛策略</strong>」等核心深度细节，
-        欢迎在专业交流中展开进一步探讨。
+        本页面侧重于架构级方案与工程产出展示。 关于「<strong>物理链路叠层的 RTL 优化细节</strong
+        >」「<strong>训练—量化—硬件映射的一致性保证</strong>」
+        以及「<strong>残差累加过程中的时序收敛策略</strong>」等核心深度细节， 欢迎在专业交流中展开进一步探讨。
       </p>
       <div class="hero-actions">
         <a class="primary" href="../index.html#contact">联系交流</a>
@@ -320,18 +303,21 @@
       <a href="#top">返回顶部 ↑</a>
     </footer>
     <script>
-      const qLinks = document.querySelectorAll('.quick-nav a');
-      const qSections = [...qLinks].map(a => document.querySelector(a.getAttribute('href')));
-      const qObs = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            qLinks.forEach(a => a.classList.remove('active'));
-            const link = document.querySelector(`.quick-nav a[href="#${entry.target.id}"]`);
-            if (link) link.classList.add('active');
-          }
-        });
-      }, { rootMargin: '-30% 0px -60% 0px' });
-      qSections.forEach(s => s && qObs.observe(s));
+      const qLinks = document.querySelectorAll(".quick-nav a");
+      const qSections = [...qLinks].map((a) => document.querySelector(a.getAttribute("href")));
+      const qObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              qLinks.forEach((a) => a.classList.remove("active"));
+              const link = document.querySelector(`.quick-nav a[href="#${entry.target.id}"]`);
+              if (link) link.classList.add("active");
+            }
+          });
+        },
+        { rootMargin: "-30% 0px -60% 0px" }
+      );
+      qSections.forEach((s) => s && qObs.observe(s));
     </script>
   </body>
 </html>
