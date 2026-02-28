@@ -36,6 +36,7 @@ function openModal(templateId) {
   if (templateEl instanceof HTMLTemplateElement) {
     const fragment = templateEl.content.cloneNode(true);
     titleEl = fragment.querySelector?.("h3") ?? null;
+    titleEl?.remove?.();
     modalBody.replaceChildren(fragment);
   } else {
     modalBody.innerHTML = templateEl.innerHTML;
