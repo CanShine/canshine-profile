@@ -1,15 +1,15 @@
-/* Clean, minimal light theme */
+/* Clean, minimal light theme — HF-1: Slate + Blue */
 :root {
-  --bg: #eef3fb;
-  --bg-2: #dde8f8;
+  --bg: #f1f5f9;
+  --bg-2: #e2e8f0;
   --card: #ffffff;
-  --text: #0b1324;
-  --muted: #5b6b84;
-  --primary: #4f46e5;
-  --accent: #14b8a6;
-  --primary-rgb: 79 70 229;
-  --accent-rgb: 20 184 166;
-  --glow: 0 0 18px rgba(79, 70, 229, 0.18);
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #475569;
+  --accent: #2563eb;
+  --primary-rgb: 71 85 105;
+  --accent-rgb: 37 99 235;
+  --glow: 0 0 14px rgba(71, 85, 105, 0.15);
   --card-tint-1: rgb(var(--primary-rgb) / 0.06);
   --card-tint-2: rgb(var(--accent-rgb) / 0.05);
 }
@@ -23,9 +23,9 @@ body {
   font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(1200px 620px at 12% -10%, rgba(79, 70, 229, 0.28), transparent 60%),
-    radial-gradient(1000px 560px at 90% 0%, rgba(20, 184, 166, 0.22), transparent 58%),
-    radial-gradient(1100px 700px at 55% 110%, rgba(79, 70, 229, 0.12), transparent 55%),
+    radial-gradient(1200px 620px at 12% -10%, rgba(71, 85, 105, 0.18), transparent 60%),
+    radial-gradient(1000px 560px at 90% 0%, rgba(37, 99, 235, 0.12), transparent 58%),
+    radial-gradient(1100px 700px at 55% 110%, rgba(71, 85, 105, 0.08), transparent 55%),
     linear-gradient(180deg, var(--bg), var(--bg-2));
   min-height: 100vh;
 }
@@ -45,8 +45,8 @@ html.page-locked body > :not(.password-gate) {
   place-items: center;
   padding: 24px;
   background:
-    radial-gradient(1100px 520px at 12% -10%, rgba(79, 70, 229, 0.2), transparent 60%),
-    radial-gradient(900px 520px at 90% 0%, rgba(20, 184, 166, 0.18), transparent 58%), rgba(15, 23, 42, 0.55);
+    radial-gradient(1100px 520px at 12% -10%, rgba(71, 85, 105, 0.15), transparent 60%),
+    radial-gradient(900px 520px at 90% 0%, rgba(37, 99, 235, 0.1), transparent 58%), rgba(15, 23, 42, 0.5);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   z-index: 999;
@@ -153,7 +153,7 @@ body.modal-open {
   border: 1px solid rgb(var(--primary-rgb) / 0.3);
   padding: 6px 12px;
   border-radius: 999px;
-  color: #4338ca;
+  color: var(--accent);
   font-size: 12px;
 }
 
@@ -646,8 +646,8 @@ h1 {
 }
 
 .honor-badge--prov {
-  background: rgba(20, 184, 166, 0.12);
-  color: #0d9488;
+  background: rgb(var(--primary-rgb) / 0.1);
+  color: var(--primary);
 }
 
 .honor-badge--school {

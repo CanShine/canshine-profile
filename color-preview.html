@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>HF-1 完整预览 · 雾蓝灰 + 晴空蓝点缀</title>
+<style>
+/* ══════════════════════════════════════════════
+   HF-1 色系变量定义（模拟 :root）
+   主体: Slate  点缀: Blue
+   ══════════════════════════════════════════════ */
+:root {
+  --bg: #f1f5f9;
+  --bg-2: #e2e8f0;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #475569;       /* 蓝灰主色 */
+  --accent: #2563eb;        /* 晴空蓝点缀 */
+  --primary-rgb: 71 85 105;
+  --accent-rgb: 37 99 235;
+  --glow: 0 0 14px rgba(71, 85, 105, 0.15);
+  --text-2: #64748b;
+  --card-tint-1: rgb(var(--primary-rgb) / 0.04);
+  --card-tint-2: rgb(var(--accent-rgb) / 0.04);
+}
+
+*{box-sizing:border-box;margin:0}
+body{
+  font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 620px at 12% -10%, rgba(71,85,105,0.18), transparent 60%),
+    radial-gradient(1000px 560px at 90% 0%, rgba(37,99,235,0.12), transparent 58%),
+    radial-gradient(1100px 700px at 55% 110%, rgba(71,85,105,0.08), transparent 55%),
+    linear-gradient(180deg, var(--bg), var(--bg-2));
+  min-height:100vh;
+}
+
+/* ── 区块标题 ── */
+.preview-label{
+  text-align:center;padding:40px 24px 12px;
+  font-size:1.4rem;font-weight:700;color:var(--text);
+}
+.preview-sub{
+  text-align:center;color:var(--muted);font-size:.82rem;margin-bottom:24px;
+}
+
+.container{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* ══════════ 1. Hero 横幅 ══════════ */
+.hero-mock{padding:32px 0}
+.badge{
+  display:inline-block;
+  background:rgb(var(--accent-rgb) / 0.1);
+  border:1px solid rgb(var(--accent-rgb) / 0.25);
+  padding:6px 12px;border-radius:999px;
+  color:var(--accent);font-size:12px;font-weight:600;
+}
+.hero-mock h1{font-size:2rem;margin:16px 0 12px;text-shadow:var(--glow)}
+.subtitle{color:var(--muted);max-width:620px;line-height:1.7}
+.subtitle strong{color:var(--text);font-weight:600}
+.hero-stats{display:flex;gap:24px;margin-top:16px}
+.stat-num{font-size:1.5rem;font-weight:700;color:var(--accent)}
+.stat-label{color:var(--muted);font-size:12px}
+.hero-actions{display:flex;gap:12px;margin-top:20px}
+
+/* ══════════ 按钮 ══════════ */
+.btn-primary{
+  background:var(--primary);border:none;color:#f8fafc;
+  padding:10px 20px;border-radius:12px;font-weight:600;font-size:.85rem;cursor:pointer;
+  box-shadow:var(--glow);
+}
+.btn-accent{
+  background:var(--accent);border:none;color:#fff;
+  padding:10px 20px;border-radius:12px;font-weight:600;font-size:.85rem;cursor:pointer;
+}
+.btn-ghost{
+  background:transparent;border:1px solid rgba(71,85,105,0.22);color:var(--text);
+  padding:10px 20px;border-radius:12px;font-size:.85rem;cursor:pointer;
+}
+.btn-sm{padding:7px 12px;font-size:12px;border-radius:10px}
+
+/* ══════════ 2. Section 标题 ══════════ */
+.section-mock{padding:32px 0}
+.section-mock h2{
+  font-size:1.5rem;position:relative;padding-bottom:10px;margin-bottom:8px;
+}
+.section-mock h2::after{
+  content:"";position:absolute;left:0;bottom:0;
+  width:44px;height:4px;border-radius:999px;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  box-shadow:var(--glow);
+}
+.section-desc{color:var(--muted);max-width:720px;line-height:1.7}
+.section-desc strong{color:var(--text)}
+
+/* ══════════ 3. 卡片们 ══════════ */
+.card-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:20px}
+
+/* info-card */
+.info-card{
+  background:linear-gradient(180deg,var(--card-tint-1),rgba(255,255,255,0.92));
+  border:1px solid rgba(15,23,42,0.08);border-radius:16px;padding:18px;
+  box-shadow:0 10px 24px rgba(15,23,42,0.06);position:relative;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.info-card::before{
+  content:"";position:absolute;left:12px;right:12px;top:10px;
+  height:3px;border-radius:999px;
+  background:linear-gradient(90deg,var(--primary),var(--accent));opacity:0.3;
+}
+.info-card:hover{
+  transform:translateY(-3px);box-shadow:0 16px 32px rgba(15,23,42,0.12);
+  border-color:rgb(var(--primary-rgb) / 0.25);
+}
+.info-card h4{font-size:.95rem;margin-bottom:4px}
+.info-card p{color:var(--muted);font-size:.85rem;line-height:1.6;margin:4px 0}
+
+/* featured-card */
+.featured-card{
+  background:
+    radial-gradient(800px 240px at 12% 0%,rgb(var(--accent-rgb) / 0.08),transparent 55%),
+    linear-gradient(180deg,var(--card-tint-2),rgba(255,255,255,0.92));
+  border:1px solid rgba(15,23,42,0.08);border-radius:16px;padding:18px;
+  display:grid;gap:10px;box-shadow:0 10px 24px rgba(15,23,42,0.06);
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.featured-card:hover{
+  transform:translateY(-3px);box-shadow:0 18px 36px rgba(15,23,42,0.12);
+  border-color:rgb(var(--accent-rgb) / 0.2);
+}
+.featured-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.featured-intro{color:var(--muted);line-height:1.6;font-size:.85rem}
+.feat-sub{color:var(--text-2);font-size:.82rem;margin-bottom:4px}
+
+/* glass-card */
+.glass-card{
+  background:var(--card);border:1px solid rgba(15,23,42,0.08);border-radius:18px;padding:24px;
+  box-shadow:0 18px 40px rgba(15,23,42,0.12);
+}
+.glass-card .card-title{font-weight:600;margin-top:8px;margin-bottom:8px}
+.glass-card .list{list-style:none;padding:0;margin:0 0 12px}
+.glass-card .list li{margin:8px 0;color:var(--muted)}
+.glass-card .list li strong{color:var(--text)}
+
+/* ══════════ 4. Chip / Tag ══════════ */
+.chip-row{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  background:rgb(var(--primary-rgb) / 0.08);
+  border:1px solid rgb(var(--primary-rgb) / 0.2);
+  padding:6px 10px;border-radius:999px;font-size:12px;color:var(--text);
+}
+.tag{
+  padding:4px 10px;border-radius:999px;
+  background:rgb(var(--accent-rgb) / 0.1);
+  border:1px solid rgb(var(--accent-rgb) / 0.25);
+  font-size:12px;color:var(--accent);font-weight:600;
+}
+
+/* ══════════ 5. Honor badges ══════════ */
+.honor-badge{
+  font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:99px;line-height:1.7;
+}
+.honor-badge--natl{background:rgb(var(--accent-rgb) / 0.1);color:var(--accent)}
+.honor-badge--prov{background:rgb(var(--primary-rgb) / 0.1);color:var(--primary)}
+.honor-badge--school{background:rgba(15,23,42,0.07);color:var(--muted)}
+
+.honor-item{
+  display:flex;align-items:flex-start;gap:10px;padding:10px 14px;
+  background:var(--card);border:1px solid rgba(15,23,42,0.07);border-radius:10px;
+  transition:border-color .2s,transform .2s;
+}
+.honor-item:hover{border-color:rgb(var(--accent-rgb) / 0.2);transform:translateY(-2px)}
+.honor-name{font-size:13px;color:var(--text);line-height:1.45}
+.honor-sub{font-size:11.5px;color:var(--muted)}
+
+/* ══════════ 6. 弹窗 Modal ══════════ */
+.modal-demo{
+  background:rgba(15,23,42,0.25);border-radius:18px;padding:28px;margin-top:20px;
+  backdrop-filter:blur(4px);
+}
+.modal-panel-demo{
+  max-width:820px;margin:0 auto;
+  background:rgba(255,255,255,0.98);border:1px solid rgba(15,23,42,0.08);
+  border-radius:18px;padding:20px 22px;
+  box-shadow:0 24px 60px rgba(15,23,42,0.18);
+}
+.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.modal-title{font-weight:600;font-size:18px}
+.modal-close{
+  background:transparent;border:1px solid rgba(15,23,42,0.15);
+  color:var(--text);border-radius:8px;padding:2px 8px;cursor:pointer;font-size:18px;
+}
+.modal-sub{color:var(--text-2);margin-bottom:16px;font-size:.88rem}
+.detail-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.detail-grid ul{margin:0;padding-left:18px;color:var(--muted);font-size:.85rem;line-height:1.8}
+.tech-card--primary{
+  background:rgb(var(--primary-rgb) / 0.05);border:1px solid rgb(var(--primary-rgb) / 0.15);
+  border-radius:12px;padding:14px;
+}
+.tech-card--accent{
+  background:rgb(var(--accent-rgb) / 0.04);border:1px solid rgb(var(--accent-rgb) / 0.12);
+  border-radius:12px;padding:14px;
+}
+.tech-card--primary h4,.tech-card--accent h4{font-size:.9rem;margin-bottom:6px}
+.tech-card--primary p,.tech-card--accent p{color:var(--muted);font-size:.82rem;line-height:1.6}
+
+/* ══════════ 7. 底部快导航 ══════════ */
+.quick-nav-demo{
+  display:inline-grid;gap:8px;padding:10px 12px;border-radius:14px;
+  background:rgba(255,255,255,0.8);border:1px solid rgba(15,23,42,0.08);
+}
+.quick-nav-demo a{
+  color:var(--muted);text-decoration:none;font-size:12px;
+  padding:4px 6px;border-radius:8px;
+}
+.quick-nav-demo a:hover{color:var(--text);background:rgb(var(--primary-rgb) / 0.08)}
+.quick-nav-demo a.active{
+  color:var(--text);background:rgb(var(--accent-rgb) / 0.1);
+  border:1px solid rgb(var(--accent-rgb) / 0.2);
+}
+
+/* ══════════ 8. 奖项磁贴 ══════════ */
+.award-track-demo{display:flex;gap:14px;padding:14px;overflow-x:auto}
+.award-tile-demo{
+  background:var(--card);border:1px solid rgba(15,23,42,0.08);border-radius:16px;
+  padding:12px;width:200px;flex-shrink:0;display:grid;gap:10px;
+  transition:transform .2s,box-shadow .2s;cursor:pointer;
+}
+.award-tile-demo:hover{transform:translateY(-4px);box-shadow:var(--glow)}
+.award-img-demo{
+  width:100%;height:120px;object-fit:contain;border-radius:12px;
+  border:1px solid rgba(15,23,42,0.08);background:rgba(255,255,255,0.6);
+  display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.75rem;
+}
+.award-title-demo{font-size:13px;color:var(--muted);line-height:1.4}
+
+/* ══════════ 9. 联系卡片 ══════════ */
+.contact-card{
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+  background:
+    radial-gradient(900px 220px at 10% 0%,rgb(var(--accent-rgb) / 0.08),transparent 55%),
+    linear-gradient(180deg,rgb(var(--primary-rgb) / 0.04),rgba(255,255,255,0.92));
+  border:1px solid rgba(15,23,42,0.08);border-radius:16px;padding:18px;
+  box-shadow:0 12px 26px rgba(15,23,42,0.06);
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.contact-card:hover{
+  transform:translateY(-2px);box-shadow:0 16px 30px rgba(15,23,42,0.12);
+  border-color:rgb(var(--accent-rgb) / 0.2);
+}
+.contact-card .contact-label{color:var(--muted);font-size:.82rem}
+.contact-card .contact-val{font-weight:600;font-size:.95rem}
+
+/* ══════════ 10. 页面底部 footer ══════════ */
+.footer-demo{
+  padding:24px 0;display:flex;justify-content:space-between;align-items:center;
+  color:var(--muted);font-size:.82rem;
+}
+.footer-demo a{color:var(--muted);text-decoration:none}
+
+/* ══════════ 11. Password gate ══════════ */
+.gate-demo{
+  background:
+    radial-gradient(1100px 520px at 12% -10%,rgba(71,85,105,0.15),transparent 60%),
+    radial-gradient(900px 520px at 90% 0%,rgba(37,99,235,0.1),transparent 58%),
+    rgba(15,23,42,0.5);
+  border-radius:18px;padding:40px;backdrop-filter:blur(6px);margin-top:20px;
+}
+.gate-panel{
+  width:min(100%,440px);margin:0 auto;
+  background:rgba(255,255,255,0.98);border:1px solid rgba(15,23,42,0.08);
+  border-radius:18px;padding:22px;box-shadow:0 24px 60px rgba(15,23,42,0.24);
+}
+.gate-panel h3{font-size:18px;font-weight:700;margin-bottom:12px}
+.gate-panel label{color:var(--muted);font-size:13px;display:grid;gap:6px}
+.gate-panel input{
+  width:100%;padding:10px 12px;border-radius:12px;
+  border:1px solid rgba(15,23,42,0.18);font-size:14px;
+}
+.gate-panel input:focus{outline:2px solid rgb(var(--accent-rgb) / 0.35);outline-offset:2px}
+.gate-hint{color:var(--muted);font-size:12px;line-height:1.5;margin-top:8px}
+
+/* ══════════ 12. 色板总览 ══════════ */
+.palette{display:flex;gap:0;border-radius:14px;overflow:hidden;margin:20px 0;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.palette-swatch{flex:1;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:.6rem;font-weight:600;gap:2px}
+.palette-swatch.dark{color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.25)}
+.palette-swatch.light{color:#333}
+
+/* ── 分隔 ── */
+hr.sep{border:none;border-top:1px solid rgba(15,23,42,0.08);margin:0}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ─────── 色板总览 ─────── -->
+<div class="preview-label">HF-1 色系完整预览</div>
+<p class="preview-sub">雾蓝灰 (Slate) 主体 + 晴空蓝 (Blue) 点缀 · 以下模拟网站实际各组件效果</p>
+
+<div class="palette">
+  <div class="palette-swatch dark" style="background:#0f172a"><span>文字</span><span>#0f172a</span></div>
+  <div class="palette-swatch dark" style="background:#334155"><span>深灰</span><span>#334155</span></div>
+  <div class="palette-swatch dark" style="background:#475569"><span>主色</span><span>#475569</span></div>
+  <div class="palette-swatch dark" style="background:#64748b"><span>次灰</span><span>#64748b</span></div>
+  <div class="palette-swatch dark" style="background:#94a3b8"><span>浅灰</span><span>#94a3b8</span></div>
+  <div class="palette-swatch dark" style="background:#2563eb"><span>点缀蓝</span><span>#2563eb</span></div>
+  <div class="palette-swatch light" style="background:#e2e8f0"><span>底色2</span><span>#e2e8f0</span></div>
+  <div class="palette-swatch light" style="background:#f1f5f9"><span>底色</span><span>#f1f5f9</span></div>
+  <div class="palette-swatch light" style="background:#ffffff"><span>卡片</span><span>#ffffff</span></div>
+</div>
+
+<!-- ─────── 1. Hero 横幅 ─────── -->
+<div class="preview-label">1 · Hero 横幅</div>
+<p class="preview-sub">badge 用蓝色点缀 · 数字 stat 用蓝色高亮 · 按钮灰色主体</p>
+
+<div class="hero-mock">
+  <p class="badge">&#128190; 数字 IC / FPGA / SoC · 集成电路工程硕士</p>
+  <h1>从 RTL 到流片，定义架构、驱动算力落地</h1>
+  <p class="subtitle">
+    南京航空航天大学 · <strong>天元实验室</strong>（国家重点实验室）<br/>
+    三项国家级课题驱动，主导 <strong>ASIC 前端全流程</strong>与 <strong>FPGA 系统架构</strong>设计；
+    从 RTL 实现到时序收敛，在真实工程约束中持续打磨技艺。
+  </p>
+  <div class="hero-stats">
+    <div><div class="stat-num">3</div><div class="stat-label">&#128300; 国家级课题</div></div>
+    <div><div class="stat-num">9+</div><div class="stat-label">&#127941; 竞赛奖项</div></div>
+    <div><div class="stat-num">5年+</div><div class="stat-label">&#9881;&#65039; 工程经验</div></div>
+  </div>
+  <div class="hero-actions">
+    <button class="btn-primary">核心项目</button>
+    <button class="btn-ghost">查看技能</button>
+  </div>
+</div>
+
+<hr class="sep"/>
+
+<!-- ─────── 2. Section 标题 + 分割线 ─────── -->
+<div class="preview-label">2 · 区块标题 (h2)</div>
+<p class="preview-sub">下划线渐变从灰到蓝 · 描述文字用 muted 灰 · strong 用深色</p>
+
+<div class="section-mock">
+  <h2>&#129489;&#8205;&#128187; 关于我</h2>
+  <p class="section-desc">
+    即将毕业的集成电路工程研究生，专注于<strong>数字 IC 前端设计</strong>与 <strong>FPGA 系统架构</strong>。
+    在国家重点实验室完成 SNN 加速器 ASIC 前端全流程、ResNet-50 FPGA 部署与混沌加密 SoC 等核心课题。
+  </p>
+</div>
+
+<hr class="sep"/>
+
+<!-- ─────── 3. Glass Card (Hero 右侧) ─────── -->
+<div class="preview-label">3 · Glass Card (Hero 右侧)</div>
+<p class="preview-sub">白色底 · 纯中性无色彩 · chip 用灰色系</p>
+
+<div class="glass-card" style="max-width:480px">
+  <div class="card-title">核心优势</div>
+  <ul class="list">
+    <li><strong>ASIC 前端</strong>：算法映射到微架构定义，RTL 到前端交付全流程独立负责</li>
+    <li><strong>FPGA 系统架构</strong>：高频时序收敛、资源精细化约束与多模块协同设计</li>
+    <li><strong>AI 硬件加速</strong>：稀疏感知与存算优化，面向推理场景的高能效架构设计</li>
+  </ul>
+  <div class="card-title">目标岗位</div>
+  <div class="chip-row">
+    <span class="chip">数字 IC 前端设计</span>
+    <span class="chip">FPGA 设计</span>
+    <span class="chip">芯片验证</span>
+  </div>
+</div>
+
+<hr class="sep"/>
+
+<!-- ─────── 4. Info Card 网格 ─────── -->
+<div class="preview-label">4 · Info Card 网格</div>
+<p class="preview-sub">顶部渐变条 灰→蓝 · 卡片底色微微灰 tint · hover 灰色边框</p>
+
+<div class="card-grid">
+  <div class="info-card">
+    <h4>&#127979; 南京航空航天大学</h4>
+    <p>集成电路工程 · 硕士</p>
+    <p style="color:var(--text-2);font-size:.85rem">天元实验室（国家重点实验室）</p>
+    <div class="chip-row" style="margin-top:8px">
+      <span class="chip">ASIC 前端</span>
+      <span class="chip">FPGA</span>
+    </div>
+  </div>
+  <div class="info-card">
+    <h4>&#128218; 嵌入式精进</h4>
+    <p>3 本技术书籍精读</p>
+    <p style="color:var(--text-2);font-size:.85rem">覆盖 SoC / RISCV / SystemVerilog</p>
+    <div class="chip-row" style="margin-top:8px">
+      <span class="chip">SoC</span>
+      <span class="chip">RISC-V</span>
+    </div>
+  </div>
+  <div class="info-card">
+    <h4>&#127942; 竞赛经历</h4>
+    <p>全国一等奖 × 2</p>
+    <p style="color:var(--text-2);font-size:.85rem">集创赛 / FPGA 创新设计赛</p>
+    <div class="chip-row" style="margin-top:8px">
+      <span class="chip">区域赛</span>
+      <span class="chip">国赛</span>
+    </div>
+  </div>
+</div>
+
+<hr class="sep"/>
+
+<!-- ─────── 5. Featured Card 网格 ─────── -->
+<div class="preview-label">5 · Featured Card (核心项目)</div>
+<p class="preview-sub">左上角蓝色辐射光晕 · tag 用蓝色 · 详情按钮灰色</p>
+
+<div class="card-grid">
+  <div class="featured-card">
+    <div class="featured-head">
+      <h4>面向 ResNet-50 的 FPGA 卷积加速器</h4>
+      <span class="tag">国家级</span>
+    </div>
+    <p class="feat-sub">FPGA Lead Architect · 硬件架构负责人</p>
+    <p class="featured-intro">基于多级缓存协同与算子融合技术的定制化计算架构，实现端到端 ResNet-50 推理部署。</p>
+    <div class="chip-row">
+      <span class="chip">SystemVerilog</span>
+      <span class="chip">Vivado</span>
+      <span class="chip">AXI4</span>
+    </div>
+    <div style="margin-top:8px"><button class="btn-primary btn-sm">查看详情</button></div>
+  </div>
+  <div class="featured-card">
+    <div class="featured-head">
+      <h4>三维超混沌实时视频流加密 SoC</h4>
+      <span class="tag">全国一等奖</span>
+    </div>
+    <p class="feat-sub">SoC 架构师 · 全流程独立完成</p>
+    <p class="featured-intro">基于 ZYNQ 的单芯片流式架构与自同步容错机制，60FPS 实时加密。</p>
+    <div class="chip-row">
+      <span class="chip">Verilog</span>
+      <span class="chip">ZYNQ</span>
+      <span class="chip">AXI4-Stream</span>
+    </div>
+    <div style="margin-top:8px"><button class="btn-primary btn-sm">查看详情</button></div>
+  </div>
+</div>
+
+<hr class="sep"/>
+
+<!-- ─────── 6. 按钮对比 ─────── -->
+<div class="preview-label">6 · 按钮样式</div>
+<p class="preview-sub">主按钮灰色 · 可选蓝色高亮按钮用于特殊 CTA · 幽灵按钮灰色边框</p>
+
+<div style="display:flex;gap:12px;flex-wrap:wrap;padding:20px 0">
+  <button class="btn-primary">主按钮 (灰)</button>
+  <button class="btn-accent">高亮按钮 (蓝)</button>
+  <button class="btn-ghost">幽灵按钮</button>
+  <button class="btn-primary btn-sm">小号主按钮</button>
+  <button class="btn-accent btn-sm">小号蓝按钮</button>
+  <button class="btn-ghost btn-sm">小号幽灵</button>
+</div>
+
+<hr class="sep"/>
+
+<!-- ─────── 7. Chip / Tag 标签 ─────── -->
+<div class="preview-label">7 · Chip 和 Tag</div>
+<p class="preview-sub">chip 灰色系（技能标签）· tag 蓝色系（项目级别/高亮标记）</p>
+
+<div style="display:flex;flex-wrap:wrap;gap:10px;padding:20px 0">
+  <span class="chip">SystemVerilog</span>
+  <span class="chip">FPGA</span>
+  <span class="chip">ASIC 前端</span>
+  <span class="chip">UVM</span>
+  <span class="tag">国家级</span>
+  <span class="tag">全国一等奖</span>
+  <span class="tag">核心项目</span>
+</div>
+
+<hr class="sep"/>
+
+<!-- ─────── 8. 荣誉徽章 ─────── -->
+<div class="preview-label">8 · 荣誉徽章 + 列表</div>
+<p class="preview-sub">国家级蓝色 · 省级灰蓝 · 校级浅灰</p>
+
+<div style="display:grid;gap:10px;max-width:500px;padding:20px 0">
+  <div class="honor-item">
+    <span class="honor-badge honor-badge--natl">国家级</span>
+    <div><div class="honor-name">"互联网+"全国金奖 · 核心成员</div><div class="honor-sub">2024年 · 创新实践赛道</div></div>
+  </div>
+  <div class="honor-item">
+    <span class="honor-badge honor-badge--prov">省级</span>
+    <div><div class="honor-name">江苏省优秀硕士毕业论文</div><div class="honor-sub">2025年</div></div>
+  </div>
+  <div class="honor-item">
+    <span class="honor-badge honor-badge--school">校级</span>
+    <div><div class="honor-name">研究生学业奖学金一等奖</div><div class="honor-sub">2023 / 2024</div></div>
+  </div>
+</div>
+
+<hr class="sep"/>
+
+<!-- ─────── 9. 弹窗 Modal ─────── -->
+<div class="preview-label">9 · 弹窗 Modal</div>
+<p class="preview-sub">毛玻璃背景 · 白色面板 · tech-card 分灰/蓝两种强调色</p>
+
+<div class="modal-demo">
+  <div class="modal-panel-demo">
+    <div class="modal-header">
+      <div class="modal-title">高能效脉冲神经网络异构计算芯片</div>
+      <button class="modal-close">&times;</button>
+    </div>
+    <p class="modal-sub">国家重点研发计划 · 4182 万元 · RTL Architect</p>
+    <div class="detail-grid">
+      <div class="tech-card--primary">
+        <h4>空时折叠映射引擎</h4>
+        <p>将 T=4 时间步折叠至单周期流水，等效面积减少约 60%，同时维持 80FPS 实时推理</p>
+      </div>
+      <div class="tech-card--accent">
+        <h4>动态稀疏感知机制</h4>
+        <p>标志位扫描器驱动跳零策略，精准剔除 82.97% 无效脉冲计算</p>
+      </div>
+    </div>
+    <div class="detail-grid" style="margin-top:12px">
+      <div>
+        <h4>关键指标</h4>
+        <ul>
+          <li><strong>分类精度</strong> 93.14% (CIFAR-10)</li>
+          <li><strong>推理帧率</strong> 80 FPS</li>
+          <li><strong>SpyGlass 全部 Pass</strong></li>
+        </ul>
+      </div>
+      <div>
+        <h4>验证体系</h4>
+        <ul>
+          <li>PyTorch Golden Model 端到端差异 &lt; 0.1%</li>
+          <li>时序全部在 200MHz 收敛</li>
+          <li>SpyGlass Lint + CDC 零 Error</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="sep"/>
+
+<!-- ─────── 10. 侧边快导 ─────── -->
+<div class="preview-label">10 · 快捷导航</div>
+<p class="preview-sub">普通态灰色 · hover 灰底 · active 蓝色底+蓝框</p>
+
+<div style="display:flex;gap:20px;padding:20px 0">
+  <div class="quick-nav-demo">
+    <a href="#">顶部</a>
+    <a href="#">关于</a>
+    <a href="#" class="active">项目</a>
+    <a href="#">奖项</a>
+    <a href="#">技能</a>
+    <a href="#">联系</a>
+  </div>
+</div>
+
+<hr class="sep"/>
+
+<!-- ─────── 11. 联系卡片 ─────── -->
+<div class="preview-label">11 · 联系卡片</div>
+<p class="preview-sub">左上蓝色辐射光 · hover 蓝色边框</p>
+
+<div style="display:grid;gap:12px;grid-template-columns:1fr 1fr;padding:20px 0">
+  <div class="contact-card">
+    <div><div class="contact-label">&#128231; 邮箱</div><div class="contact-val">canshine@example.com</div></div>
+  </div>
+  <div class="contact-card">
+    <div><div class="contact-label">&#128241; 微信</div><div class="contact-val">CanShine_IC</div></div>
+  </div>
+</div>
+
+<hr class="sep"/>
+
+<!-- ─────── 12. 密码闸门 ─────── -->
+<div class="preview-label">12 · 密码闸门 (Password Gate)</div>
+<p class="preview-sub">毛玻璃灰雾背景 · input focus 蓝色边框 · 按钮灰色</p>
+
+<div class="gate-demo">
+  <div class="gate-panel">
+    <h3>&#128274; 请输入访问密码</h3>
+    <form onsubmit="return false">
+      <label>
+        密码
+        <input type="password" placeholder="请输入密码" value=""/>
+      </label>
+      <div class="gate-hint">提示：如需密码请联系本人获取</div>
+      <div style="margin-top:12px"><button class="btn-primary" style="width:100%">进入</button></div>
+    </form>
+  </div>
+</div>
+
+<hr class="sep"/>
+
+<!-- ─────── 13. Footer ─────── -->
+<div class="preview-label">13 · 页脚 Footer</div>
+<div class="footer-demo">
+  <span>&copy; 2025 CanShine</span>
+  <a href="#">回到顶部</a>
+</div>
+
+<div style="padding:40px 0;text-align:center;color:var(--muted);font-size:.8rem">
+  ─ 预览结束 · 确认后再应用到网站 ─
+</div>
+
+</div>
+</body>
+</html>
