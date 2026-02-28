@@ -207,6 +207,12 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  background: #7c9ac5;
+  box-shadow: none;
+}
+
+.primary.small:hover {
+  background: #6a8ab8;
 }
 
 .ghost {
@@ -228,16 +234,16 @@ h1 {
 .ghost.small {
   padding: 8px 12px;
   font-size: 12px;
-  background: #94a3b8;
-  border-color: #94a3b8;
+  background: #a8b8ca;
+  border-color: #a8b8ca;
   color: #fff;
   font-weight: 600;
   transition: background 0.2s ease;
 }
 
 .ghost.small:hover {
-  background: #7c8fa6;
-  border-color: #7c8fa6;
+  background: #95a7bb;
+  border-color: #95a7bb;
 }
 
 .hero-stats {
