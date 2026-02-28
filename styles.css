@@ -344,6 +344,14 @@ h1 {
   border-color: rgb(var(--primary-rgb) / 0.25);
 }
 
+/* ── info-card inner layout helpers ── */
+.ic-title  { margin-bottom: 4px; }
+.ic-org    { margin-bottom: 2px; }
+.ic-org-lg { margin-bottom: 6px; }
+.ic-dept   { color: var(--text-2); font-size: .85rem; }
+.ic-dept-end { color: var(--text-2); font-size: .85rem; margin-bottom: 14px; }
+.ic-chips  { margin-bottom: 8px; }
+
 .article-card {
   text-decoration: none;
   color: var(--text);
@@ -429,6 +437,20 @@ h1 {
 .featured-intro {
   color: var(--muted);
   line-height: 1.6;
+}
+
+.feat-subtitle {
+  display: block;
+  color: var(--text-2);
+  font-size: .82rem;
+  margin-bottom: 5px;
+}
+
+.feat-metrics {
+  display: block;
+  margin-top: 8px;
+  font-family: monospace;
+  font-size: .85rem;
 }
 
 .compact-grid {
@@ -787,6 +809,37 @@ h1 {
   color: var(--muted);
 }
 
+/* ── modal template paragraph helpers ── */
+.modal-sub  { color: var(--text-2); margin-bottom: 16px; }
+.award-meta { color: var(--text-2); margin-bottom: 12px; }
+.card-text  { margin: 0; color: var(--muted); font-size: .9rem; }
+.img-hint   { color: var(--muted); font-size: .8rem; margin: 16px 0 8px; text-align: right; }
+
+/* ── chip-row modifiers ── */
+.chip-row--sm { gap: 6px; }
+.chip-row--mt { margin-top: 10px; }
+
+/* ── detail-grid modifier ── */
+.detail-grid--mt { margin-top: 16px; }
+
+/* ── tech card variants (inside detail-grid second row) ── */
+.tech-card--primary {
+  background: rgb(var(--primary-rgb) / .05);
+  border: 1px solid rgb(var(--primary-rgb) / .15);
+  border-radius: 12px;
+  padding: 14px;
+}
+.tech-card--accent {
+  background: rgb(var(--accent-rgb) / .05);
+  border: 1px solid rgb(var(--accent-rgb) / .18);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+/* ── image layout helpers ── */
+.img-stack { display: flex; flex-direction: column; gap: 20px; }
+.img-pair  { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
 .image-row {
   margin-top: 12px;
   display: grid;
@@ -868,6 +921,86 @@ h1 {
   box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
   border-color: rgb(var(--primary-rgb) / 0.2);
 }
+
+/* ── project page figure helpers ── */
+.proj-fig {
+  margin: 0 0 24px;
+}
+
+.proj-fig-img {
+  width: 100%;
+  max-width: 960px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+}
+
+.proj-figcap {
+  text-align: center;
+  margin-top: 10px;
+  font-size: .85rem;
+  color: var(--text-2);
+}
+
+/* ── gallery grid ── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 840px;
+  margin: 0 auto 36px;
+}
+
+.gallery-figure {
+  margin: 0;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.gallery-figure:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+}
+
+.gallery-img {
+  width: 100%;
+  display: block;
+}
+
+.gallery-cap {
+  padding: 8px 10px;
+  font-size: .82rem;
+  color: var(--text-2);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* ── video figure ── */
+.video-figure {
+  margin: 0;
+  text-align: center;
+}
+
+.video-main {
+  width: 100%;
+  max-width: 768px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+}
+
+/* ── stat-block (inside info-card) ── */
+.stat-block {
+  margin: 12px 0;
+}
+
+/* ── small text spacing utilities ── */
+.mt-6 { margin-top: 6px; }
+.mt-8 { margin-top: 8px; }
 
 .footer {
   padding: 24px 8vw 40px;

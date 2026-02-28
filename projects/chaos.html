@@ -1,15 +1,26 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>混沌加密 SoC · CanShine</title>
     <meta name="description" content="基于三维超混沌系统的实时视频流加密 SoC，全国一等奖项目，ZYNQ 软硬协同流式架构与自同步容错机制。" />
-    <link rel="stylesheet" href="../styles.css?v=20260228-1" />
+    <link rel="stylesheet" href="../styles.css?v=20260228-2" />
     <script src="../gate.js"></script>
   </head>
   <body class="project-page">
     <div class="bg-grid"></div>
+
+    <!-- 快速导航 -->
+    <nav class="quick-nav" aria-label="页内导航">
+      <a href="#context">背景</a>
+      <a href="#architecture">架构</a>
+      <a href="#innovations">技术</a>
+      <a href="#metrics">指标</a>
+      <a href="#verification">验证</a>
+      <a href="#gallery">演示</a>
+    </nav>
+
     <header class="hero">
       <nav class="nav">
         <div class="brand">CanShine</div>
@@ -63,12 +74,12 @@
         <div>
           <h4>竞赛背书</h4>
           <p>全国大学生嵌入式芯片与系统设计竞赛<br />（FPGA 创新设计竞赛）</p>
-          <p style="margin-top:6px"><strong>🏆 全国一等奖</strong></p>
+          <p class="mt-6"><strong>🏆 全国一等奖</strong></p>
         </div>
         <div>
           <h4>担任角色</h4>
           <p><strong>SoC 系统架构师 / 算法硬件化负责人</strong></p>
-          <p style="margin-top:6px">负责 RTL 实现与系统集成，与算法队友协同：队友保证「算法理论上的安全」，我负责「工程上的高效」。</p>
+          <p class="mt-6">负责 RTL 实现与系统集成，与算法队友协同：队友保证「算法理论上的安全」，我负责「工程上的高效」。</p>
         </div>
         <div>
           <h4>研发目标</h4>
@@ -87,13 +98,13 @@
       <p class="section-desc">
         摒弃传统「数据块（Block）」处理思维，确立<strong>「视频即数据流（Video as Stream）」</strong>的核心设计理念。
       </p>
-      <figure style="margin:0 0 24px">
+      <figure class="proj-fig">
         <img
+          class="proj-fig-img"
           src="../assets/projects/chaos/混沌系统架构图.svg"
           alt="混沌加密 SoC 系统架构图"
-          style="width:100%;max-width:960px;display:block;margin:0 auto;border-radius:8px"
         />
-        <figcaption style="text-align:center;margin-top:8px;font-size:0.85rem;color:var(--text-2)">
+        <figcaption class="proj-figcap">
           图 1 &nbsp;·&nbsp; 基于 ZYNQ 的软硬协同流式加密 SoC 系统架构
         </figcaption>
       </figure>
@@ -122,21 +133,21 @@
       <div class="info-grid">
         <div class="info-card">
           <h3>⚙️ 自同步容错机制</h3>
-          <p style="margin-bottom:8px"><span class="chip">Self-Synchronizing</span>&nbsp;<span class="chip">密文反馈</span></p>
+          <p class="ic-chips"><span class="chip">Self-Synchronizing</span>&nbsp;<span class="chip">密文反馈</span></p>
           <p>引入<strong>密文反馈</strong>逻辑，利用混沌方程中<strong>正弦因子</strong>的非线性收敛特性，从根本上解决传统流密码的「雪崩效应」。</p>
-          <p style="margin-top:8px">经仿真验证：误码干扰下 <strong>&lt;10 个像素时钟周期</strong>内自动恢复同步，视觉上仅表现为瞬时噪点，而非画面崩溃。</p>
+          <p class="mt-8">经仿真验证：误码干扰下 <strong>&lt;10 个像素时钟周期</strong>内自动恢复同步，视觉上仅表现为瞬时噪点，而非画面崩溃。</p>
         </div>
         <div class="info-card">
           <h3>🔢 零 DSP 算法映射</h3>
-          <p style="margin-bottom:8px"><span class="chip">Zero DSP</span>&nbsp;<span class="chip">移位加法</span></p>
+          <p class="ic-chips"><span class="chip">Zero DSP</span>&nbsp;<span class="chip">移位加法</span></p>
           <ul>
             <li><strong>移位加法架构</strong>：二进制分解替代浮点矩阵乘法，实现<strong>零 DSP 占用</strong>，为其他信号处理模块释放宝贵资源</li>
-            <li><strong>非线性 LUT 优化</strong>：1KB BRAM (32-bit × 256) 构建正弦查找表，规避高开销 CORDIC，实现<strong>单周期</strong>高吞吐数值查找</li>
+            <li><strong>非线性 LUT 优化</strong>：1KB BRAM (32-bit &times; 256) 构建正弦查找表，规避高开销 CORDIC，实现<strong>单周期</strong>高吞吐数值查找</li>
           </ul>
         </div>
         <div class="info-card">
           <h3>🚀 全链路流水线优化</h3>
-          <p style="margin-bottom:8px"><span class="chip">AXI4-Stream</span>&nbsp;<span class="chip">流控</span></p>
+          <p class="ic-chips"><span class="chip">AXI4-Stream</span>&nbsp;<span class="chip">流控</span></p>
           <p>综合运用 AXI4-Stream 握手流控及无效数据筛除技术，解决长链条视频处理中的空转与拥塞问题，保障全链路线速吞吐能力。</p>
         </div>
       </div>
@@ -149,7 +160,7 @@
       <div class="info-grid">
         <div class="info-card">
           <h3>🔒 安全与鲁棒性</h3>
-          <div class="hero-stats" style="margin:12px 0">
+          <div class="hero-stats stat-block">
             <div class="stat">
               <div class="stat-num">100%</div>
               <div class="stat-label">NIST 通过</div>
@@ -163,7 +174,7 @@
         </div>
         <div class="info-card">
           <h3>⚡ 高速实时性能</h3>
-          <div class="hero-stats" style="margin:12px 0">
+          <div class="hero-stats stat-block">
             <div class="stat">
               <div class="stat-num">60</div>
               <div class="stat-label">FPS @ 480P</div>
@@ -177,7 +188,7 @@
         </div>
         <div class="info-card">
           <h3>💻 系统集成度</h3>
-          <div class="hero-stats" style="margin:12px 0">
+          <div class="hero-stats stat-block">
             <div class="stat">
               <div class="stat-num">0</div>
               <div class="stat-label">DSP 占用</div>
@@ -217,61 +228,37 @@
       <p class="section-desc">仿真导出数据经 MATLAB 重构的加解密图像验证结果，逐比特对比确认硬件逻辑正确性。</p>
 
       <!-- 2×2 验证图网格 -->
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:800px;margin:0 auto 36px">
-        <figure style="margin:0;text-align:center">
-          <img
-            src="../assets/projects/chaos/发送端原始图片.png"
-            alt="发送端原始图片"
-            style="width:100%;border-radius:6px;display:block"
-          />
-          <figcaption style="margin-top:8px;font-size:0.85rem;color:var(--text-2)">
-            ① &nbsp;发送端 &nbsp;·&nbsp; 原始明文图像
-          </figcaption>
+      <div class="gallery-grid">
+        <figure class="gallery-figure">
+          <img class="gallery-img" src="../assets/projects/chaos/发送端原始图片.png" alt="发送端原始图片" />
+          <figcaption class="gallery-cap">① 发送端 &nbsp;·&nbsp; 原始明文图像</figcaption>
         </figure>
-        <figure style="margin:0;text-align:center">
-          <img
-            src="../assets/projects/chaos/发送端加密图片.png"
-            alt="发送端加密图片"
-            style="width:100%;border-radius:6px;display:block"
-          />
-          <figcaption style="margin-top:8px;font-size:0.85rem;color:var(--text-2)">
-            ② &nbsp;发送端 &nbsp;·&nbsp; 加密密文（像素值完全随机化）
-          </figcaption>
+        <figure class="gallery-figure">
+          <img class="gallery-img" src="../assets/projects/chaos/发送端加密图片.png" alt="发送端加密图片" />
+          <figcaption class="gallery-cap">② 发送端 &nbsp;·&nbsp; 加密密文（像素值完全随机化）</figcaption>
         </figure>
-        <figure style="margin:0;text-align:center">
-          <img
-            src="../assets/projects/chaos/接收端加密图片.png"
-            alt="接收端加密图片"
-            style="width:100%;border-radius:6px;display:block"
-          />
-          <figcaption style="margin-top:8px;font-size:0.85rem;color:var(--text-2)">
-            ③ &nbsp;接收端 &nbsp;·&nbsp; 与发送端密文一致
-          </figcaption>
+        <figure class="gallery-figure">
+          <img class="gallery-img" src="../assets/projects/chaos/接收端加密图片.png" alt="接收端加密图片" />
+          <figcaption class="gallery-cap">③ 接收端 &nbsp;·&nbsp; 与发送端密文一致</figcaption>
         </figure>
-        <figure style="margin:0;text-align:center">
-          <img
-            src="../assets/projects/chaos/接收端解密图片.png"
-            alt="接收端解密图片"
-            style="width:100%;border-radius:6px;display:block"
-          />
-          <figcaption style="margin-top:8px;font-size:0.85rem;color:var(--text-2)">
-            ④ &nbsp;接收端 &nbsp;·&nbsp; 解密还原（与原始图像完全一致）
-          </figcaption>
+        <figure class="gallery-figure">
+          <img class="gallery-img" src="../assets/projects/chaos/接收端解密图片.png" alt="接收端解密图片" />
+          <figcaption class="gallery-cap">④ 接收端 &nbsp;·&nbsp; 解密还原（与原始图像完全一致）</figcaption>
         </figure>
       </div>
 
       <!-- 演示视频 -->
-      <figure style="margin:0;text-align:center">
+      <figure class="video-figure">
         <video
+          class="video-main"
           controls
           preload="metadata"
           data-playsinline
-          style="width:100%;max-width:768px;border-radius:8px;display:block;margin:0 auto"
         >
           <source src="../assets/projects/chaos/演示视频.mp4" type="video/mp4" />
           你的浏览器不支持视频播放，可 <a href="../assets/projects/chaos/演示视频.mp4">下载 MP4</a> 查看。
         </video>
-        <figcaption style="margin-top:8px;font-size:0.85rem;color:var(--text-2)">
+        <figcaption class="proj-figcap">
           系统实机演示 &nbsp;·&nbsp; 640×480 实时加解密全链路运行（发送端 → 信道传输 → 接收端还原）
         </figcaption>
       </figure>
@@ -288,23 +275,38 @@
     </section>
 
     <footer class="footer">
-      <div>© CanShine · 混沌加密 SoC</div>
-      <a href="../index.html">返回主页 ↑</a>
+      <div>© CanShine  混沌加密 SoC</div>
+      <a href="../index.html">返回主页 </a>
     </footer>
 
     <script>
       (() => {
+        // iOS playsinline
         const video = document.querySelector("video[data-playsinline]");
-        if (!video) return;
-
-        const isiOS =
-          /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-          (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-
-        if (isiOS) {
-          video.setAttribute("playsinline", "");
-          video.setAttribute("webkit-playsinline", "");
+        if (video) {
+          const isiOS =
+            /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+            (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+          if (isiOS) {
+            video.setAttribute("playsinline", "");
+            video.setAttribute("webkit-playsinline", "");
+          }
         }
+
+        // quick-nav active highlight
+        const sections = document.querySelectorAll("section[id]");
+        const links = document.querySelectorAll(".quick-nav a");
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id));
+              }
+            });
+          },
+          { rootMargin: "-40% 0px -55% 0px" }
+        );
+        sections.forEach((s) => obs.observe(s));
       })();
     </script>
   </body>

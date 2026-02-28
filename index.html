@@ -86,19 +86,19 @@
       <div class="info-grid">
         <div class="info-card">
           <h3>教育背景</h3>
-          <p style="margin-bottom:4px"><strong>硕士在读</strong>&nbsp;·&nbsp;2024 — 2027（预计）</p>
-          <p style="margin-bottom:2px">南京航空航天大学</p>
-          <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:14px">电子信息工程学院 · 电子信息（集成电路设计方向）</p>
-          <p style="margin-bottom:4px"><strong>学士</strong>&nbsp;·&nbsp;2020 — 2024</p>
-          <p style="margin-bottom:2px">广东工业大学</p>
-          <p style="color:var(--text-2);font-size:0.85rem">集成电路设计联合学院 · 电子科学与技术（IC 班）</p>
+          <p class="ic-title"><strong>硕士在读</strong>&nbsp;·&nbsp;2024 — 2027（预计）</p>
+          <p class="ic-org">南京航空航天大学</p>
+          <p class="ic-dept-end">电子信息工程学院 · 电子信息（集成电路设计方向）</p>
+          <p class="ic-title"><strong>学士</strong>&nbsp;·&nbsp;2020 — 2024</p>
+          <p class="ic-org">广东工业大学</p>
+          <p class="ic-dept">集成电路设计联合学院 · 电子科学与技术（IC 班）</p>
         </div>
         <div class="info-card">
           <h3>科研平台</h3>
-          <p style="margin-bottom:6px">南京航空航天大学</p>
-          <p style="margin-bottom:4px"><strong>集成电路与光电融合课题组</strong></p>
-          <p style="color:var(--text-2);font-size:0.85rem;margin-bottom:14px">隶属 · 天元实验室</p>
-          <h3 style="margin-top:4px">研究方向</h3>
+          <p class="ic-org-lg">南京航空航天大学</p>
+          <p class="ic-title"><strong>集成电路与光电融合课题组</strong></p>
+          <p class="ic-dept-end">隶属 · 天元实验室</p>
+          <h3 class="research-title">研究方向</h3>
           <p>数字 IC 前端设计 / FPGA 系统架构<br />AI 推理硬件加速 / 低功耗高能效计算</p>
         </div>
       </div>
@@ -107,21 +107,21 @@
       <div class="info-grid">
         <div class="info-card">
           <h3>🧠 从理论到架构的跨越</h3>
-          <p style="margin-bottom:8px"><span class="chip">SNN 项目</span>&nbsp;<span class="chip">国家重点研发计划</span></p>
+          <p class="ic-chips"><span class="chip">SNN 项目</span>&nbsp;<span class="chip">国家重点研发计划</span></p>
           <p>独立主导 Spiking-ResNet-18 ASIC 前端全流程，从算法拆解到微架构定义，
           提出<strong>空时折叠</strong>与<strong>稀疏感知</strong>微架构创新，
           在严苛面积与功耗约束下完成前端交付。</p>
         </div>
         <div class="info-card">
           <h3>💪 从挫折到重构的坚守</h3>
-          <p style="margin-bottom:8px"><span class="chip">ResNet 项目</span>&nbsp;<span class="chip">国家级专项 6000 万</span></p>
+          <p class="ic-chips"><span class="chip">ResNet 项目</span>&nbsp;<span class="chip">国家级专项 6000 万</span></p>
           <p>在距结项仅 6 个月时接手问题遗留代码，花费 3 个月逐模块分析并完成系统性重构，
           最终在 <strong>&lt;2% DSP 资源占用</strong>的严苛约束下跑通 300 MHz 高频时序，
           在极端条件下独立克服困难并按期交付。</p>
         </div>
         <div class="info-card">
           <h3>🔗 从模块到系统的闭环</h3>
-          <p style="margin-bottom:8px"><span class="chip">FPGA 创新赛</span>&nbsp;<span class="chip">全国一等奖</span></p>
+          <p class="ic-chips"><span class="chip">FPGA 创新赛</span>&nbsp;<span class="chip">全国一等奖</span></p>
           <p>负责混沌算法定点化与硬件映射，与队友协同构建从底层加密核到上层 SoC
           视频流调度的完整系统，实现<strong>软硬件全栈闭环</strong>，获全国一等奖。</p>
         </div>
@@ -142,9 +142,9 @@
             <span class="tag">国家重点研发</span>
           </div>
           <p class="featured-intro">
-            <span style="display:block;color:var(--text-2);font-size:.82rem;margin-bottom:5px">国家重点研发计划 · 前端全流程独立负责人</span>
+            <span class="feat-subtitle">国家重点研发计划 · 前端全流程独立负责人</span>
             空时折叠并行 + 动态稀疏感知架构，从算法拆解到 RTL 前端交付全流程。
-            <span style="display:block;margin-top:8px;font-family:monospace;font-size:.85rem">80 FPS @ 200 MHz &nbsp;·&nbsp; 93.14% CIFAR-10</span>
+            <span class="feat-metrics">80 FPS @ 200 MHz &nbsp;·&nbsp; 93.14% CIFAR-10</span>
           </p>
           <a class="primary small" href="projects/snn.html">查看详情</a>
         </div>
@@ -154,9 +154,9 @@
             <span class="tag">国家级专项</span>
           </div>
           <p class="featured-intro">
-            <span style="display:block;color:var(--text-2);font-size:.82rem;margin-bottom:5px">国家级重点专项 · 接手遗留代码完成系统性重构</span>
+            <span class="feat-subtitle">国家级重点专项 · 接手遗留代码完成系统性重构</span>
             VLIW 指令驱动 + 乒乓缓存协同，&lt;2% DSP 约束下完成 300 MHz 时序收敛。
-            <span style="display:block;margin-top:8px;font-family:monospace;font-size:.85rem">2.89 FPS / 38.4 GOPS @ 300 MHz &nbsp;·&nbsp; 全片扩展 ~1.6 TOPS</span>
+            <span class="feat-metrics">2.89 FPS / 38.4 GOPS @ 300 MHz &nbsp;·&nbsp; 全片扩展 ~1.6 TOPS</span>
           </p>
           <a class="primary small" href="projects/resnet.html">查看详情</a>
         </div>
@@ -166,9 +166,9 @@
             <span class="tag">全国一等奖</span>
           </div>
           <p class="featured-intro">
-            <span style="display:block;color:var(--text-2);font-size:.82rem;margin-bottom:5px">全国大学生嵌入式芯片竞赛全国一等奖 · FPGA 创新设计赛道</span>
+            <span class="feat-subtitle">全国大学生嵌入式芯片竞赛全国一等奖 · FPGA 创新设计赛道</span>
             零 DSP 混沌算子 + 软硬协同 SoC 架构，自同步容错设计实现实时加密传输。
-            <span style="display:block;margin-top:8px;font-family:monospace;font-size:.85rem">&lt;10px 偏差 &nbsp;·&nbsp; 60 FPS @ 148.5 MB/s</span>
+            <span class="feat-metrics">&lt;10px 偏差 &nbsp;·&nbsp; 60 FPS @ 148.5 MB/s</span>
           </p>
           <a class="primary small" href="projects/chaos.html">查看详情</a>
         </div>
@@ -182,9 +182,9 @@
             <span class="tag">数字 IC</span>
           </div>
           <p class="featured-intro">
-            <span style="display:block;color:var(--text-2);font-size:.82rem;margin-bottom:5px">集创赛华东二等奖 · 数字 IC 设计赛道</span>
+            <span class="feat-subtitle">集创赛华东二等奖 · 数字 IC 设计赛道</span>
             TDM-PE 时分复用架构 + Coverage-Driven UVM，以极低面积代价兼容 9 种精度模式。
-            <span style="display:block;margin-top:8px;font-family:monospace;font-size:.85rem">200 MHz / 22.9% LUT &nbsp;·&nbsp; 100% 交叉覆盖率</span>
+            <span class="feat-metrics">200 MHz / 22.9% LUT &nbsp;·&nbsp; 100% 交叉覆盖率</span>
           </p>
           <button class="ghost small" type="button" data-open="proj-tpu">查看详情</button>
         </div>
@@ -194,9 +194,9 @@
             <span class="tag">图像处理</span>
           </div>
           <p class="featured-intro">
-            <span style="display:block;color:var(--text-2);font-size:.82rem;margin-bottom:5px">复微杯全国第三名 · PSoC 平台 DSP/BRAM 双重资源约束</span>
+            <span class="feat-subtitle">复微杯全国第三名 · PSoC 平台 DSP/BRAM 双重资源约束</span>
             AOD-Net-Opt 轻量化 + BRAM 时分复用 + PS-PL 流式架构，保障实时视频流吞吐。
-            <span style="display:block;margin-top:8px;font-family:monospace;font-size:.85rem">0.529 GOPS &nbsp;·&nbsp; BRAM 降低 93.75%</span>
+            <span class="feat-metrics">0.529 GOPS &nbsp;·&nbsp; BRAM 降低 93.75%</span>
           </p>
           <button class="ghost small" type="button" data-open="proj-image">查看详情</button>
         </div>
@@ -206,9 +206,9 @@
             <span class="tag">FPGA</span>
           </div>
           <p class="featured-intro">
-            <span style="display:block;color:var(--text-2);font-size:.82rem;margin-bottom:5px">中国软件杯全国三等奖 · FPGA 算法赛道</span>
+            <span class="feat-subtitle">中国软件杯全国三等奖 · FPGA 算法赛道</span>
             混合 8-Parallel 架构（MDF 前级 + 全并行末 3 级），消除 N &lt; P 死锁，参数化覆盖全规模。
-            <span style="display:block;margin-top:8px;font-family:monospace;font-size:.85rem">6.97× 加速 / 72.5 dB SNR &nbsp;·&nbsp; 8～8192 点</span>
+            <span class="feat-metrics">6.97× 加速 / 72.5 dB SNR &nbsp;·&nbsp; 8～8192 点</span>
           </p>
           <button class="ghost small" type="button" data-open="proj-fft">查看详情</button>
         </div>
@@ -377,7 +377,7 @@
 
         <div class="skill-card">
           <h3>💻 硬件描述语言</h3>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+          <div class="chip-row chip-row--sm">
             <span class="chip">Verilog</span>
             <span class="chip">SystemVerilog</span>
           </div>
@@ -385,7 +385,7 @@
 
         <div class="skill-card">
           <h3>🔧 建模与脚本</h3>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+          <div class="chip-row chip-row--sm">
             <span class="chip">MATLAB</span>
             <span class="chip">Python</span>
             <span class="chip">C</span>
@@ -395,7 +395,7 @@
 
         <div class="skill-card">
           <h3>🔍 验证与方法学</h3>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+          <div class="chip-row chip-row--sm">
             <span class="chip">UVM</span>
             <span class="chip">Coverage-Driven</span>
             <span class="chip">DPI-C</span>
@@ -406,7 +406,7 @@
 
         <div class="skill-card">
           <h3>🖥️ EDA 工具链</h3>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+          <div class="chip-row chip-row--sm">
             <span class="chip">Vivado</span>
             <span class="chip">Questasim</span>
             <span class="chip">VCS</span>
@@ -418,7 +418,7 @@
 
         <div class="skill-card">
           <h3>🔌 接口与平台</h3>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+          <div class="chip-row chip-row--sm">
             <span class="chip">AXI4</span>
             <span class="chip">DDR4</span>
             <span class="chip">UART / SPI / I2C</span>
@@ -482,7 +482,7 @@
 
     <template id="proj-tpu">
       <h3>多精度可重构张量计算单元 (TPU) 设计</h3>
-      <p style="color:var(--text-2);margin-bottom:16px">第九届全国大学生集成电路创新创业大赛 · <strong>华东赛区二等奖</strong></p>
+      <p class="modal-sub">第九届全国大学生集成电路创新创业大赛 · <strong>华东赛区二等奖</strong></p>
 
       <!-- 第一行：核心挑战 + 成果指标 -->
       <div class="detail-grid">
@@ -498,7 +498,7 @@
             <li>XCZU19EG 综合频率 <strong>200 MHz</strong>，LUT <strong>22.9%</strong>，功耗 <strong>6.1 W</strong></li>
             <li>8&times;8 阵列 FPGA 上板验证通过，结果与软件模型完全一致</li>
           </ul>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px;margin-top:10px">
+          <div class="chip-row chip-row--sm chip-row--mt">
             <span class="chip">SystemVerilog</span>
             <span class="chip">UVM</span>
             <span class="chip">DPI-C</span>
@@ -509,20 +509,20 @@
       </div>
 
       <!-- 第二行：两大技术方案卡片 -->
-      <div class="detail-grid" style="margin-top:16px">
-        <div style="background:rgb(var(--primary-rgb)/.05);border:1px solid rgb(var(--primary-rgb)/.15);border-radius:12px;padding:14px">
+      <div class="detail-grid detail-grid--mt">
+        <div class="tech-card--primary">
           <h4 style="margin-top:0">⚙️ TDM-PE 时分复用架构</h4>
-          <p style="margin:0;color:var(--muted);font-size:.9rem">设计基于时分复用的通用计算单元，延迟复用底层乘法器与加法器树资源，以极低面积代价实现全精度集合硬件兼容，支持 INT4&ndash;FP32 共 9 种精度与 m8/m16/m32 三种维度。</p>
+          <p class="card-text">设计基于时分复用的通用计算单元，延迟复用底层乘法器与加法器树资源，以极低面积代价实现全精度集合硬件兼容，支持 INT4&ndash;FP32 共 9 种精度与 m8/m16/m32 三种维度。</p>
         </div>
-        <div style="background:rgb(var(--accent-rgb)/.05);border:1px solid rgb(var(--accent-rgb)/.18);border-radius:12px;padding:14px">
+        <div class="tech-card--accent">
           <h4 style="margin-top:0">🔬 Coverage-Driven UVM 验证</h4>
-          <p style="margin:0;color:var(--muted);font-size:.9rem">UVM Agent / Scoreboard + <strong>DPI-C</strong> 调用 Python 黄金模型在线比对；针对稀疏矩阵、Corner Case 受限随机激励；实现 <strong>9 种精度 &times; 3 种维度 &times; 溢出标志位 100% 交叉覆盖</strong>。</p>
+          <p class="card-text">UVM Agent / Scoreboard + <strong>DPI-C</strong> 调用 Python 黄金模型在线比对；针对稀疏矩阵、Corner Case 受限随机激励；实现 <strong>9 种精度 &times; 3 种维度 &times; 溢出标志位 100% 交叉覆盖</strong>。</p>
         </div>
       </div>
 
       <!-- 第三行：图片（点击可放大） -->
-      <p style="color:var(--muted);font-size:.8rem;margin:16px 0 8px;text-align:right">点击图片可放大查看</p>
-      <div style="display:flex;flex-direction:column;gap:20px">
+      <p class="img-hint">点击图片可放大查看</p>
+      <div class="img-stack">
         <figure style="margin:0">
           <img class="detail-image" src="assets/projects/tpu/UVM环境.svg" alt="UVM 验证环境架构" style="max-width:900px;width:100%" />
           <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:6px">① Coverage-Driven UVM 验证环境架构</figcaption>
@@ -540,7 +540,7 @@
 
     <template id="proj-image">
       <h3>智能图像去雾与动态范围增强引擎</h3>
-      <p style="color:var(--text-2);margin-bottom:16px">2025 年"复微杯"全国大学生电子设计大赛  <strong>赛题全国第三名（优秀奖）</strong></p>
+      <p class="modal-sub">2025 年"复微杯"全国大学生电子设计大赛  <strong>赛题全国第三名（优秀奖）</strong></p>
 
       <!-- 第一行：核心挑战 + 成果指标 -->
       <div class="detail-grid">
@@ -556,7 +556,7 @@
             <li>AOD-Net-Opt 轻量化推理峰值 <strong>0.529 GOPS</strong></li>
             <li>CLAHE + 去雾增强效果显著，满足实时视频流吞吐需求</li>
           </ul>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px;margin-top:10px">
+          <div class="chip-row chip-row--sm chip-row--mt">
             <span class="chip">Verilog</span>
             <span class="chip">PSoC</span>
             <span class="chip">AXI-Stream</span>
@@ -567,40 +567,40 @@
       </div>
 
       <!-- 第二行：两大技术方案卡片 -->
-      <div class="detail-grid" style="margin-top:16px">
-        <div style="background:rgb(var(--primary-rgb)/.05);border:1px solid rgb(var(--primary-rgb)/.15);border-radius:12px;padding:14px">
+      <div class="detail-grid detail-grid--mt">
+        <div class="tech-card--primary">
           <h4 style="margin-top:0">🔧 资源极限压缩</h4>
-          <p style="margin:0;color:var(--muted);font-size:.9rem"><strong>移位替代乘除</strong>：乘除算子全逻辑化，DSP 消耗归零；<strong>BRAM 时分复用</strong>：行缓存滚动复用，64 块压缩至 4 块，降幅 93.75%。</p>
+          <p class="card-text"><strong>移位替代乘除</strong>：乘除算子全逻辑化，DSP 消耗归零；<strong>BRAM 时分复用</strong>：行缓存滚动复用，64 块压缩至 4 块，降幅 93.75%。</p>
         </div>
-        <div style="background:rgb(var(--accent-rgb)/.05);border:1px solid rgb(var(--accent-rgb)/.18);border-radius:12px;padding:14px">
+        <div class="tech-card--accent">
           <h4 style="margin-top:0">🧠 AOD-Net-Opt + PS-PL 流式架构</h4>
-          <p style="margin:0;color:var(--muted);font-size:.9rem">轻量化 AOD-Net 参数量减少 53%，支持 <strong>1&times;1&sim;7&times;7 卷积核可配置</strong>；AXI-Stream 纯流式通路 + AXI-Lite 控制分离，多分辨率自适应低延迟处理。</p>
+          <p class="card-text">轻量化 AOD-Net 参数量减少 53%，支持 <strong>1&times;1&sim;7&times;7 卷积核可配置</strong>；AXI-Stream 纯流式通路 + AXI-Lite 控制分离，多分辨率自适应低延迟处理。</p>
         </div>
       </div>
 
       <!-- 第三行：图片（点击可放大） -->
-      <p style="color:var(--muted);font-size:.8rem;margin:16px 0 8px;text-align:right">点击图片可放大查看</p>
-      <div style="display:flex;flex-direction:column;gap:20px">
+      <p class="img-hint">点击图片可放大查看</p>
+      <div class="img-stack">
         <figure style="margin:0">
           <img class="detail-image" src="assets/projects/image/图像处理架构.svg" alt="图像处理架构" style="max-width:880px;width:100%" />
           <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:6px"> PS-PL 异构流式图像增强引擎总体架构</figcaption>
         </figure>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="img-pair">
           <figure style="margin:0">
             <img class="detail-image" src="assets/projects/image/图片1原图.svg" alt="图片1原图" style="width:100%" />
-            <figcaption style="text-align:center;color:var(--text-2);font-size:.8rem;margin-top:4px"> 原图（有雾）</figcaption>
+            <figcaption style="text-align:center;color:var(--text-2);font-size:.8rem;margin-top:4px"> 原图</figcaption>
           </figure>
           <figure style="margin:0">
             <img class="detail-image" src="assets/projects/image/图片1增强图.svg" alt="图片1增强图" style="width:100%" />
-            <figcaption style="text-align:center;color:var(--text-2);font-size:.8rem;margin-top:4px"> 增强后（去雾）</figcaption>
+            <figcaption style="text-align:center;color:var(--text-2);font-size:.8rem;margin-top:4px"> 增强后</figcaption>
           </figure>
           <figure style="margin:0">
             <img class="detail-image" src="assets/projects/image/图片2原图.svg" alt="图片2原图" style="width:100%" />
-            <figcaption style="text-align:center;color:var(--text-2);font-size:.8rem;margin-top:4px"> 原图（低动态范围）</figcaption>
+            <figcaption style="text-align:center;color:var(--text-2);font-size:.8rem;margin-top:4px"> 原图</figcaption>
           </figure>
           <figure style="margin:0">
             <img class="detail-image" src="assets/projects/image/图片2增强图.svg" alt="图片2增强图" style="width:100%" />
-            <figcaption style="text-align:center;color:var(--text-2);font-size:.8rem;margin-top:4px"> 增强后（CLAHE 动态范围扩展）</figcaption>
+            <figcaption style="text-align:center;color:var(--text-2);font-size:.8rem;margin-top:4px"> 增强后</figcaption>
           </figure>
         </div>
       </div>
@@ -608,7 +608,7 @@
 
     <template id="proj-fft">
       <h3>参数化高性能并行 FFT 硬件 IP 核</h3>
-      <p style="color:var(--text-2);margin-bottom:16px">"中国软件杯"大学生软件设计大赛  <strong>全国三等奖</strong> &nbsp;&nbsp; FPGA 算法赛道 &nbsp;&nbsp; 2023</p>
+      <p class="modal-sub">"中国软件杯"大学生软件设计大赛  <strong>全国三等奖</strong> &nbsp;&nbsp; FPGA 算法赛道 &nbsp;&nbsp; 2023</p>
 
       <!-- 第一行：核心挑战 + 性能指标 -->
       <div class="detail-grid">
@@ -624,7 +624,7 @@
             <li>支持 <strong>8～8192 点</strong>任意 2ⁿ 动态配置，全规模仿真验证通过</li>
             <li>每级 1 bit 截断防溢出，8192 点（13 级）SNR 满足 65 dB 下限</li>
           </ul>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px;margin-top:10px">
+          <div class="chip-row chip-row--sm chip-row--mt">
             <span class="chip">FPGA</span>
             <span class="chip">Verilog</span>
             <span class="chip">DSP 算法</span>
@@ -636,20 +636,20 @@
       </div>
 
       <!-- 第二行：两大技术方案卡片 -->
-      <div class="detail-grid" style="margin-top:16px">
-        <div style="background:rgb(var(--primary-rgb)/.05);border:1px solid rgb(var(--primary-rgb)/.15);border-radius:12px;padding:14px">
+      <div class="detail-grid detail-grid--mt">
+        <div class="tech-card--primary">
           <h4 style="margin-top:0">⚡ MDF 多路并行前级</h4>
-          <p style="margin:0;color:var(--muted);font-size:.9rem">8 路并行流水线结构，吞吐率大幅提升；移位寄存器实现数据对齐，面积代价随并行度<strong>线性</strong>可控，避免全并行结构的指数膨胀。</p>
+          <p class="card-text">8 路并行流水线结构，吞吐率大幅提升；移位寄存器实现数据对齐，面积代价随并行度<strong>线性</strong>可控，避免全并行结构的指数膨胀。</p>
         </div>
-        <div style="background:rgb(var(--accent-rgb)/.05);border:1px solid rgb(var(--accent-rgb)/.18);border-radius:12px;padding:14px">
+        <div class="tech-card--accent">
           <h4 style="margin-top:0">🔚 全并行末 3 级 + 参数化控制</h4>
-          <p style="margin:0;color:var(--muted);font-size:.9rem">8 点全并行蝶形单元一次完成最终 3 级，<strong>彻底消除 N &lt; P 调度死锁</strong>；参数化控制自动生成蝶形级数与旋转因子，覆盖 8～8192 点任意 2ⁿ 规模。</p>
+          <p class="card-text">8 点全并行蝶形单元一次完成最终 3 级，<strong>彻底消除 N &lt; P 调度死锁</strong>；参数化控制自动生成蝶形级数与旋转因子，覆盖 8～8192 点任意 2ⁿ 规模。</p>
         </div>
       </div>
 
       <!-- 第三行：图片（点击可放大） -->
-      <p style="color:var(--muted);font-size:.8rem;margin:16px 0 8px;text-align:right">点击图片可放大查看</p>
-      <div style="display:flex;flex-direction:column;gap:20px">
+      <p class="img-hint">点击图片可放大查看</p>
+      <div class="img-stack">
         <figure style="margin:0">
           <img class="detail-image" src="assets/projects/fft/单路径延迟反馈的蝶形结构.png" alt="单路径延迟反馈的蝶形结构" style="max-width:760px;width:100%" />
           <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:6px"> 单路径延迟反馈（SDF）蝶形基本单元</figcaption>
@@ -666,85 +666,104 @@
     </template>
 
     <!-- L3 综合工程实践与技术库 modal 模板 -->
-    <template id="proj-eth">
+        <template id="proj-eth">
       <h3>UDP 高速互联子系统</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">国家级重点实验室基金项目 · 面向在线训练的硬件加速技术研究</p>
+      <p class="modal-sub">国家级重点实验室基金项目 &middot; 面向在线训练的硬件加速技术研究</p>
+
+      <!-- 行一：核心挑战 + 成果指标 -->
       <div class="detail-grid">
         <div>
           <h4>核心挑战</h4>
           <p>PC 上位机与 FPGA 加速器之间需实现低延迟、大带宽的权重数据导入导出与训练指令传输，传统 CPU 软协议栈延迟高、CPU 占用大，无法满足在线训练的实时性需求。</p>
-          <h4 style="margin-top:12px">关键技术</h4>
-          <ul>
-            <li><strong>纯硬件 UDP/IP 协议栈</strong>：完整实现 UDP/IP 封装与解析，支持 <strong>ARP 自动应答</strong>与 <strong>ICMP Ping</strong>，摒弃 CPU 软协议栈依赖</li>
-            <li><strong>多级缓存流控</strong>：基于多级 FIFO 的数据流控机制，消除突发抖动，实现 <strong>&gt;800 Mbps</strong> 线速稳定传输</li>
-            <li><strong>双向数据通路</strong>：训练指令下发与大规模权重数据导入导出无缝复用同一物理链路</li>
-          </ul>
         </div>
         <div>
-          <h4>技术标签</h4>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+          <h4>成果指标</h4>
+          <ul>
+            <li>传输吞吐 <strong>&gt;800 Mbps</strong>，达到千兆以太网线速</li>
+            <li>ARP/ICMP 全硬件响应，零 CPU 介入</li>
+            <li>完成训练权重实时导入导出，支撑 FPGA 在线训练闭环</li>
+          </ul>
+          <div class="chip-row chip-row--sm chip-row--mt">
             <span class="chip">Verilog</span>
             <span class="chip">UDP/IP</span>
             <span class="chip">RGMII</span>
             <span class="chip">AXI-Stream</span>
             <span class="chip">FIFO</span>
           </div>
-          <h4 style="margin-top:12px">成果指标</h4>
-          <ul>
-            <li>传输吞吐 <strong>&gt;800 Mbps</strong>，达到千兆以太网线速</li>
-            <li>ARP/ICMP 全硬件响应，零 CPU 介入</li>
-            <li>完成训练权重的实时导入导出，支撑 FPGA 在线训练流程闭环</li>
-          </ul>
+        </div>
+      </div>
+
+      <!-- 行二：两大技术方案 -->
+      <div class="detail-grid detail-grid--mt">
+        <div class="tech-card--primary">
+          <h4 style="margin-top:0">&#128295; 纯硬件 UDP/IP 协议栈</h4>
+          <p class="card-text">完整实现 UDP/IP 封装与解析，支持 <strong>ARP 自动应答</strong>与 <strong>ICMP Ping</strong>，彻底摒弃 CPU 软协议栈依赖，消除软件路径延迟与中断开销。</p>
+        </div>
+        <div class="tech-card--accent">
+          <h4 style="margin-top:0">&#9889; 多级缓存流控 + 双向通路</h4>
+          <p class="card-text">基于多级 FIFO 的数据流控机制消除突发抖动，实现线速稳定传输；训练指令下发与大规模权重数据无缝复用同一物理链路。</p>
         </div>
       </div>
     </template>
 
-    <template id="proj-aiot">
+        <template id="proj-aiot">
       <h3>AIoT 智能花盆视觉识别系统</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">广东省大学生电子设计竞赛 · <strong>一等奖（最高奖）</strong>（基于"杰理杯"优胜奖原型迭代重构）</p>
+      <p class="modal-sub">广东省大学生电子设计竞赛 &middot; <strong>一等奖（最高奖）</strong>（基于「杰理杯」优胜奖原型迭代重构）</p>
+
+      <!-- 行一：核心工作 + 项目亮点 -->
       <div class="detail-grid">
         <div>
           <h4>核心工作</h4>
-          <ul>
-            <li><strong>无线图像传输链路</strong>：STM32 主控 + ESP8266 Wi-Fi 模块，基于 <strong>TCP</strong> 协议构建可靠图像上传通道；使用 AT 指令集实现数据分包发送与丢包重传</li>
-            <li><strong>端云协同控制闭环</strong>：图像实时上传至上位机进行 <strong>SqueezeNet</strong> 推理（Plant-Village 数据集），解析识别结果，单片机端执行对应的环境控制策略（浇水/补光等）</li>
-            <li><strong>驱动与外设适配</strong>：负责摄像头采集驱动、LCD 显示输出及传感器读取的底层驱动开发</li>
-          </ul>
+          <p>以 STM32 + ESP8266 构建无线图传链路，摄像头图像实时上传至上位机，调用 <strong>SqueezeNet</strong> 推理识别植物病害状态，将控制指令回发至单片机执行自动浇水、补光等调节策略，实现完整端云协同闭环。</p>
         </div>
         <div>
-          <h4>技术标签</h4>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+          <h4>项目亮点</h4>
+          <ul>
+            <li>省电赛 AI 专题赛道 <strong>一等奖</strong>（最高级别奖项）</li>
+            <li>AI 算力（云端推理）与终端控制逻辑完全解耦，可扩展性强</li>
+            <li>经历两代版本演进（校赛 &rarr; 省赛），从功能验证到工程落地</li>
+          </ul>
+          <div class="chip-row chip-row--sm chip-row--mt">
             <span class="chip">STM32</span>
             <span class="chip">ESP8266</span>
             <span class="chip">TCP/IP</span>
             <span class="chip">SqueezeNet</span>
             <span class="chip">IoT</span>
           </div>
-          <h4 style="margin-top:12px">项目亮点</h4>
-          <ul>
-            <li>AI 算力（云端推理）与终端控制逻辑完全解耦，系统可扩展性强</li>
-            <li>经历两代版本演进（校赛→省赛），从功能验证到工程落地优化</li>
-            <li>省电赛 AI 专题赛道 <strong>一等奖</strong>（最高级别奖项）</li>
-          </ul>
+        </div>
+      </div>
+
+      <!-- 行二：两大技术方案 -->
+      <div class="detail-grid detail-grid--mt">
+        <div class="tech-card--primary">
+          <h4 style="margin-top:0">&#128225; 无线图像传输链路</h4>
+          <p class="card-text">STM32 主控 + ESP8266 Wi-Fi 模块，基于 <strong>TCP</strong> 协议构建可靠图像上传通道；AT 指令集实现数据分包发送与丢包重传，保障图像传输完整性。</p>
+        </div>
+        <div class="tech-card--accent">
+          <h4 style="margin-top:0">&#129504; 端云协同控制闭环</h4>
+          <p class="card-text">图像上传至上位机进行 <strong>SqueezeNet</strong> 推理（Plant-Village 数据集），识别结果反向下发控制策略；单片机执行浇水 / 补光动作，形成完整 AI 控制闭环。</p>
         </div>
       </div>
     </template>
 
-    <template id="proj-t16">
+        <template id="proj-t16">
       <h3>工业级芯片测试与外设驱动平台</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">实验室通用验证平台 · 多协议 IP 库 + Python 自动化测试</p>
+      <p class="modal-sub">实验室通用验证平台 &middot; 多协议 IP 库 + Python 自动化测试</p>
+
+      <!-- 行一：核心工作 + 工程价值 -->
       <div class="detail-grid">
         <div>
           <h4>核心工作</h4>
-          <ul>
-            <li><strong>Python 上位机软件</strong>：开发测试自动化框架，支持 <strong>UART</strong> 与 <strong>以太网 TCP/IP</strong> 两条控制通道，实现测试指令下发与大批量数据导入导出的自动化闭环</li>
-            <li><strong>多协议驱动 IP 库</strong>：设计集成 <strong>SPI / I2C / AXIS / DRP</strong> 的多协议控制器，作为芯片或下游功能模块的标准接口，支持灵活时序配置与协议转换</li>
-            <li><strong>测试数据管道</strong>：构建从激励注入、响应采集到自动回归比对的完整测试链路</li>
-          </ul>
+          <p>面向芯片功能验证需求，构建从激励注入、响应采集到自动回归比对的完整测试链路，并设计集成多协议驱动 IP 库，作为芯片或下游功能模块的标准接口层。</p>
         </div>
         <div>
-          <h4>技术标签</h4>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+          <h4>工程价值</h4>
+          <ul>
+            <li>覆盖 <strong>4 种</strong>片上 / 片外通信协议，形成可复用 IP 库</li>
+            <li>Python 脚本与 FPGA RTL 协同工作，减少人工回归工作量</li>
+            <li>已应用于实验室多款芯片的功能验证与性能测评</li>
+          </ul>
+          <div class="chip-row chip-row--sm chip-row--mt">
             <span class="chip">Python</span>
             <span class="chip">SPI</span>
             <span class="chip">I2C</span>
@@ -752,31 +771,40 @@
             <span class="chip">DRP</span>
             <span class="chip">UART</span>
           </div>
-          <h4 style="margin-top:12px">工程价值</h4>
-          <ul>
-            <li>覆盖 4 种片上/片外通信协议，形成可复用 IP 库</li>
-            <li>Python 自动化测试脚本与 FPGA RTL 协同工作，减少人工回归工作量</li>
-            <li>已应用于实验室多款芯片的功能验证与性能测评</li>
-          </ul>
+        </div>
+      </div>
+
+      <!-- 行二：两大技术方案 -->
+      <div class="detail-grid detail-grid--mt">
+        <div class="tech-card--primary">
+          <h4 style="margin-top:0">&#128013; Python 上位机自动化框架</h4>
+          <p class="card-text">支持 <strong>UART</strong> 与 <strong>以太网 TCP/IP</strong> 双控制通道，实现测试指令下发与批量数据导入导出的自动化闭环；测试脚本可直接驱动 FPGA RTL 完成回归比对。</p>
+        </div>
+        <div class="tech-card--accent">
+          <h4 style="margin-top:0">&#128268; 多协议驱动 IP 库</h4>
+          <p class="card-text">集成 <strong>SPI / I2C / AXIS / DRP</strong> 四种控制器，支持灵活时序配置与协议转换；作为标准接口层降低测试平台集成复杂度，可复用于多款芯片验证场景。</p>
         </div>
       </div>
     </template>
 
-    <template id="proj-car">
+        <template id="proj-car">
       <h3>汽车仪表屏显示容错控制器</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">校企合作商业落地项目 · 车规级可靠性设计</p>
+      <p class="modal-sub">校企合作商业落地项目 &middot; 车规级可靠性设计</p>
+
+      <!-- 行一：核心工作 + 工程亮点 -->
       <div class="detail-grid">
         <div>
           <h4>核心工作</h4>
-          <ul>
-            <li><strong>指令桥接与数据存储</strong>：设计 MCU 到主控的通信桥接逻辑，负责指令转发与图标数据的 <strong>SPI Flash 存储管理</strong>；接收端实现 <strong>CRC 校验机制</strong>，确保车载强电磁干扰环境下数据可靠性</li>
-            <li><strong>Fail-Safe 视频故障切换</strong>：实现视频流监控状态机——正常时持续备份关键帧至 Flash/DDR；监测到视频链路中断时自动切换路径，从备份存储加载图标数据至 OSD 模块</li>
-            <li><strong>关键信息保障</strong>：确保报警图标等行车安全信息在视频主链路故障时依然可见，满足功能安全需求</li>
-          </ul>
+          <p>设计车载显示控制器的 Fail-Safe 容错机制：正常模式持续热备份关键帧至 Flash/DDR；监测到视频链路中断时，自动切换路径从备份存储加载图标数据至 OSD 模块，确保报警图标等行车安全信息始终可见。</p>
         </div>
         <div>
-          <h4>技术标签</h4>
-          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+          <h4>工程亮点</h4>
+          <ul>
+            <li>商业落地项目，满足<strong>车规级</strong>电磁环境可靠性要求</li>
+            <li>Fail-Safe 切换状态机经过完整边界测试，切换延迟可控</li>
+            <li>存储管理模块支持在线更新图标数据，具备量产灵活性</li>
+          </ul>
+          <div class="chip-row chip-row--sm chip-row--mt">
             <span class="chip">Verilog</span>
             <span class="chip">SPI Flash</span>
             <span class="chip">CRC 校验</span>
@@ -784,79 +812,85 @@
             <span class="chip">OSD</span>
             <span class="chip">DDR</span>
           </div>
-          <h4 style="margin-top:12px">工程亮点</h4>
-          <ul>
-            <li>商业落地项目，设计需满足车规级电磁环境可靠性要求</li>
-            <li>Fail-Safe 切换状态机经过完整边界测试，切换延迟可控</li>
-            <li>存储管理模块支持在线更新图标数据，具备量产灵活性</li>
-          </ul>
+        </div>
+      </div>
+
+      <!-- 行二：两大技术方案 -->
+      <div class="detail-grid detail-grid--mt">
+        <div class="tech-card--primary">
+          <h4 style="margin-top:0">&#128737; Fail-Safe 视频故障切换</h4>
+          <p class="card-text">视频流监控状态机持续热备份关键帧至 Flash/DDR；链路中断时自动切换，从备份存储加载 OSD 图标数据，确保行车安全信息在主链路故障时依然可见。</p>
+        </div>
+        <div class="tech-card--accent">
+          <h4 style="margin-top:0">&#128279; 指令桥接 + CRC 可靠传输</h4>
+          <p class="card-text">MCU 到主控通信桥接逻辑负责指令转发与图标数据的 <strong>SPI Flash 存储管理</strong>；接收端 <strong>CRC 校验机制</strong>确保车载强电磁干扰环境下数据完整性。</p>
         </div>
       </div>
     </template>
 
     <template id="award-1">
       <h3>全国大学生嵌入式芯片与系统设计竞赛</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">奖项：<strong>全国一等奖</strong> &nbsp;&nbsp; FPGA 创新设计赛道 &nbsp;&nbsp; 2022</p>
+      <p class="award-meta">奖项：<strong>全国一等奖</strong> &nbsp;&nbsp; FPGA 创新设计赛道 &nbsp;&nbsp; 2022</p>
       <img class="detail-image" src="assets/awards/award-1.jpg" alt="全国一等奖奖状" style="max-width:440px;width:100%;display:block;margin:0 auto;border-radius:10px" />
     </template>
     <template id="award-2">
       <h3>“中国软件杯”大学生软件设计大赛</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">奖项：<strong>全国三等奖</strong> &nbsp;&nbsp; FPGA 算法赛道 &nbsp;&nbsp; 2023</p>
+      <p class="award-meta">奖项：<strong>全国三等奖</strong> &nbsp;&nbsp; FPGA 算法赛道 &nbsp;&nbsp; 2023</p>
       <img class="detail-image" src="assets/awards/award-2.png" alt="全国三等奖奖状" style="max-width:720px;width:100%;display:block;margin:0 auto;border-radius:10px" />
     </template>
         <template id="award-3">
       <h3>"复微杯"全国大学生电子设计大赛</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">奖项：<strong>全国优秀奖（赛题第三名）</strong> &nbsp;&nbsp; 图像处理赛道 &nbsp;&nbsp; 2025</p>
+      <p class="award-meta">奖项：<strong>全国优秀奖（赛题第三名）</strong> &nbsp;&nbsp; 图像处理赛道 &nbsp;&nbsp; 2025</p>
       <img class="detail-image" src="assets/awards/award-3.jpg" alt="复微杯全国优秀奖奖状" style="max-width:720px;width:100%;display:block;margin:0 auto;border-radius:10px" />
     </template>
         <template id="award-4">
       <h3>广东省大学生电子设计竞赛</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">奖项：<strong>一等奖（最高奖）</strong> &nbsp;&nbsp; AI-未来技术专题 &nbsp;&nbsp; 2022</p>
+      <p class="award-meta">奖项：<strong>一等奖（最高奖）</strong> &nbsp;&nbsp; AI-未来技术专题 &nbsp;&nbsp; 2022</p>
       <img class="detail-image" src="assets/awards/award-4.jpg" alt="广东省电设一等奖奖状" style="max-width:720px;width:100%;display:block;margin:0 auto;border-radius:10px" />
     </template>
     <template id="award-5">
       <h3>第九届全国大学生集成电路创新创业大赛</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">奖项：<strong>华东赛区二等奖</strong> &nbsp;&nbsp; 多精度 TPU 设计 &nbsp;&nbsp; 2025</p>
+      <p class="award-meta">奖项：<strong>华东赛区二等奖</strong> &nbsp;&nbsp; 多精度 TPU 设计 &nbsp;&nbsp; 2025</p>
       <img class="detail-image" src="assets/awards/award-5.jpg" alt="赛区二等奖奖状" style="max-width:720px;width:100%;display:block;margin:0 auto;border-radius:10px" />
     </template>
         <template id="award-6">
       <h3>全国大学生嵌入式芯片与系统设计竞赛（应用赛道）</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">奖项：<strong>华南赛区二等奖</strong> &nbsp;&nbsp; 2023</p>
+      <p class="award-meta">奖项：<strong>华南赛区二等奖</strong> &nbsp;&nbsp; 2023</p>
       <img class="detail-image" src="assets/awards/award-6.jpg" alt="嵌入式芯片竞赛华南二等奖奖状" style="max-width:440px;width:100%;display:block;margin:0 auto;border-radius:10px" />
     </template>
         <template id="award-7">
       <h3>第八届全国大学生集成电路创新创业大赛</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">奖项：<strong>华南赛区三等奖</strong> &nbsp;&nbsp; 音频处理系统 &nbsp;&nbsp; 2024</p>
+      <p class="award-meta">奖项：<strong>华南赛区三等奖</strong> &nbsp;&nbsp; 音频处理系统 &nbsp;&nbsp; 2024</p>
       <img class="detail-image" src="assets/awards/award-7.jpg" alt="集创赛华南三等奖奖状" style="max-width:720px;width:100%;display:block;margin:0 auto;border-radius:10px" />
     </template>
         <template id="award-8">
       <h3>第十四届蓝桥杯全国软件和信息技术专业人才大赛</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">奖项：<strong>广东赛区三等奖</strong> &nbsp;&nbsp; EDA 设计与开发赛道 &nbsp;&nbsp; 2023</p>
+      <p class="award-meta">奖项：<strong>广东赛区三等奖</strong> &nbsp;&nbsp; EDA 设计与开发赛道 &nbsp;&nbsp; 2023</p>
       <img class="detail-image" src="assets/awards/award-8.jpg" alt="蓝桥杯EDA广东三等奖奖状" style="max-width:440px;width:100%;display:block;margin:0 auto;border-radius:10px" />
     </template>
     <template id="award-9">
       <h3>全国大学生软件测试大赛（省赛广东赛区）</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">奖项：<strong>省赛优胜奖</strong> &nbsp;&nbsp; 嵌入式测试个人赛 &nbsp;&nbsp; 2022</p>
+      <p class="award-meta">奖项：<strong>省赛优胜奖</strong> &nbsp;&nbsp; 嵌入式测试个人赛 &nbsp;&nbsp; 2022</p>
       <img class="detail-image" src="assets/awards/award-9.jpg" alt="软件测试大赛省赛优胜奖奖状" style="max-width:720px;width:100%;display:block;margin:0 auto;border-radius:10px" />
     </template>
     <template id="award-10">
       <h3>数学挑战赛之数学建模竞赛</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">奖项：<strong>校级二等奖</strong> &nbsp;&nbsp; 数理逻辑与算法建模 &nbsp;&nbsp; 2022</p>
+      <p class="award-meta">奖项：<strong>校级二等奖</strong> &nbsp;&nbsp; 数理逻辑与算法建模 &nbsp;&nbsp; 2022</p>
       <img class="detail-image" src="assets/awards/award-10.jpg" alt="数学建模竞赛二等奖奖状" style="max-width:720px;width:100%;display:block;margin:0 auto;border-radius:10px" />
     </template>
     <template id="award-11">
       <h3>第十五届学生实验技能竞赛「电路设计、焊接与测试」</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">奖项：<strong>校级二等奖</strong> &nbsp;&nbsp; 硬件实操与故障排查 &nbsp;&nbsp; 2022</p>
+      <p class="award-meta">奖项：<strong>校级二等奖</strong> &nbsp;&nbsp; 硬件实操与故障排查 &nbsp;&nbsp; 2022</p>
       <img class="detail-image" src="assets/awards/award-11.jpg" alt="电路焊接竞赛二等奖奖状" style="max-width:720px;width:100%;display:block;margin:0 auto;border-radius:10px" />
     </template>
     <template id="award-12">
       <h3>第十六届学生实验技能竞赛「FPGA 数字电路系统设计」</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">奖项：<strong>校级三等奖（个人满分）</strong> &nbsp;&nbsp; 2023</p>
+      <p class="award-meta">奖项：<strong>校级三等奖（个人满分）</strong> &nbsp;&nbsp; 2023</p>
       <img class="detail-image" src="assets/awards/award-12.jpg" alt="FPGA数字电路设计竞赛三等奖奖状" style="max-width:720px;width:100%;display:block;margin:0 auto;border-radius:10px" />
     </template>
     <template id="award-13">
       <h3>第五届「杰理杯」智能创新设计大赛</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">奖项：<strong>校级优胜奖</strong> &nbsp;&nbsp; AIoT 智能花盆早期原型 &nbsp;&nbsp; 2022</p>
+      <p class="award-meta">奖项：<strong>校级优胜奖</strong> &nbsp;&nbsp; AIoT 智能花盆早期原型 &nbsp;&nbsp; 2022</p>
       <img class="detail-image" src="assets/awards/award-13.jpg" alt="杰理杯优胜奖奖状" style="max-width:720px;width:100%;display:block;margin:0 auto;border-radius:10px" />
     </template>
 
