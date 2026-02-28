@@ -272,50 +272,18 @@
       <div class="featured-grid">
         <div class="featured-card">
           <div class="featured-head">
-            <h3>图像增强</h3>
-            <span class="tag">FPGA</span>
+            <h3>智能图像去雾增强引擎</h3>
+            <span class="tag">图像处理</span>
           </div>
-          <p class="featured-intro">多平台协作的视频流增强与量化处理。</p>
+          <p class="featured-intro">PSoC 平台 DSP/BRAM 双重约束下的实时视频增强，AOD-Net-Opt 0.529 GOPS；复微杯全国第三名。</p>
           <button class="ghost small" type="button" data-open="proj-image">查看详情</button>
         </div>
         <div class="featured-card">
           <div class="featured-head">
-            <h3>CY 光计算</h3>
-            <span class="tag">异构系统</span>
-          </div>
-          <p class="featured-intro">PL/PS DDR 读写与以太网高速数据传输。</p>
-          <button class="ghost small" type="button" data-open="proj-cy">查看详情</button>
-        </div>
-        <div class="featured-card">
-          <div class="featured-head">
-            <h3>以太网传输</h3>
-            <span class="tag">FPGA</span>
-          </div>
-          <p class="featured-intro">高速收发与缓存管理优化。</p>
-          <button class="ghost small" type="button" data-open="proj-eth">查看详情</button>
-        </div>
-        <div class="featured-card">
-          <div class="featured-head">
-            <h3>VGG 训练加速器</h3>
-            <span class="tag">FPGA/AI</span>
-          </div>
-          <p class="featured-intro">PL 仿真 + AXI-LITE 交互。</p>
-          <button class="ghost small" type="button" data-open="proj-vgg">查看详情</button>
-        </div>
-        <div class="featured-card">
-          <div class="featured-head">
-            <h3>T16 ADC 芯片测试</h3>
-            <span class="tag">测试平台</span>
-          </div>
-          <p class="featured-intro">UART/FIFO/SPI/控制模块开发。</p>
-          <button class="ghost small" type="button" data-open="proj-t16">查看详情</button>
-        </div>
-        <div class="featured-card">
-          <div class="featured-head">
-            <h3>TPU 设计</h3>
+            <h3>多精度可重构 TPU 设计</h3>
             <span class="tag">数字 IC</span>
           </div>
-          <p class="featured-intro">张量处理单元架构与接口设计。</p>
+          <p class="featured-intro">TDM-PE + Coverage-Driven UVM，9 种精度 100% 交叉覆盖，200 MHz / 22.9% LUT；集创赛华东二等奖。</p>
           <button class="ghost small" type="button" data-open="proj-tpu">查看详情</button>
         </div>
         <div class="featured-card">
@@ -323,16 +291,8 @@
             <h3>FFT 并行 IP 核</h3>
             <span class="tag">FPGA</span>
           </div>
-          <p class="featured-intro">参数化巷形运算并行架构，支持8、8192 点 FFT，6.97 倍加速 / 72.5 dB SNR。</p>
+          <p class="featured-intro">混合 8-Parallel 架构（MDF 前级 + 全并行末 3 级），参数化 8～8192 点，6.97 倍加速 / 72.5 dB SNR；软件杯全国三等奖。</p>
           <a class="ghost small" href="projects/fft.html">查看详情</a>
-        </div>
-        <div class="featured-card">
-          <div class="featured-head">
-            <h3>车载仪表屏展示容错控制器</h3>
-            <span class="tag">FPGA</span>
-          </div>
-          <p class="featured-intro">CRC 校验 + Fail-Safe 视频切换状态机，Flash/DDR 备份，导明级女全容错设计。</p>
-          <a class="ghost small" href="projects/car.html">查看详情</a>
         </div>
       </div>
     </section>
@@ -491,25 +451,25 @@
       </div>
     </div>
 
-    <div class="debug-badge">版本：2026-02-28 v2.9</div>
+    <div class="debug-badge">版本：2026-02-28 v3.0</div>
 
     <template id="proj-image">
       <h3>智能图像去雾与动态范围增强引擎</h3>
-      <p style="color:var(--text-2);margin-bottom:12px">2025 年“夏微杯”全国大学生电子设计大赛 · <strong>赛题全国第三名（优秀奖）</strong></p>
+      <p style="color:var(--text-2);margin-bottom:12px">2025 年“复微杯”全国大学生电子设计大赛 · <strong>赛题全国第三名（优秀奖）</strong></p>
       <div class="detail-grid">
         <div>
           <h4>核心挑战</h4>
-          <p>在嵌入式 <strong>PSoC （夏微）</strong> 平台上部署去雾网络（AOD-Net）与直方图增强（CLAHE）算法，面临 <strong>DSP 资源匯乏</strong> 与 <strong>BRAM 容量受限</strong> 的双重瓶颈，且需保证视频流实时吐吐。</p>
+          <p>在嵌入式 <strong>PSoC（复旦微）</strong> 平台上部署去雾网络（AOD-Net）与直方图增强（CLAHE）算法，面临 <strong>DSP 资源匮乏</strong> 与 <strong>BRAM 容量受限</strong> 的双重瓶颈，且需保证视频流实时吞吐。</p>
           <h4 style="margin-top:12px">关键技术</h4>
           <ul>
             <li><strong>移位替代乘除</strong>：关键算子 DSP 消耗 <strong>减少 100%</strong>（全逻辑实现）；CNN 阵列单 DSP 双乘法复用，效率提升 33%</li>
             <li><strong>BRAM 时分复用</strong>：64 块 BRAM 压缩至 <strong>4 块</strong>，资源降低 <strong>93.75%</strong></li>
-            <li><strong>AOD-Net-Opt 轻量化加速器</strong>：参数量减少 53%，支持 1&times;1&sim;7&times;7 卷积核可配置，峰値性能 <strong>0.529 GOPS</strong></li>
+            <li><strong>AOD-Net-Opt 轻量化加速器</strong>：参数量减少 53%，支持 1&times;1&sim;7&times;7 卷积核可配置，峰值性能 <strong>0.529 GOPS</strong></li>
             <li><strong>PS-PL 异构流式架构</strong>：AXI-Stream 纯流式数据通路 + AXI-Lite 控制分离，多分辨率自适应低延迟处理</li>
           </ul>
         </div>
         <div>
-          <h4>技术栏</h4>
+          <h4>技术标签</h4>
           <div class="chip-row" style="flex-wrap:wrap;gap:6px">
             <span class="chip">Verilog</span>
             <span class="chip">PSoC</span>
@@ -520,115 +480,36 @@
           <h4 style="margin-top:12px">成果指标</h4>
           <ul>
             <li>BRAM 资源占用降低 <strong>93.75%</strong>，DSP 全逻辑替代</li>
-            <li>头程网络推理 <strong>0.529 GOPS</strong> 峰値性能</li>
-            <li>CLAHE + AOD-Net 去雾增强效果显著，满足实时流需求</li>
+            <li>轻量化网络推理峰值性能 <strong>0.529 GOPS</strong></li>
+            <li>CLAHE + AOD-Net 去雾增强效果显著，满足实时流吞吐需求</li>
           </ul>
         </div>
       </div>
-      <div class="image-row">
-        <img class="detail-image" src="assets/projects/image/图像处理架构.svg" alt="图像处理架构" />
+      <figure style="margin:16px 0">
+        <img class="detail-image" src="assets/projects/image/图像处理架构.svg" alt="图像处理架构" style="max-width:880px;width:100%" />
+        <figcaption style="text-align:center;color:var(--text-2);font-size:.85rem;margin-top:6px">PS-PL 异构流式图像增强引擎总体架构</figcaption>
+      </figure>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px">
+        <figure style="margin:0">
+          <img class="detail-image" src="assets/projects/image/图片1原图.svg" alt="图片1原图" style="width:100%" />
+          <figcaption style="text-align:center;color:var(--text-2);font-size:.8rem;margin-top:4px">① 原图（有雾）</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <img class="detail-image" src="assets/projects/image/图片1增强图.svg" alt="图片1增强图" style="width:100%" />
+          <figcaption style="text-align:center;color:var(--text-2);font-size:.8rem;margin-top:4px">① 增强后（去雾）</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <img class="detail-image" src="assets/projects/image/图片2原图.svg" alt="图片2原图" style="width:100%" />
+          <figcaption style="text-align:center;color:var(--text-2);font-size:.8rem;margin-top:4px">② 原图（低动态范围）</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <img class="detail-image" src="assets/projects/image/图片2增强图.svg" alt="图片2增强图" style="width:100%" />
+          <figcaption style="text-align:center;color:var(--text-2);font-size:.8rem;margin-top:4px">② 增强后（CLAHE 动态范围扩展）</figcaption>
+        </figure>
       </div>
     </template>
 
-    <template id="proj-cy">
-      <h3>CY 光计算</h3>
-      <p>PL/PS DDR 读写与以太网高速数据传输。</p>
-      <div class="detail-grid">
-        <div>
-          <h4>项目介绍</h4>
-          <p>参与异构系统开发与联调，打通 PL/PS 与以太网链路。</p>
-          <h4>原理介绍</h4>
-          <p>基于 AXI 互连与 DDR 带宽调度，实现高吞吐数据交换。</p>
-        </div>
-        <div>
-          <h4>结构要点</h4>
-          <ul>
-            <li>AXI 互连与 DMA 通路</li>
-            <li>DDR 访问与带宽优化</li>
-            <li>以太网协议与缓存调度</li>
-          </ul>
-        </div>
-      </div>
-      <div class="image-row">
-        <img class="detail-image" src="assets/projects/cy/plps.svg" alt="PL/PS 通路示意" />
-        <img class="detail-image" src="assets/projects/cy/eth.svg" alt="以太网链路示意" />
-      </div>
-    </template>
-
-    <template id="proj-eth">
-      <h3>以太网传输</h3>
-      <p>高速收发与缓存管理优化。</p>
-      <div class="detail-grid">
-        <div>
-          <h4>项目介绍</h4>
-          <p>设计并优化以太网通信模块，实现稳定高速数据收发。</p>
-          <h4>原理介绍</h4>
-          <p>围绕 MAC/PHY 接口与 DMA 通路设计，实现吞吐与延迟平衡。</p>
-        </div>
-        <div>
-          <h4>结构要点</h4>
-          <ul>
-            <li>收发通路与缓存策略</li>
-            <li>背压控制与流量调度</li>
-            <li>稳定性测试与故障定位</li>
-          </ul>
-        </div>
-      </div>
-      <div class="image-row">
-        <img class="detail-image" src="assets/projects/eth/macphy.svg" alt="MAC/PHY 接口" />
-        <img class="detail-image" src="assets/projects/eth/buffer.svg" alt="缓存管理示意" />
-      </div>
-    </template>
-
-    <template id="proj-vgg">
-      <h3>VGG 训练加速器</h3>
-      <p>PL 仿真 + AXI-LITE 交互。</p>
-      <div class="detail-grid">
-        <div>
-          <h4>项目介绍</h4>
-          <p>搭建训练加速平台，支持控制通路与算子配置。</p>
-          <h4>原理介绍</h4>
-          <p>通过卷积算子与数据复用策略提升训练阶段吞吐。</p>
-        </div>
-        <div>
-          <h4>结构要点</h4>
-          <ul>
-            <li>AXI-LITE 控制与配置</li>
-            <li>算子调度与带宽优化</li>
-            <li>仿真验证与性能分析</li>
-          </ul>
-        </div>
-      </div>
-      <div class="image-row">
-        <img class="detail-image" src="assets/projects/vgg/ctrl.svg" alt="控制通路" />
-        <img class="detail-image" src="assets/projects/vgg/schedule.svg" alt="算子调度" />
-      </div>
-    </template>
-
-    <template id="proj-t16">
-      <h3>T16 ADC 芯片测试</h3>
-      <p>UART/FIFO/SPI/控制模块开发。</p>
-      <div class="detail-grid">
-        <div>
-          <h4>项目介绍</h4>
-          <p>搭建测试平台并完成核心通信与控制模块开发。</p>
-          <h4>原理介绍</h4>
-          <p>基于串行通信协议与 FIFO 流控构建稳定测试链路。</p>
-        </div>
-        <div>
-          <h4>结构要点</h4>
-          <ul>
-            <li>UART/SPI 通信模块</li>
-            <li>FIFO 流控与数据缓冲</li>
-            <li>测试时序与触发逻辑</li>
-          </ul>
-        </div>
-      </div>
-      <div class="image-row">
-        <img class="detail-image" src="assets/projects/t16/test-flow.svg" alt="测试流程" />
-        <img class="detail-image" src="assets/projects/t16/ctrl-module.svg" alt="控制模块" />
-      </div>
-    </template>
+    <!-- proj-cy / proj-eth / proj-vgg / proj-t16: 已从专项优质项目移除，模板删除 -->
 
     <template id="proj-tpu">
       <h3>多精度可重构张量计算单元 (TPU) 设计</h3>
