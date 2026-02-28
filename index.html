@@ -231,7 +231,7 @@
         <div class="hint">重点项目优先展示，其他项目以卡片形式补充</div>
       </div>
 
-      <div class="subsection-title">重点项目</div>
+      <div class="subsection-title">核心代表作展示</div>
       <div class="featured-grid">
         <div class="featured-card">
           <div class="featured-head">
@@ -268,7 +268,7 @@
         </div>
       </div>
 
-      <div class="subsection-title">其他项目</div>
+      <div class="subsection-title">专项优质项目</div>
       <div class="featured-grid">
         <div class="featured-card">
           <div class="featured-head">
@@ -491,30 +491,42 @@
       </div>
     </div>
 
-    <div class="debug-badge">版本：2026-02-28 v2.6</div>
+    <div class="debug-badge">版本：2026-02-28 v2.9</div>
 
     <template id="proj-image">
-      <h3>图像增强</h3>
-      <p>多平台协作的视频流增强与量化处理。</p>
+      <h3>智能图像去雾与动态范围增强引擎</h3>
+      <p style="color:var(--text-2);margin-bottom:12px">2025 年“夏微杯”全国大学生电子设计大赛 · <strong>赛题全国第三名（优秀奖）</strong></p>
       <div class="detail-grid">
         <div>
-          <h4>项目介绍</h4>
-          <p>构建图像增强流水线，提升低照度与对比度场景的可视质量。</p>
-          <h4>原理介绍</h4>
-          <p>基于滤波、直方图均衡与锐化策略，对视频流进行逐帧增强。</p>
+          <h4>核心挑战</h4>
+          <p>在嵌入式 <strong>PSoC （夏微）</strong> 平台上部署去雾网络（AOD-Net）与直方图增强（CLAHE）算法，面临 <strong>DSP 资源匯乏</strong> 与 <strong>BRAM 容量受限</strong> 的双重瓶颈，且需保证视频流实时吐吐。</p>
+          <h4 style="margin-top:12px">关键技术</h4>
+          <ul>
+            <li><strong>移位替代乘除</strong>：关键算子 DSP 消耗 <strong>减少 100%</strong>（全逻辑实现）；CNN 阵列单 DSP 双乘法复用，效率提升 33%</li>
+            <li><strong>BRAM 时分复用</strong>：64 块 BRAM 压缩至 <strong>4 块</strong>，资源降低 <strong>93.75%</strong></li>
+            <li><strong>AOD-Net-Opt 轻量化加速器</strong>：参数量减少 53%，支持 1&times;1&sim;7&times;7 卷积核可配置，峰値性能 <strong>0.529 GOPS</strong></li>
+            <li><strong>PS-PL 异构流式架构</strong>：AXI-Stream 纯流式数据通路 + AXI-Lite 控制分离，多分辨率自适应低延迟处理</li>
+          </ul>
         </div>
         <div>
-          <h4>结构要点</h4>
+          <h4>技术栏</h4>
+          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+            <span class="chip">Verilog</span>
+            <span class="chip">PSoC</span>
+            <span class="chip">AXI-Stream</span>
+            <span class="chip">CNN 加速器</span>
+            <span class="chip">ISP</span>
+          </div>
+          <h4 style="margin-top:12px">成果指标</h4>
           <ul>
-            <li>视频流缓存与流水线调度</li>
-            <li>定点化与量化策略</li>
-            <li>多平台协同处理</li>
+            <li>BRAM 资源占用降低 <strong>93.75%</strong>，DSP 全逻辑替代</li>
+            <li>头程网络推理 <strong>0.529 GOPS</strong> 峰値性能</li>
+            <li>CLAHE + AOD-Net 去雾增强效果显著，满足实时流需求</li>
           </ul>
         </div>
       </div>
       <div class="image-row">
-        <img class="detail-image" src="assets/projects/image/flow.svg" alt="图像增强处理流程" />
-        <img class="detail-image" src="assets/projects/image/result.svg" alt="图像增强效果对比" />
+        <img class="detail-image" src="assets/projects/image/图像处理架构.svg" alt="图像处理架构" />
       </div>
     </template>
 
@@ -619,27 +631,36 @@
     </template>
 
     <template id="proj-tpu">
-      <h3>TPU 设计</h3>
-      <p>张量处理单元架构与接口设计。</p>
+      <h3>多精度可重构张量计算单元 (TPU) 设计</h3>
+      <p style="color:var(--text-2);margin-bottom:12px">第九届全国大学生集成电路创新创业大赛 · <strong>华东赛区二等奖</strong></p>
       <div class="detail-grid">
         <div>
-          <h4>项目介绍</h4>
-          <p>参与张量处理单元架构设计与模块化实现。</p>
-          <h4>原理介绍</h4>
-          <p>围绕矩阵乘阵列与片上存储层级设计优化数据流。</p>
+          <h4>核心挑战</h4>
+          <p>如何在单一计算阵列中兼容 <strong>m16/m32/m8</strong> 等多种维度及 <strong>INT4&ndash;FP32</strong> 共 9 种精度模式，同时避免硬件资源呼线性膨胀。最大难点在于 <strong>验证空间爆炸</strong>，传统定向测试无法覆盖所有精度与维度组合及边界溢出情况。</p>
+          <h4 style="margin-top:12px">关键技术</h4>
+          <p><strong>TDM-PE 时分复用架构</strong>：设计基于时分复用的通用计算单元，延迟复用底层乘法器与加法器树资源，以极低面积代价实现全精度集合硬件兼容。</p>
+          <p style="margin-top:8px"><strong>Coverage-Driven UVM 验证</strong>：UVM Agent / Scoreboard + <strong>DPI-C</strong> 调用 Python 黄金模型在线比对；针对稀疏矩阵、Corner Case 受限随机激励；实现 <strong>9 种精度 &times; 3 种维度 &times; 溢出标志位 100% 交叉覆盖</strong>。</p>
         </div>
         <div>
-          <h4>结构要点</h4>
+          <h4>成果指标</h4>
           <ul>
-            <li>矩阵乘阵列与数据流</li>
-            <li>片上存储层级</li>
-            <li>控制调度与带宽管理</li>
+            <li>功能覆盖率 <strong>100%</strong>，代码覆盖率（行/分支/翻转）<strong>95%+</strong></li>
+            <li>FPGA 上板前拦截 <strong>20+ 个深层逗辑 Bug</strong>（如溢出截断错误）</li>
+            <li>XCZU19EG 综合频率 <strong>200 MHz</strong>，LUT <strong>22.9%</strong>，功耗 <strong>6.1 W</strong></li>
+            <li>标准 8&times;8 阵列 FPGA 上板验证通过，计算结果与软件模型完全一致</li>
           </ul>
+          <h4 style="margin-top:12px">技术栏</h4>
+          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+            <span class="chip">SystemVerilog</span>
+            <span class="chip">UVM</span>
+            <span class="chip">DPI-C</span>
+            <span class="chip">AXI 总线</span>
+            <span class="chip">FPGA</span>
+          </div>
         </div>
       </div>
       <div class="image-row">
-        <img class="detail-image" src="assets/projects/tpu/mma.svg" alt="矩阵乘阵列" />
-        <img class="detail-image" src="assets/projects/tpu/dataflow.svg" alt="数据流架构" />
+        <img class="detail-image" src="assets/projects/tpu/误差分析.svg" alt="误差分析图" />
       </div>
     </template>
 
