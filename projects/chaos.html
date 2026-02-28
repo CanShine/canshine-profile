@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>混沌加密系统 · 项目详情</title>
-    <link rel="stylesheet" href="../styles.css?v=20260201-3" />
+    <title>混沌加密 SoC · CanShine</title>
+    <meta name="description" content="基于三维超混沌系统的实时视频流加密 SoC，全国一等奖项目，ZYNQ 软硬协同流式架构与自同步容错机制。" />
+    <link rel="stylesheet" href="../styles.css?v=20260228-1" />
     <script src="../gate.js"></script>
   </head>
   <body class="project-page">
     <div class="bg-grid"></div>
     <header class="hero">
       <nav class="nav">
-        <div class="brand">[姓名占位]</div>
+        <div class="brand">CanShine</div>
         <div class="nav-links">
           <a href="../index.html#projects">返回项目</a>
           <a href="../index.html#awards">奖项</a>
@@ -22,84 +23,221 @@
 
       <div class="hero-content">
         <div class="hero-left">
-          <p class="badge">重点项目</p>
-          <h1>混沌加密系统</h1>
-          <p class="subtitle">面向视频流场景，构建可实时运行的混沌序列加密通路，并完成 FPGA 硬件加速。</p>
+          <p class="badge">全国一等奖 · FPGA 创新设计竞赛</p>
+          <h1>基于三维超混沌系统的实时视频流加密 SoC</h1>
+          <p class="subtitle">
+            基于 ZYNQ 的单芯片流式架构与自同步容错机制设计<br />
+            SoC 系统架构师 / 算法硬件化负责人
+          </p>
           <div class="hero-actions">
-            <a class="primary" href="#detail">查看详情</a>
-            <a class="ghost" href="#gallery">查看图片/视频</a>
+            <a class="primary" href="#innovations">核心技术</a>
+            <a class="ghost" href="#metrics">性能指标</a>
           </div>
         </div>
         <div class="hero-right">
           <div class="glass-card">
-            <div class="card-title">项目要点</div>
+            <div class="card-title">项目亮点</div>
             <ul class="list">
-              <li>混沌序列生成与密钥管理</li>
-              <li>视频流分块/加密/重组通路</li>
-              <li>缓存与流水线调度</li>
+              <li>单芯片 ZYNQ 全集成，替代 CPU + FPGA 双芯片方案</li>
+              <li>零 DSP 混沌加密算子，移位加法 + LUT 映射</li>
+              <li>自同步容错，&lt;10 像素周期内自动恢复同步</li>
+              <li>60 FPS 实时加密，148.5 MB/s 流式吞吐</li>
             </ul>
-            <div class="card-title">关键词</div>
+            <div class="card-title">技术栈</div>
             <div class="chip-row">
-              <span class="chip">FPGA</span>
-              <span class="chip">视频流</span>
-              <span class="chip">安全性</span>
+              <span class="chip">Verilog</span>
+              <span class="chip">ZYNQ SoC</span>
+              <span class="chip">AXI4-Stream</span>
+              <span class="chip">MATLAB</span>
+              <span class="chip">TCP/IP</span>
             </div>
           </div>
         </div>
       </div>
     </header>
 
-    <section class="section" id="detail">
-      <h2>项目介绍</h2>
+    <!-- 项目背景 -->
+    <section class="section" id="context">
+      <h2>项目背景</h2>
       <p class="section-desc">
-        基于混沌系统的初值敏感性与伪随机特性，构建实时视频流加密模块，实现低延迟处理与高吞吐输出。
+        针对视频保密通信中<strong>实时性差、抗干扰能力弱、系统集成度低</strong>的三大痛点，
+        设计一款单芯片全集成硬件加密系统。利用 ZYNQ 软硬协同架构，在 FPGA 端实现高速低时延长链条流水线，
+        在 ARM 端实现网络传输，解决传统「FPGA 协处理器」方案的功耗与体积瓶颈。
       </p>
       <div class="detail-grid">
         <div>
-          <h4>原理介绍</h4>
-          <p>通过混沌序列驱动像素级扰动与重构流程，保证加密强度与系统实时性。</p>
+          <h4>竞赛背书</h4>
+          <p>全国大学生嵌入式芯片与系统设计竞赛<br />（FPGA 创新设计竞赛）</p>
+          <p style="margin-top:6px"><strong>🏆 全国一等奖</strong></p>
         </div>
         <div>
-          <h4>结构要点</h4>
-          <ul>
-            <li>密钥管理与序列生成</li>
-            <li>加密/解密数据通路</li>
-            <li>缓存与流水线策略</li>
-          </ul>
+          <h4>担任角色</h4>
+          <p><strong>SoC 系统架构师 / 算法硬件化负责人</strong></p>
+          <p style="margin-top:6px">负责 RTL 实现与系统集成，与算法队友协同：队友保证「算法理论上的安全」，我负责「工程上的高效」。</p>
         </div>
         <div>
-          <h4>效果/指标</h4>
+          <h4>研发目标</h4>
           <ul>
-            <li>实时处理与吞吐优化</li>
-            <li>资源利用与时序收敛</li>
-            <li>安全性与稳定性验证</li>
+            <li>单芯片取代 CPU + FPGA 双芯片方案</li>
+            <li>构建从采集到显示的超长流水线</li>
+            <li>解决传统流密码「雪崩效应」的脆弱性</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="section" id="gallery">
-      <h2>结构图 / 效果图 / 演示视频</h2>
+    <!-- 架构方案 -->
+    <section class="section" id="architecture">
+      <h2>架构方案：软硬协同流式体系</h2>
+      <p class="section-desc">
+        摒弃传统「数据块（Block）」处理思维，确立<strong>「视频即数据流（Video as Stream）」</strong>的核心设计理念。
+      </p>
       <div class="image-row">
-        <img class="detail-image" src="../assets/projects/chaos/arch.svg" alt="混沌加密系统架构图（占位）" />
-        <img
-          class="detail-image"
-          src="../assets/projects/chaos/result.svg"
-          alt="混沌加密系统效果图（占位）"
-        />
-        <img class="detail-image" src="../assets/projects/chaos/flow.svg" alt="混沌加密系统流程图（占位）" />
+        <img class="detail-image" src="../assets/projects/chaos/混沌系统架构图.svg" alt="混沌加密 SoC 系统架构图" />
+      </div>
+      <div class="detail-grid">
+        <div>
+          <h4>PL 端（FPGA 加速层）</h4>
+          <p>集成视频采集、色彩空间转换、<strong>混沌加密/解密 IP</strong>、VDMA 控制及 HDMI 显示逻辑，承担所有高带宽计算任务。</p>
+        </div>
+        <div>
+          <h4>PS 端（ARM 控制层）</h4>
+          <p>运行轻量级软件栈实现 TCP/IP 协议及系统状态机，负责视频流以太网封包、帧序号管理与可靠传输。</p>
+        </div>
+        <div>
+          <h4>高速流式数据通路</h4>
+          <ul>
+            <li>模块间全面采用 <strong>AXI4-Stream</strong> 握手协议 + FIFO 缓冲消除气泡</li>
+            <li>VDMA 多级缓冲 + 防读写冲突内存共享，确保跨时钟域零撕裂传输</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        <video class="detail-image" controls preload="metadata" data-playsinline>
-          <source src="../assets/projects/chaos/demo.mp4" type="video/mp4" />
-          你的浏览器不支持视频播放。你也可以
-          <a href="../assets/projects/chaos/demo.mp4">下载 MP4</a>
-          查看。
+    <!-- 关键技术 -->
+    <section class="section" id="innovations">
+      <h2>架构创新与关键技术</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>⚙️ 自同步容错机制</h3>
+          <p style="margin-bottom:8px"><span class="chip">Self-Synchronizing</span>&nbsp;<span class="chip">密文反馈</span></p>
+          <p>引入<strong>密文反馈</strong>逻辑，利用混沌方程中<strong>正弦因子</strong>的非线性收敛特性，从根本上解决传统流密码的「雪崩效应」。</p>
+          <p style="margin-top:8px">经仿真验证：误码干扰下 <strong>&lt;10 个像素时钟周期</strong>内自动恢复同步，视觉上仅表现为瞬时噪点，而非画面崩溃。</p>
+        </div>
+        <div class="info-card">
+          <h3>🔢 零 DSP 算法映射</h3>
+          <p style="margin-bottom:8px"><span class="chip">Zero DSP</span>&nbsp;<span class="chip">移位加法</span></p>
+          <ul>
+            <li><strong>移位加法架构</strong>：二进制分解替代浮点矩阵乘法，实现<strong>零 DSP 占用</strong>，为其他信号处理模块释放宝贵资源</li>
+            <li><strong>非线性 LUT 优化</strong>：1KB BRAM (32-bit × 256) 构建正弦查找表，规避高开销 CORDIC，实现<strong>单周期</strong>高吞吐数值查找</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3>🚀 全链路流水线优化</h3>
+          <p style="margin-bottom:8px"><span class="chip">AXI4-Stream</span>&nbsp;<span class="chip">流控</span></p>
+          <p>综合运用 AXI4-Stream 握手流控及无效数据筛除技术，解决长链条视频处理中的空转与拥塞问题，保障全链路线速吞吐能力。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 性能指标 -->
+    <section class="section" id="metrics">
+      <h2>实测性能与指标</h2>
+      <p class="section-desc">以下指标基于 Xilinx ZYNQ-7000 平台实测结果。</p>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>🔒 安全与鲁棒性</h3>
+          <div class="hero-stats" style="margin:12px 0">
+            <div class="stat">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">NIST 通过</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">&lt;10px</div>
+              <div class="stat-label">自同步恢复</div>
+            </div>
+          </div>
+          <p>15 项随机性测试全部通过，信道恶劣条件下通信不中断。</p>
+        </div>
+        <div class="info-card">
+          <h3>⚡ 高速实时性能</h3>
+          <div class="hero-stats" style="margin:12px 0">
+            <div class="stat">
+              <div class="stat-num">60</div>
+              <div class="stat-label">FPS @ 480P</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">148.5</div>
+              <div class="stat-label">MB/s 吞吐</div>
+            </div>
+          </div>
+          <p>148.5 MHz 系统时钟，480P 采集流实时拼接至 1080P 显示域，多窗口对比展示零延迟。</p>
+        </div>
+        <div class="info-card">
+          <h3>💻 系统集成度</h3>
+          <div class="hero-stats" style="margin:12px 0">
+            <div class="stat">
+              <div class="stat-num">0</div>
+              <div class="stat-label">DSP 占用</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">1</div>
+              <div class="stat-label">芯片集成</div>
+            </div>
+          </div>
+          <p>取代传统 CPU + FPGA 双芯片方案，显著降低功耗、成本与体积。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 验证流程 -->
+    <section class="section" id="verification">
+      <h2>系统闭环与验证</h2>
+      <div class="detail-grid">
+        <div>
+          <h4>软硬协同验证（MATLAB-RTL Co-Simulation）</h4>
+          <p>MATLAB 作黄金模型生成视频流激励与预期密文，RTL 仿真平台输出实际波形，通过脚本进行<strong>逐比特比对（Bit-exact Matching）</strong>，验证硬件定点化与算法浮点模型的高度一致性。</p>
+        </div>
+        <div>
+          <h4>加密效果验证</h4>
+          <p>密文图像呈均匀雪花噪点分布，直方图显示像素值完全随机化，证明算法的<strong>高掩蔽性</strong>。</p>
+        </div>
+        <div>
+          <h4>解密效果验证</h4>
+          <p>解密后重构图像清晰无损，与原始输入完全一致，验证了硬件解密逻辑的<strong>完全可逆性</strong>。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 效果演示 -->
+    <section class="section" id="gallery">
+      <h2>效果演示</h2>
+      <div class="image-row">
+        <img class="detail-image" src="../assets/projects/chaos/发送端原始图片.png" alt="发送端原始图片" />
+        <img class="detail-image" src="../assets/projects/chaos/发送端加密图片.png" alt="发送端加密图片（像素值完全随机化）" />
+        <img class="detail-image" src="../assets/projects/chaos/接收端加密图片.png" alt="接收端加密图片（含信道干扰）" />
+        <img class="detail-image" src="../assets/projects/chaos/接收端解密图片.png" alt="接收端解密图片（自同步恢复后）" />
+      </div>
+      <div class="image-row">
+        <video class="detail-image" controls preload="metadata" style="width:100%;max-width:768px" data-playsinline>
+          <source src="../assets/projects/chaos/演示视频.mp4" type="video/mp4" />
+          你的浏览器不支持视频播放，可 <a href="../assets/projects/chaos/演示视频.mp4">下载 MP4</a> 查看。
         </video>
       </div>
     </section>
 
+    <!-- 技术探讨 -->
+    <section class="section" id="discussion">
+      <h2>技术探讨</h2>
+      <p class="section-desc">
+        本页面展示了从算法理论到 SoC 系统的全栈实现。关于「如何在流水线中嵌入自同步反馈逻辑」、
+        「ZYNQ 平台下 VDMA 的高带宽防冲突配置」以及「基于 DDR 地址映射的视频拼接技巧」等深度细节，
+        欢迎在专业交流中展开进一步探讨。
+      </p>
+    </section>
+
     <footer class="footer">
-      <div>© [姓名占位] · 项目详情</div>
+      <div>© CanShine · 混沌加密 SoC</div>
       <a href="../index.html">返回主页 ↑</a>
     </footer>
 
