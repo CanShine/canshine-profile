@@ -530,7 +530,9 @@ h1 {
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
-  min-width: 220px;
+  /* 横版：4:3 → 图片宽 ≈ 240px + padding */
+  width: 264px;
+  flex-shrink: 0;
 }
 
 .award-tile:hover {
@@ -539,21 +541,18 @@ h1 {
 }
 
 .award-image {
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 180px;        /* 所有证书统一高度 */
   object-fit: contain;
   border-radius: 12px;
   border: 1px solid rgba(15, 23, 42, 0.08);
   background: rgba(255, 255, 255, 0.6);
 }
 
-/* 竖版证书：aspect-ratio 3/4，缩窄宽度保持整洁 */
+/* 竖版证书：3:4 → 图片宽 ≈ 135px + padding，高不变 */
 .award-tile--portrait {
-  min-width: 150px;
-  max-width: 175px;
-}
-.award-tile--portrait .award-image {
-  aspect-ratio: 3 / 4;
+  width: 160px;
 }
 
 .award-title {
