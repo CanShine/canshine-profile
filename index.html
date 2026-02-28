@@ -292,7 +292,7 @@
             <span class="tag">FPGA</span>
           </div>
           <p class="featured-intro">混合 8-Parallel 架构（MDF 前级 + 全并行末 3 级），参数化 8～8192 点，6.97 倍加速 / 72.5 dB SNR；软件杯全国三等奖。</p>
-          <a class="ghost small" href="projects/fft.html">查看详情</a>
+          <button class="ghost small" type="button" data-open="proj-fft">查看详情</button>
         </div>
       </div>
 
@@ -789,6 +789,55 @@
     <!-- proj-snn: 已迁移至独立页面 projects/snn.html -->
 
     <!-- proj-resnet: 已迁移至独立页面 projects/resnet.html -->
+
+    <template id="proj-fft">
+      <h3>参数化高性能并行 FFT 硬件 IP 核</h3>
+      <p style="color:var(--text-2);margin-bottom:12px">"中国软件杯"大学生软件设计大赛 · <strong>全国三等奖</strong> &nbsp;&nbsp; FPGA 算法赛道 &nbsp;&nbsp; 2023</p>
+      <div class="detail-grid">
+        <div>
+          <h4>核心挑战</h4>
+          <p><strong>单路径延迟反馈（SDF）</strong>资源省但吞吐受限；<strong>全并行结构</strong>速度快但面积随点数指数膨胀。传统 <strong>MDF</strong> 多路并行方案在运算到达 <strong>N &lt; 并行度 P</strong> 末级时产生结构性死锁，难以在 8～8192 点全范围兼顾性能与资源。</p>
+          <h4 style="margin-top:12px">混合 8-Parallel 架构</h4>
+          <ul>
+            <li><strong>MDF 前级</strong>：8 路并行流水，吞吐率大幅提升；移位寄存器实现数据对齐，面积线性可控</li>
+            <li><strong>全并行末 3 级</strong>：8 点全并行蝶形单元一次完成最终 3 级计算，彻底消除 N &lt; P 调度死锁</li>
+            <li><strong>参数化自适应控制</strong>：输入点数 N，自动生成蝶形级数、旋转因子序列与延迟链配置，支持 8～8192 点任意 2ⁿ</li>
+          </ul>
+        </div>
+        <div>
+          <h4>性能指标</h4>
+          <ul>
+            <li>实测加速比 <strong>6.97×</strong>（vs 官方 1024 点串行 SDF 基线，理论极限 8×）</li>
+            <li>信噪比 <strong>72.5 dB</strong>，定点量化精度稳健</li>
+            <li>支持 <strong>8～8192 点</strong>任意 2ⁿ 动态配置，全规模仿真验证通过</li>
+            <li>每级 1 bit 截断防溢出，8192 点（13 级）SNR 满足 65 dB 下限</li>
+          </ul>
+          <h4 style="margin-top:12px">技术标签</h4>
+          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+            <span class="chip">FPGA</span>
+            <span class="chip">Verilog</span>
+            <span class="chip">DSP 算法</span>
+            <span class="chip">流水线设计</span>
+            <span class="chip">参数化模块</span>
+            <span class="chip">AXI-Stream</span>
+          </div>
+        </div>
+      </div>
+      <div class="image-row" style="flex-direction:column;gap:16px;align-items:center">
+        <figure style="margin:0;width:100%">
+          <img class="detail-image" src="assets/projects/fft/单路径延迟反馈的蝶形结构.png" alt="单路径延迟反馈的蝶形结构" style="max-width:760px;width:100%" />
+          <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:4px">① 单路径延迟反馈（SDF）蝶形基本单元</figcaption>
+        </figure>
+        <figure style="margin:0;width:100%">
+          <img class="detail-image" src="assets/projects/fft/8并行度单路径延迟反馈结构.png" alt="8并行度单路径延迟反馈结构" style="max-width:900px;width:100%" />
+          <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:4px">② 8 并行度 MDF 前级结构</figcaption>
+        </figure>
+        <figure style="margin:0;width:100%">
+          <img class="detail-image" src="assets/projects/fft/FFT整体设计.png" alt="FFT整体设计" style="max-width:900px;width:100%" />
+          <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:4px">③ 混合 8-Parallel 架构整体设计（MDF 前级 + 全并行末 3 级）</figcaption>
+        </figure>
+      </div>
+    </template>
 
     <template id="award-1">
       <h3>全国大学生嵌入式芯片与系统设计竞赛</h3>
