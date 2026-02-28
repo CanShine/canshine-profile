@@ -385,11 +385,18 @@ h1 {
 
 /* ── info-card inner layout helpers ── */
 .ic-title  { margin-bottom: 4px; }
-.ic-org    { margin-bottom: 2px; }
+.ic-org    { margin-bottom: 2px; display: flex; align-items: center; gap: 6px; }
 .ic-org-lg { margin-bottom: 6px; }
 .ic-dept   { color: var(--text-2); font-size: .85rem; }
 .ic-dept-end { color: var(--text-2); font-size: .85rem; margin-bottom: 14px; }
 .ic-chips  { margin-bottom: 8px; }
+
+.school-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 
 .article-card {
   text-decoration: none;
