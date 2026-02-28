@@ -132,12 +132,19 @@ body.modal-open {
 }
 
 .nav-cta {
-  border: 1px solid rgba(11, 19, 36, 0.18);
-  background: transparent;
-  color: var(--text);
+  border: 1px solid rgb(var(--accent-rgb) / 0.3);
+  background: rgb(var(--accent-rgb) / 0.06);
+  color: var(--accent);
   padding: 8px 14px;
   border-radius: 999px;
   cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: rgb(var(--accent-rgb) / 0.12);
+  border-color: rgb(var(--accent-rgb) / 0.45);
 }
 
 .hero-content {
@@ -149,12 +156,13 @@ body.modal-open {
 
 .badge {
   display: inline-block;
-  background: rgb(var(--primary-rgb) / 0.12);
-  border: 1px solid rgb(var(--primary-rgb) / 0.3);
+  background: rgb(var(--accent-rgb) / 0.1);
+  border: 1px solid rgb(var(--accent-rgb) / 0.25);
   padding: 6px 12px;
   border-radius: 999px;
   color: var(--accent);
   font-size: 12px;
+  font-weight: 600;
 }
 
 h1 {
@@ -176,14 +184,20 @@ h1 {
 }
 
 .primary {
-  background: linear-gradient(120deg, var(--primary), var(--accent));
+  background: var(--accent);
   border: none;
   color: #f8fafc;
   padding: 10px 18px;
   border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: var(--glow);
+  box-shadow: 0 0 14px rgba(37, 99, 235, 0.2);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary:hover {
+  background: #1d4ed8;
+  box-shadow: 0 0 18px rgba(37, 99, 235, 0.3);
 }
 
 .primary.small {
@@ -196,12 +210,19 @@ h1 {
 }
 
 .ghost {
-  background: transparent;
-  border: 1px solid rgba(11, 19, 36, 0.2);
-  color: var(--text);
+  background: rgb(var(--primary-rgb) / 0.06);
+  border: 1px solid rgb(var(--primary-rgb) / 0.2);
+  color: var(--primary);
   padding: 10px 18px;
   border-radius: 12px;
   cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.ghost:hover {
+  background: rgb(var(--primary-rgb) / 0.12);
+  border-color: rgb(var(--primary-rgb) / 0.35);
 }
 
 .ghost.small {
@@ -257,11 +278,13 @@ h1 {
 }
 
 .chip {
-  background: rgb(var(--primary-rgb) / 0.08);
-  border: 1px solid rgb(var(--primary-rgb) / 0.2);
+  background: rgb(var(--primary-rgb) / 0.1);
+  border: 1px solid rgb(var(--primary-rgb) / 0.22);
   padding: 6px 10px;
   border-radius: 999px;
   font-size: 12px;
+  color: var(--primary);
+  font-weight: 500;
 }
 
 .section {
@@ -377,7 +400,7 @@ h1 {
   margin-top: 18px;
   font-size: 18px;
   font-weight: 600;
-  color: var(--text);
+  color: #334155;
 }
 
 .hint {
@@ -388,9 +411,11 @@ h1 {
 .tag {
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgb(var(--primary-rgb) / 0.12);
-  border: 1px solid rgb(var(--primary-rgb) / 0.28);
+  background: rgb(var(--accent-rgb) / 0.1);
+  border: 1px solid rgb(var(--accent-rgb) / 0.25);
   font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .featured-grid {
@@ -441,8 +466,9 @@ h1 {
 
 .feat-subtitle {
   display: block;
-  color: var(--text-2);
+  color: var(--accent);
   font-size: .82rem;
+  font-weight: 500;
   margin-bottom: 5px;
 }
 
