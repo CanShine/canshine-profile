@@ -295,6 +295,50 @@
           <a class="ghost small" href="projects/fft.html">查看详情</a>
         </div>
       </div>
+
+      <div class="subsection-title">综合工程实践与技术库</div>
+      <div class="featured-grid">
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>UDP 高速互联子系统</h3>
+            <span class="tag">以太网通信</span>
+          </div>
+          <p class="featured-intro">国家级重点实验室基金项目，纯硬件 UDP/IP 协议栈（含 ARP/ICMP），PC ↔ FPGA &gt;800 Mbps 线速传输。</p>
+          <button class="ghost small" type="button" data-open="proj-eth">查看详情</button>
+        </div>
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>AIoT 智能花盆视觉识别</h3>
+            <span class="tag">IoT</span>
+          </div>
+          <p class="featured-intro">广东省电设一等奖（最高奖），STM32 + ESP8266 TCP 图像上传 + 云端 SqueezeNet 推理，端云协同环境控制闭环。</p>
+          <button class="ghost small" type="button" data-open="proj-aiot">查看详情</button>
+        </div>
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>芯片测试与外设驱动平台</h3>
+            <span class="tag">验证平台</span>
+          </div>
+          <p class="featured-intro">Python 上位机 + SPI/I2C/AXIS/DRP 多协议控制器 IP 库，支持芯片测试指令自动化闭环与数据导入导出。</p>
+          <button class="ghost small" type="button" data-open="proj-t16">查看详情</button>
+        </div>
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>汽车仪表屏容错控制器</h3>
+            <span class="tag">可靠性设计</span>
+          </div>
+          <p class="featured-intro">校企合作商业落地，CRC 校验 + Fail-Safe 视频切换状态机，Flash/DDR 备份确保故障模式下关键图标可见。</p>
+          <button class="ghost small" type="button" data-open="proj-car">查看详情</button>
+        </div>
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>VGG 训练加速器</h3>
+            <span class="tag">FPGA/AI</span>
+          </div>
+          <p class="featured-intro">AXI-Lite 控制接口 + PL 端卷积算子仿真加速，搭建可配置的训练支撑平台，验证数据复用与带宽调度策略。</p>
+          <button class="ghost small" type="button" data-open="proj-vgg">查看详情</button>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="awards">
@@ -451,7 +495,7 @@
       </div>
     </div>
 
-    <div class="debug-badge">版本：2026-02-28 v3.0</div>
+    <div class="debug-badge">版本：2026-02-28 v3.1</div>
 
     <template id="proj-image">
       <h3>智能图像去雾与动态范围增强引擎</h3>
@@ -510,6 +554,162 @@
     </template>
 
     <!-- proj-cy / proj-eth / proj-vgg / proj-t16: 已从专项优质项目移除，模板删除 -->
+
+    <!-- L3 综合工程实践与技术库 modal 模板 -->
+    <template id="proj-eth">
+      <h3>UDP 高速互联子系统</h3>
+      <p style="color:var(--text-2);margin-bottom:12px">国家级重点实验室基金项目 · 面向在线训练的硬件加速技术研究</p>
+      <div class="detail-grid">
+        <div>
+          <h4>核心挑战</h4>
+          <p>PC 上位机与 FPGA 加速器之间需实现低延迟、大带宽的权重数据导入导出与训练指令传输，传统 CPU 软协议栈延迟高、CPU 占用大，无法满足在线训练的实时性需求。</p>
+          <h4 style="margin-top:12px">关键技术</h4>
+          <ul>
+            <li><strong>纯硬件 UDP/IP 协议栈</strong>：完整实现 UDP/IP 封装与解析，支持 <strong>ARP 自动应答</strong>与 <strong>ICMP Ping</strong>，摒弃 CPU 软协议栈依赖</li>
+            <li><strong>多级缓存流控</strong>：基于多级 FIFO 的数据流控机制，消除突发抖动，实现 <strong>&gt;800 Mbps</strong> 线速稳定传输</li>
+            <li><strong>双向数据通路</strong>：训练指令下发与大规模权重数据导入导出无缝复用同一物理链路</li>
+          </ul>
+        </div>
+        <div>
+          <h4>技术标签</h4>
+          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+            <span class="chip">Verilog</span>
+            <span class="chip">UDP/IP</span>
+            <span class="chip">RGMII</span>
+            <span class="chip">AXI-Stream</span>
+            <span class="chip">FIFO</span>
+          </div>
+          <h4 style="margin-top:12px">成果指标</h4>
+          <ul>
+            <li>传输吞吐 <strong>&gt;800 Mbps</strong>，达到千兆以太网线速</li>
+            <li>ARP/ICMP 全硬件响应，零 CPU 介入</li>
+            <li>完成训练权重的实时导入导出，支撑 FPGA 在线训练流程闭环</li>
+          </ul>
+        </div>
+      </div>
+    </template>
+
+    <template id="proj-aiot">
+      <h3>AIoT 智能花盆视觉识别系统</h3>
+      <p style="color:var(--text-2);margin-bottom:12px">广东省大学生电子设计竞赛 · <strong>一等奖（最高奖）</strong>（基于"杰理杯"优胜奖原型迭代重构）</p>
+      <div class="detail-grid">
+        <div>
+          <h4>核心工作</h4>
+          <ul>
+            <li><strong>无线图像传输链路</strong>：STM32 主控 + ESP8266 Wi-Fi 模块，基于 <strong>TCP</strong> 协议构建可靠图像上传通道；使用 AT 指令集实现数据分包发送与丢包重传</li>
+            <li><strong>端云协同控制闭环</strong>：图像实时上传至上位机进行 <strong>SqueezeNet</strong> 推理（Plant-Village 数据集），解析识别结果，单片机端执行对应的环境控制策略（浇水/补光等）</li>
+            <li><strong>驱动与外设适配</strong>：负责摄像头采集驱动、LCD 显示输出及传感器读取的底层驱动开发</li>
+          </ul>
+        </div>
+        <div>
+          <h4>技术标签</h4>
+          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+            <span class="chip">STM32</span>
+            <span class="chip">ESP8266</span>
+            <span class="chip">TCP/IP</span>
+            <span class="chip">SqueezeNet</span>
+            <span class="chip">IoT</span>
+          </div>
+          <h4 style="margin-top:12px">项目亮点</h4>
+          <ul>
+            <li>AI 算力（云端推理）与终端控制逻辑完全解耦，系统可扩展性强</li>
+            <li>经历两代版本演进（校赛→省赛），从功能验证到工程落地优化</li>
+            <li>省电赛 AI 专题赛道 <strong>一等奖</strong>（最高级别奖项）</li>
+          </ul>
+        </div>
+      </div>
+    </template>
+
+    <template id="proj-t16">
+      <h3>工业级芯片测试与外设驱动平台</h3>
+      <p style="color:var(--text-2);margin-bottom:12px">实验室通用验证平台 · 多协议 IP 库 + Python 自动化测试</p>
+      <div class="detail-grid">
+        <div>
+          <h4>核心工作</h4>
+          <ul>
+            <li><strong>Python 上位机软件</strong>：开发测试自动化框架，支持 <strong>UART</strong> 与 <strong>以太网 TCP/IP</strong> 两条控制通道，实现测试指令下发与大批量数据导入导出的自动化闭环</li>
+            <li><strong>多协议驱动 IP 库</strong>：设计集成 <strong>SPI / I2C / AXIS / DRP</strong> 的多协议控制器，作为芯片或下游功能模块的标准接口，支持灵活时序配置与协议转换</li>
+            <li><strong>测试数据管道</strong>：构建从激励注入、响应采集到自动回归比对的完整测试链路</li>
+          </ul>
+        </div>
+        <div>
+          <h4>技术标签</h4>
+          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+            <span class="chip">Python</span>
+            <span class="chip">SPI</span>
+            <span class="chip">I2C</span>
+            <span class="chip">AXI-Stream</span>
+            <span class="chip">DRP</span>
+            <span class="chip">UART</span>
+          </div>
+          <h4 style="margin-top:12px">工程价值</h4>
+          <ul>
+            <li>覆盖 4 种片上/片外通信协议，形成可复用 IP 库</li>
+            <li>Python 自动化测试脚本与 FPGA RTL 协同工作，减少人工回归工作量</li>
+            <li>已应用于实验室多款芯片的功能验证与性能测评</li>
+          </ul>
+        </div>
+      </div>
+    </template>
+
+    <template id="proj-car">
+      <h3>汽车仪表屏显示容错控制器</h3>
+      <p style="color:var(--text-2);margin-bottom:12px">校企合作商业落地项目 · 车规级可靠性设计</p>
+      <div class="detail-grid">
+        <div>
+          <h4>核心工作</h4>
+          <ul>
+            <li><strong>指令桥接与数据存储</strong>：设计 MCU 到主控的通信桥接逻辑，负责指令转发与图标数据的 <strong>SPI Flash 存储管理</strong>；接收端实现 <strong>CRC 校验机制</strong>，确保车载强电磁干扰环境下数据可靠性</li>
+            <li><strong>Fail-Safe 视频故障切换</strong>：实现视频流监控状态机——正常时持续备份关键帧至 Flash/DDR；监测到视频链路中断时自动切换路径，从备份存储加载图标数据至 OSD 模块</li>
+            <li><strong>关键信息保障</strong>：确保报警图标等行车安全信息在视频主链路故障时依然可见，满足功能安全需求</li>
+          </ul>
+        </div>
+        <div>
+          <h4>技术标签</h4>
+          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+            <span class="chip">Verilog</span>
+            <span class="chip">SPI Flash</span>
+            <span class="chip">CRC 校验</span>
+            <span class="chip">状态机</span>
+            <span class="chip">OSD</span>
+            <span class="chip">DDR</span>
+          </div>
+          <h4 style="margin-top:12px">工程亮点</h4>
+          <ul>
+            <li>商业落地项目，设计需满足车规级电磁环境可靠性要求</li>
+            <li>Fail-Safe 切换状态机经过完整边界测试，切换延迟可控</li>
+            <li>存储管理模块支持在线更新图标数据，具备量产灵活性</li>
+          </ul>
+        </div>
+      </div>
+    </template>
+
+    <template id="proj-vgg">
+      <h3>VGG 训练加速器</h3>
+      <p style="color:var(--text-2);margin-bottom:12px">FPGA 平台卷积算子加速研究 · 训练支撑原型验证</p>
+      <div class="detail-grid">
+        <div>
+          <h4>核心工作</h4>
+          <ul>
+            <li><strong>AXI-Lite 控制接口</strong>：设计标准化寄存器地址映射，PS 端通过 AXI-Lite 下发卷积参数（核大小、步长、特征图分辨率），实现灵活的算子配置</li>
+            <li><strong>PL 端算子仿真加速</strong>：在 PL 端部署卷积计算核，验证数据复用策略（行缓冲复用、权重广播）对带宽需求的降低效果</li>
+            <li><strong>性能对标与分析</strong>：建立仿真基准，测量不同批大小与分辨率配置下的吞吐率，为后续训练加速架构演进提供数据支撑</li>
+          </ul>
+        </div>
+        <div>
+          <h4>技术标签</h4>
+          <div class="chip-row" style="flex-wrap:wrap;gap:6px">
+            <span class="chip">Verilog</span>
+            <span class="chip">AXI-Lite</span>
+            <span class="chip">ZYNQ</span>
+            <span class="chip">卷积加速</span>
+            <span class="chip">数据复用</span>
+          </div>
+          <h4 style="margin-top:12px">设计说明</h4>
+          <p style="font-size:.9rem;color:var(--text-2)">本项目为原型探索性工作，重点在于验证 PS-PL 协同控制流与算子参数化设计的可行性，而非追求极致的峰值性能，结论为后续 ResNet/SNN 加速器的架构决策提供了参考。</p>
+        </div>
+      </div>
+    </template>
 
     <template id="proj-tpu">
       <h3>多精度可重构张量计算单元 (TPU) 设计</h3>
