@@ -392,8 +392,8 @@ h1 {
 .ic-chips  { margin-bottom: 8px; }
 
 .school-logo {
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   object-fit: contain;
   flex-shrink: 0;
 }
