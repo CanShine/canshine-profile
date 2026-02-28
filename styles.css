@@ -427,6 +427,9 @@ h1 {
   font-weight: 600;
   color: #334155;
 }
+.subsection-title:first-child {
+  margin-top: 0;
+}
 
 .hint {
   color: var(--muted);
@@ -447,7 +450,7 @@ h1 {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .featured-card {
