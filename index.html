@@ -29,9 +29,6 @@
             三项国家级课题驱动，主导 <strong>ASIC 前端全流程</strong>与 <strong>FPGA 系统架构</strong>设计；
             从 RTL 实现到时序收敛，在真实工程约束中持续打磨技艺。
           </p>
-          <!-- <div class="hero-actions">
-            <a class="primary" href="assets/resume/resume.pdf" download>下载简历</a>
-          </div> -->
           <div class="hero-stats">
             <div class="stat">
               <div class="stat-num">3</div>
@@ -181,18 +178,6 @@
       <div class="featured-grid">
         <div class="featured-card">
           <div class="featured-head">
-            <h3>智能图像去雾增强引擎</h3>
-            <span class="tag">图像处理</span>
-          </div>
-          <p class="featured-intro">
-            <span style="display:block;color:var(--text-2);font-size:.82rem;margin-bottom:5px">复微杯全国第三名 · PSoC 平台 DSP/BRAM 双重资源约束</span>
-            AOD-Net-Opt 轻量化 + BRAM 时分复用 + PS-PL 流式架构，保障实时视频流吞吐。
-            <span style="display:block;margin-top:8px;font-family:monospace;font-size:.85rem">0.529 GOPS &nbsp;·&nbsp; BRAM 降低 93.75%</span>
-          </p>
-          <button class="ghost small" type="button" data-open="proj-image">查看详情</button>
-        </div>
-        <div class="featured-card">
-          <div class="featured-head">
             <h3>多精度可重构 TPU 设计</h3>
             <span class="tag">数字 IC</span>
           </div>
@@ -202,6 +187,18 @@
             <span style="display:block;margin-top:8px;font-family:monospace;font-size:.85rem">200 MHz / 22.9% LUT &nbsp;·&nbsp; 100% 交叉覆盖率</span>
           </p>
           <button class="ghost small" type="button" data-open="proj-tpu">查看详情</button>
+        </div>
+        <div class="featured-card">
+          <div class="featured-head">
+            <h3>智能图像去雾增强引擎</h3>
+            <span class="tag">图像处理</span>
+          </div>
+          <p class="featured-intro">
+            <span style="display:block;color:var(--text-2);font-size:.82rem;margin-bottom:5px">复微杯全国第三名 · PSoC 平台 DSP/BRAM 双重资源约束</span>
+            AOD-Net-Opt 轻量化 + BRAM 时分复用 + PS-PL 流式架构，保障实时视频流吞吐。
+            <span style="display:block;margin-top:8px;font-family:monospace;font-size:.85rem">0.529 GOPS &nbsp;·&nbsp; BRAM 降低 93.75%</span>
+          </p>
+          <button class="ghost small" type="button" data-open="proj-image">查看详情</button>
         </div>
         <div class="featured-card">
           <div class="featured-head">
@@ -452,32 +449,6 @@
       </div>
     </section>
 
-    <section class="section" id="books" style="display:none">
-      <div class="section-title-row">
-        <h2>📚 阅读与书评（可选）</h2>
-        <div class="hint">占比小，突出学习广度</div>
-      </div>
-      <p class="section-desc">如果你希望突出学习方法与工程思维，可保留书墙；否则可直接隐藏本区块。</p>
-      <div class="book-wall">
-        <div class="book-card">
-          <img class="book-cover" src="assets/books/hdl-design.svg" alt="书籍封面" />
-          <div class="book-title">HDL Design</div>
-        </div>
-        <div class="book-card">
-          <img class="book-cover" src="assets/books/digital-ic.svg" alt="书籍封面" />
-          <div class="book-title">Digital IC</div>
-        </div>
-        <div class="book-card">
-          <img class="book-cover" src="assets/books/fpga.svg" alt="书籍封面" />
-          <div class="book-title">FPGA</div>
-        </div>
-        <div class="book-card">
-          <img class="book-cover" src="assets/books/computer-arch.svg" alt="书籍封面" />
-          <div class="book-title">Computer Architecture</div>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="contact">
       <h2>📬 联系我</h2>
       <div class="contact-card">
@@ -492,7 +463,7 @@
     </section>
 
     <footer class="footer">
-      <div>&copy; CanShine · 个人展示页</div>
+      <div>&copy; CanShine · 数字 IC / FPGA 工程师</div>
       <a href="#top">返回顶部 ↑</a>
     </footer>
 
@@ -752,8 +723,19 @@
           </div>
         </div>
       </div>
-      <div class="image-row">
-        <img class="detail-image" src="assets/projects/tpu/误差分析.svg" alt="误差分析图" />
+      <div class="image-row" style="flex-direction:column;gap:16px;align-items:center">
+        <figure style="margin:0;width:100%">
+          <img class="detail-image" src="assets/projects/tpu/UVM环境.svg" alt="UVM 验证环境架构" style="max-width:900px;width:100%" />
+          <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:4px">① Coverage-Driven UVM 验证环境架构</figcaption>
+        </figure>
+        <figure style="margin:0;width:100%">
+          <img class="detail-image" src="assets/projects/tpu/覆盖率.svg" alt="覆盖率报告" style="max-width:900px;width:100%" />
+          <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:4px">② 精度 × 维度 × 溢出标志位交叉覆盖率报告</figcaption>
+        </figure>
+        <figure style="margin:0;width:100%">
+          <img class="detail-image" src="assets/projects/tpu/误差分析.svg" alt="误差分析图" style="max-width:900px;width:100%" />
+          <figcaption style="text-align:center;color:var(--text-2);font-size:.82rem;margin-top:4px">③ 多精度计算误差分析</figcaption>
+        </figure>
       </div>
     </template>
 
