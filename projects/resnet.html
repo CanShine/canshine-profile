@@ -10,15 +10,21 @@
   </head>
   <body class="project-page">
     <div class="bg-grid"></div>
+
+    <!-- 快速导航 -->
+    <nav class="quick-nav" aria-label="页内导航">
+      <a href="#context">背景</a>
+      <a href="#architecture">架构</a>
+      <a href="#innovations">技术</a>
+      <a href="#metrics">指标</a>
+      <a href="#verification">验证</a>
+      <a href="#discussion">探讨</a>
+    </nav>
+
     <header class="hero">
       <nav class="nav">
         <div class="brand">CanShine</div>
-        <div class="nav-links">
-          <a href="../index.html#projects">返回项目</a>
-          <a href="../index.html#awards">奖项</a>
-          <a href="../index.html#contact">联系</a>
-        </div>
-        <a class="nav-cta" href="../index.html">返回主页</a>
+        <a class="nav-cta" href="../index.html#projects">返回项目</a>
       </nav>
 
       <div class="hero-content">
@@ -67,12 +73,12 @@
         <div>
           <h4>项目归属</h4>
           <p><strong>国家级专项重点项目</strong></p>
-          <p style="margin-top:6px">项目经费：6000 万元</p>
+          <p class="mt-6">项目经费：6000 万元</p>
         </div>
         <div>
           <h4>担任角色</h4>
           <p><strong>FPGA Lead Architect · 硬件架构负责人</strong></p>
-          <p style="margin-top:6px">
+          <p class="mt-6">
             在距结项仅 <strong>6 个月</strong> 的关键节点接手，完成从遗留代码到完整架构的全面重构。
           </p>
         </div>
@@ -94,13 +100,13 @@
         摒弃通用处理器模式，采用 <strong>VLIW 指令驱动</strong> 的独立 IP 架构，通过 <strong>AXI-Lite</strong> 配置
         与 <strong>AXI-Full</strong> 大位宽数据搬运，实现计算与访存的深度解耦。
       </p>
-      <figure style="margin:0 0 24px">
+      <figure class="proj-fig">
         <img
           src="../assets/projects/resnet/顶层架构图.png"
           alt="ResNet-50 FPGA 加速器顶层架构图"
-          style="width:100%;max-width:960px;display:block;margin:0 auto;border-radius:8px"
+          class="proj-fig-img"
         />
-        <figcaption style="text-align:center;margin-top:8px;font-size:0.85rem;color:var(--text-2)">
+        <figcaption class="proj-figcap">
           图 1 &nbsp;·&nbsp; 控制 / DMA / 缓存 / 计算四位一体的 FPGA 加速器顶层架构
         </figcaption>
       </figure>
@@ -141,7 +147,7 @@
             当前缓冲块正在参与计算的同时，DMA 已在后台预取下一块数据，
             有效隐藏高负载环境下的 DDR 访存开销。
           </p>
-          <p style="margin-top:8px;font-size:0.9rem;color:var(--accent)">
+          <p class="accent-note">
             推理延迟降低 ~14%（401.2 ms → 345.8 ms）
           </p>
         </div>
@@ -153,7 +159,7 @@
             三个算子在单次数据通过中完成，消除中间结果的片外回写，
             显著降低总线压力与动态功耗。
           </p>
-          <p style="margin-top:8px;font-size:0.9rem;color:var(--accent)">
+          <p class="accent-note">
             中间数据传输量减少 ~60%，片外带宽需求大幅降低
           </p>
         </div>
@@ -164,7 +170,7 @@
             <strong>VLIW 调度</strong> 降低控制开销，<strong>残差主旁路</strong>共用计算与存储资源，
             消除冗余资源闲置。针对 DDR 4KB 边界限制实现硬件自动拆分，无需软件干预。
           </p>
-          <p style="margin-top:8px;font-size:0.9rem;color:var(--accent)">
+          <p class="accent-note">
             DSP &lt;2% / LUT &lt;4%，多系统稳定共存
           </p>
         </div>
@@ -177,7 +183,7 @@
       <p class="section-desc">
         当前在多系统共存模式（Coexistence Mode）下的实测数据，以及全片专用模式下的算力扩展分析。
       </p>
-      <div class="hero-stats" style="justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:32px">
+      <div class="hero-stats hero-stats--center">
         <div class="stat">
           <div class="stat-num">2.89 FPS</div>
           <div class="stat-label">推理帧率 @ 共存模式</div>
@@ -262,7 +268,7 @@
         以及「<strong>大规模并行下的布线拥塞规避与 Floorplanning 策略</strong>」等深度细节，
         欢迎在专业交流中展开进一步探讨。
       </p>
-      <div class="hero-actions" style="margin-top:24px">
+      <div class="hero-actions">
         <a class="primary" href="../index.html#contact">联系交流</a>
         <a class="ghost" href="../index.html#projects">查看其他项目</a>
       </div>
@@ -270,7 +276,21 @@
 
     <footer class="footer">
       <div>© CanShine · 个人展示页</div>
-      <a href="#top">返回顶部 ↑</a>
+      <a href="../index.html#projects">返回项目</a>
     </footer>
+    <script>
+      const qLinks = document.querySelectorAll('.quick-nav a');
+      const qSections = [...qLinks].map(a => document.querySelector(a.getAttribute('href')));
+      const qObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            qLinks.forEach(a => a.classList.remove('active'));
+            const link = document.querySelector(`.quick-nav a[href="#${entry.target.id}"]`);
+            if (link) link.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-30% 0px -60% 0px' });
+      qSections.forEach(s => s && qObs.observe(s));
+    </script>
   </body>
 </html>
