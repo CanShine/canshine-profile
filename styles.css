@@ -115,7 +115,7 @@ body.modal-open {
 .hero {
   position: relative;
   z-index: 1;
-  padding: 24px 8vw 32px;
+  padding: 24px 8vw 16px;
 }
 
 .nav {
@@ -429,6 +429,10 @@ h1 {
 }
 .subsection-title:first-child {
   margin-top: 0;
+}
+
+#about {
+  padding-top: 8px;
 }
 
 .hint {
