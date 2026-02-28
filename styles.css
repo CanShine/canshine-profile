@@ -703,6 +703,11 @@ h1 {
   }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .award-track {
     animation: none;
@@ -808,12 +813,12 @@ h1 {
   background: rgba(255, 255, 255, 0.6);
 }
 
-/* modal 内图片点击放大提示 */
-.modal-body .detail-image {
+/* 图片点击放大提示 */
+.detail-image {
   cursor: zoom-in;
   transition: opacity 0.15s, transform 0.15s;
 }
-.modal-body .detail-image:hover {
+.detail-image:hover {
   opacity: 0.88;
   transform: scale(1.01);
 }
@@ -828,6 +833,7 @@ h1 {
   align-items: center;
   justify-content: center;
   cursor: zoom-out;
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   animation: fadeIn 0.15s ease;
 }

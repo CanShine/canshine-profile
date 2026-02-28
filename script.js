@@ -173,9 +173,9 @@ if (awardNext) {
   awardNext.addEventListener("click", () => scrollAwards(1));
 }
 
-// 图片灯箱：点击 modal 内图片放大查看
+// 图片灯箱：点击 .detail-image 放大查看
 document.addEventListener("click", (e) => {
-  const img = e.target.closest(".modal-body .detail-image");
+  const img = e.target.closest(".detail-image");
   if (!img) return;
   const lb = document.createElement("div");
   lb.className = "img-lightbox";
